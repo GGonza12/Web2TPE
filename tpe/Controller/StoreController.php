@@ -13,24 +13,24 @@ class TaskController{
     }
 
     function showHome(){
-        $games = $this->model->getGames();
-        $this->view->showGames($games);
+        $games = $this->model->GetGames();
+        $this->view->ShowGames($games);
     }
 
     function createGame(){
 
-        $this->model->insertGame($_POST['']);
-        $this->view->showHomeLocation();
+        $this->model->InsertGame($_POST['']);
+        $this->view->ShowHomeLocation();
     }
 
     function deleteGame($id){
-        $this->model->deleteGameFromDB($id);
+        $this->model->DeleteGameFromDB($id);
         $this->view->showHomeLocation();
     }
     
     function viewGame($id){
-        $game = $this->model->getGame($id);
-        $this->view->showGame($game);
+        $game = $this->model->GetGame($id);
+        $this->view->ShowGame($game);
     }
 
 }
