@@ -9,7 +9,7 @@ class TaskController{
 
     function __construct(){
         $this->model = new StoreModel();
-        $this->view = new StorekView();
+        $this->view = new StoreView();
     }
 
     function showHome(){
