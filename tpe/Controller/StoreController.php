@@ -23,10 +23,10 @@ class StoreController{
         $this->view->ShowHomeLocation();
     }
 
-    //function deleteGame($id){
-   //     $this->model->DeleteGameFromDB($id);
-   //     $this->view->showHomeLocation();
-   // }
+    function deleteGame($id){
+        $this->model->Delete($id);
+        $this->view->showHomeLocation();
+    }
     
   //  function viewGame($id){
   //      $game = $this->model->GetGame($id);
