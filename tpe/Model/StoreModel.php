@@ -10,7 +10,7 @@
     
 
     function GetGames(){
-        $sentencia = $this->db->prepare( "select * from juegos");
+        $sentencia = $this->db->prepare("SELECT * from juegos");
         $sentencia->execute();
         $juegos = $sentencia->fetchAll(PDO::FETCH_OBJ);
         return $juegos;
