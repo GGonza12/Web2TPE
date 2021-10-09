@@ -2,7 +2,7 @@
 require_once 'C:/xampp/htdocs/Web2TPE/tpe/Model/StoreModel.php';
 require_once 'C:/xampp/htdocs/Web2TPE/tpe/View/StoreView.php';
 
-class TaskController{
+class StoreController{
 
     private $model;
     private $view;
