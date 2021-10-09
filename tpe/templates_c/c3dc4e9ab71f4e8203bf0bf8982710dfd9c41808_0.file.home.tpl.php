@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-10 01:03:00
+/* Smarty version 3.1.39, created on 2021-10-10 01:27:35
   from 'C:\xampp\htdocs\webtpe\Web2TPE\tpe\templates\home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61621fa4977e59_19813176',
+  'unifunc' => 'content_616225670e6a66_70350321',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c3dc4e9ab71f4e8203bf0bf8982710dfd9c41808' => 
     array (
       0 => 'C:\\xampp\\htdocs\\webtpe\\Web2TPE\\tpe\\templates\\home.tpl',
-      1 => 1633819980,
+      1 => 1633822048,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61621fa4977e59_19813176 (Smarty_Internal_Template $_smarty_tpl) {
+function content_616225670e6a66_70350321 (Smarty_Internal_Template $_smarty_tpl) {
 ?><h3>Agregar juego:</h3>
 
 
@@ -43,7 +43,7 @@ function content_61621fa4977e59_19813176 (Smarty_Internal_Template $_smarty_tpl)
 <h1><?php echo $_smarty_tpl->tpl_vars['titulo']->value;?>
 </h1>
 <table>
-	
+
     <thead>
         <tr>
             <th>Id juego</th>
@@ -53,7 +53,6 @@ function content_61621fa4977e59_19813176 (Smarty_Internal_Template $_smarty_tpl)
             <th>Id_empresa</th>
             <th>eliminar</th>
             <th>Detalles</th>
-
 
         </tr>
     </thead>
@@ -75,15 +74,39 @@ $_smarty_tpl->tpl_vars['juego']->do_else = false;
 </td>
             <td><?php echo $_smarty_tpl->tpl_vars['juego']->value->id_empresa;?>
 </td>
-
-          
-
             <td><a href="deleteGame/<?php echo $_smarty_tpl->tpl_vars['juego']->value->id_juego;?>
 ">eliminar</a></td>
-
             <td><a href="viewGame/<?php echo $_smarty_tpl->tpl_vars['juego']->value->id_juego;?>
 ">Detalles</a></td>
             
+        </tr>
+    </tbody>
+ 
+<?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+</table>
+
+<table>
+	
+    <thead>
+        <tr>
+            <th>Id Empresa</th>
+            <th>Empresa</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['companys']->value, 'company');
+$_smarty_tpl->tpl_vars['company']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['company']->value) {
+$_smarty_tpl->tpl_vars['company']->do_else = false;
+?>
+		<tr>
+			<td><?php echo $_smarty_tpl->tpl_vars['company']->value->id_empresa;?>
+</td>
+            <td><?php echo $_smarty_tpl->tpl_vars['company']->value->empresa;?>
+</td>
         </tr>
     </tbody>
  

@@ -19,7 +19,7 @@
 
 <h1>{$titulo}</h1>
 <table>
-	
+
     <thead>
         <tr>
             <th>Id juego</th>
@@ -29,7 +29,6 @@
             <th>Id_empresa</th>
             <th>eliminar</th>
             <th>Detalles</th>
-
 
         </tr>
     </thead>
@@ -41,13 +40,28 @@
             <td>{$juego->descripcion}</td>
             <td>{$juego->precio}</td>
             <td>{$juego->id_empresa}</td>
-
-          
-
             <td><a href="deleteGame/{$juego->id_juego}">eliminar</a></td>
-
             <td><a href="viewGame/{$juego->id_juego}">Detalles</a></td>
             
+        </tr>
+    </tbody>
+ 
+{/foreach}
+</table>
+
+<table>
+	
+    <thead>
+        <tr>
+            <th>Id Empresa</th>
+            <th>Empresa</th>
+        </tr>
+    </thead>
+    <tbody>
+    {foreach from= $companys item= $company}
+		<tr>
+			<td>{$company->id_empresa}</td>
+            <td>{$company->empresa}</td>
         </tr>
     </tbody>
  

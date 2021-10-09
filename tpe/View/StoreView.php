@@ -24,6 +24,13 @@ class StoreView
         $this->smarty->display('templates/ViewGame.tpl');
     }
 
+    function ShowCompanys($companys)
+    {
+        $this->smarty->assing('titlecomp', $companys->empresa);
+        $this->smarty->assing('companys',$companys);
+        $this->smarty->display('templates/home.tpl');
+    }
+
     function showHomeLocation(){
         header("Location: " . BASE_URL . "home");
     }
