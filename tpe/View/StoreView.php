@@ -16,12 +16,11 @@ class StoreView
         $this->smarty->assign('juegos', $games);
         $this->smarty->display('templates/home.tpl');
     }
-
     
     function ShowGame($game)
     {
         $this->smarty->assign('titulo', $game->juego);
-        $this->smarty->assign('game', $game);
+        $this->smarty->assign('juego', $game);
         $this->smarty->display('templates/ViewGame.tpl');
     }
 

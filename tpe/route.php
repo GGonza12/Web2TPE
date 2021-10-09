@@ -26,9 +26,9 @@ switch ($params[0]) {
     case 'deleteGame': 
         $storeController->deleteGame($params[1]); 
         break;
-  //  case 'viewGame': 
-  //      $storeController->viewGame($id); 
-  //      break;
+    case 'viewGame': 
+        $storeController->viewGame($params[1]); 
+        break;
     default: 
         echo('404 Page not found'); 
         break;

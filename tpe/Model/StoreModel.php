@@ -25,7 +25,7 @@
     }
 
     function GetGame($id){
-        $sentencia = $this->db->prepare("SELECT * from juegos WHERE id_juego");
+        $sentencia = $this->db->prepare("SELECT * from juegos WHERE id_juego=?");
         $sentencia->execute(array($id));
         $juego = $sentencia->fetch(PDO::FETCH_OBJ);
         return $juego;

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-09 03:48:12
+/* Smarty version 3.1.39, created on 2021-10-10 01:03:00
   from 'C:\xampp\htdocs\webtpe\Web2TPE\tpe\templates\home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6160f4dcb9b456_21653572',
+  'unifunc' => 'content_61621fa4977e59_19813176',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c3dc4e9ab71f4e8203bf0bf8982710dfd9c41808' => 
     array (
       0 => 'C:\\xampp\\htdocs\\webtpe\\Web2TPE\\tpe\\templates\\home.tpl',
-      1 => 1633743907,
+      1 => 1633819980,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6160f4dcb9b456_21653572 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61621fa4977e59_19813176 (Smarty_Internal_Template $_smarty_tpl) {
 ?><h3>Agregar juego:</h3>
 
 
@@ -75,9 +75,13 @@ $_smarty_tpl->tpl_vars['juego']->do_else = false;
 </td>
             <td><?php echo $_smarty_tpl->tpl_vars['juego']->value->id_empresa;?>
 </td>
-            <td><a href="deleteTask/<?php echo $_smarty_tpl->tpl_vars['juego']->value->id_juego;?>
+
+          
+
+            <td><a href="deleteGame/<?php echo $_smarty_tpl->tpl_vars['juego']->value->id_juego;?>
 ">eliminar</a></td>
-            <td><a href="viewTask/<?php echo $_smarty_tpl->tpl_vars['juego']->value->id_juego;?>
+
+            <td><a href="viewGame/<?php echo $_smarty_tpl->tpl_vars['juego']->value->id_juego;?>
 ">Detalles</a></td>
             
         </tr>
