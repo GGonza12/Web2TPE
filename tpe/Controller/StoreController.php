@@ -14,11 +14,16 @@ class StoreController{
 
     function showHome(){
         $games = $this->model->GetGames();
+        $company = $this->model->GetCompanys();
         $this->view->ShowGames($games);
+        $this->view->ShowGames($company);
+    }
+    function ShowCompanys(){
+        $companys = $this->model->GetCompanys();
+        $this->view->ShowGames($companys);
     }
 
     function createGame($juego,$descripcion,$precio,$empresa){
-
         $this->model->InsertGame($juego,$descripcion,$precio,$empresa);
         $this->view->ShowHomeLocation();
     }

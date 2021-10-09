@@ -19,6 +19,13 @@
         $sentencia->execute(array($juego,$descripcion,$precio,$id_empresa));
     }
 
+    function GetCompanys(){
+        $sentencia = $this->db->prepare("SELECT * FROM empresas");
+        $sentencia->execute();
+        $empresas = $sentencia->fetchAll(PDO::FETCH_OBJ);
+        return $empresas;
+    }
+
     function Delete($id){
         $sentencia = $this->db->prepare("DELETE FROM juegos WHERE id_juego=?");
         $sentencia->execute(array($id));
