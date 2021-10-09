@@ -17,13 +17,13 @@ class StoreView
         $this->smarty->display('templates/home.tpl');
     }
 
-    //
-    //function showTask($task)
-    //{
-   //     $this->smarty->assign('titulo', $task->producto);
-    //    $this->smarty->assign('task', $task);
-    //    $this->smarty->display('templates/Taskdetail.tpl');
-   // }
+    
+    function ShowGame($game)
+    {
+        $this->smarty->assign('titulo', $game->juego);
+        $this->smarty->assign('game', $game);
+        $this->smarty->display('templates/ViewGame.tpl');
+    }
 
     function showHomeLocation(){
         header("Location: " . BASE_URL . "home");

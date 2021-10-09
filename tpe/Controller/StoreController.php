@@ -28,9 +28,9 @@ class StoreController{
         $this->view->showHomeLocation();
     }
     
-  //  function viewGame($id){
-  //      $game = $this->model->GetGame($id);
-  //      $this->view->ShowGame($game);
-  //  }
+    function viewGame($id){
+        $game = $this->model->GetGame($id);
+        $this->view->ShowGame($game);
+   }
 
 }
