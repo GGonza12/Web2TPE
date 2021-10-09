@@ -21,7 +21,7 @@ switch ($params[0]) {
         var_dump($params);
         $storeController->showHome(); 
         break;
-    case 'createGame': 
+    case 'CreateGame': 
 
         $storeController->createGame($_POST['juego'],$_POST['descripcion'],$_POST['precio'],$_POST['empresa']); 
         break;

@@ -2,22 +2,21 @@
 
     class StoreModel{
         private $db;
-            
-        function __contruct(){
-            $this->db = new PDO('mysql:host=localhost;'.'dbname=db_juegos;charset=utf8', 'root', '');
-        }
+    function __construct(){
+         $this->db = new PDO('mysql:host=localhost;'.'dbname=db_juegos;charset=utf8', 'root', '');
+    }
     
 
     function GetGames(){
-        $sentencia = $this->db->prepare("SELECT * from juegos");
+        $sentencia = $this->db->prepare("SELECT * FROM juegos");
         $sentencia->execute();
         $juegos = $sentencia->fetchAll(PDO::FETCH_OBJ);
         return $juegos;
     }
 
-    function InsertGame($juegos,$descripcion,$precio,$id_empresa){
+    function InsertGame($juego,$descripcion,$precio,$id_empresa){
         $sentencia = $this->db->prepare("INSERT INTO juegos(juego,descripcion,precio,id_empresa) VALUES(?, ?, ?, ?)");
-        $sentencia->execute(array($juegos,$descripcion,$precio,$id_empresa));
+        $sentencia->execute(array($juego,$descripcion,$precio,$id_empresa));
     }
 
     function DeleteGame($id){

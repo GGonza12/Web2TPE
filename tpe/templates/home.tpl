@@ -13,7 +13,6 @@
             <option value=4>CAPCOM</option>
             <option value=5>Rockstar Games</option>
         </select>
-        <select>
         <input type="submit" value="Agregar">
         
 </form>
@@ -27,8 +26,9 @@
             <th>Juego</th>
             <th>Descripcion</th>
             <th>Precio</th>
-            <th>Empresa</th>
-            <th>id_empresa</th>
+            <th>Id_empresa</th>
+            <th>eliminar</th>
+            <th>Detalles</th>
 
 
         </tr>
@@ -40,7 +40,6 @@
             <td>{$juego->juego}</td>
             <td>{$juego->descripcion}</td>
             <td>{$juego->precio}</td>
-			<td>{$juego->empresa}</td>
             <td>{$juego->id_empresa}</td>
             <td><a href="deleteTask/{$juego->id_juego}">eliminar</a></td>
             <td><a href="viewTask/{$juego->id_juego}">Detalles</a></td>

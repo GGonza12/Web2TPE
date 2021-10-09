@@ -1,5 +1,5 @@
 <?php
-require_once('C:/xampp/htdocs/web2/tp4/ejer5/libs/smarty-3.1.39/libs/Smarty.class.php');
+require_once('C:/xampp/htdocs/Web2TPE/tpe/libs/smarty-3.1.39/libs/Smarty.class.php');
 
 class StoreView
 {
@@ -10,10 +10,10 @@ class StoreView
         $this->smarty = new Smarty();
     }
 
-    function ShowGames($coments)
+    function ShowGames($games)
     {
-        $this->smarty->assign('titulo', 'Comentarios');
-        $this->smarty->assign('coments', $coments);
+        $this->smarty->assign('titulo', 'Juegos');
+        $this->smarty->assign('juegos', $games);
         $this->smarty->display('templates/home.tpl');
     }
 
