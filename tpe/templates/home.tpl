@@ -41,8 +41,8 @@
             <td>{$juego->descripcion}</td>
             <td>{$juego->precio}</td>
             <td>{$juego->id_empresa}</td>
-            <td><a href="deleteTask/{$juego->id_juego}">eliminar</a></td>
-            <td><a href="viewTask/{$juego->id_juego}">Detalles</a></td>
+            <td><a href="deleteGame/{$juego->id_juego}">eliminar</a></td>
+            <td><a href="viewGame/{$juego->id_juego}">Detalles</a></td>
             
         </tr>
     </tbody>
