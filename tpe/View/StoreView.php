@@ -17,7 +17,7 @@ class StoreView
         $this->smarty->display('templates/home.tpl');
     }
 
-    
+    //
     //function showTask($task)
     //{
    //     $this->smarty->assign('titulo', $task->producto);
