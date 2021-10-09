@@ -25,12 +25,12 @@ switch ($params[0]) {
 
         $storeController->createGame($_POST['juego'],$_POST['descripcion'],$_POST['precio'],$_POST['empresa']); 
         break;
-    case 'deleteGame': 
-        $storeController->deleteGame($id); 
-        break;
-    case 'viewGame': 
-        $storeController->viewGame($id); 
-        break;
+  //  case 'deleteGame': 
+  //      $storeController->deleteGame($id); 
+  //      break;
+  //  case 'viewGame': 
+  //      $storeController->viewGame($id); 
+  //      break;
     default: 
         echo('404 Page not found'); 
         break;

@@ -16,6 +16,8 @@ class StoreView
         $this->smarty->assign('coments', $coments);
         $this->smarty->display('templates/home.tpl');
     }
+
+    
     //function showTask($task)
     //{
    //     $this->smarty->assign('titulo', $task->producto);
@@ -23,8 +25,7 @@ class StoreView
     //    $this->smarty->display('templates/Taskdetail.tpl');
    // }
 
-    function showHomeLocation()
-    {
+    function showHomeLocation(){
         header("Location: " . BASE_URL . "home");
     }
 
