@@ -18,7 +18,6 @@ $storeController = new StoreController();
 // determina que camino seguir según la acción
 switch ($params[0]) {
     case 'home':
-        var_dump($params);
         $storeController->showHome(); 
         break;
     case 'CreateGame': 
