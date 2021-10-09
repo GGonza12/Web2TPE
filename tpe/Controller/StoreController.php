@@ -1,5 +1,5 @@
 <?php
-require_once 'C:/xampp/htdocs/Web2TPE/tpe/Model/StoreModel.php';
+require_once 'C:/xampp/htdocs/webtpe/Web2TPE/tpe/Model/StoreModel.php';
 require_once 'C:/xampp/htdocs/Web2TPE/tpe/View/StoreView.php';
 
 class TaskController{

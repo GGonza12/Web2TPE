@@ -1,6 +1,7 @@
 <?php
 
     class StoreModel{
+        
         private $db;
             
         function_contruct(){
