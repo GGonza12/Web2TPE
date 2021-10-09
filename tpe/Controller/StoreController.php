@@ -1,6 +1,6 @@
 <?php
-require_once 'C:\xampp\htdocs\webtpe\Web2TPE\tpe\Model\StoreModel.php';
-require_once 'C:\xampp\htdocs\webtpe\Web2TPE\tpe\View\StoreView.php';
+require_once 'C:/xampp/htdocs/Web2TPE/tpe/Model/StoreModel.php';
+require_once 'C:/xampp/htdocs/Web2TPE/tpe/View/StoreView.php';
 
 class StoreController{
 
@@ -14,11 +14,16 @@ class StoreController{
 
     function showHome(){
         $games = $this->model->GetGames();
+        $company = $this->model->GetCompanys();
         $this->view->ShowGames($games);
+        $this->view->ShowGames($company);
+    }
+    function ShowCompanys(){
+        $companys = $this->model->GetCompanys();
+        $this->view->ShowGames($companys);
     }
 
     function createGame($juego,$descripcion,$precio,$empresa){
-
         $this->model->InsertGame($juego,$descripcion,$precio,$empresa);
         $this->view->ShowHomeLocation();
     }

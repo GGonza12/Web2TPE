@@ -1,5 +1,5 @@
 <?php
-require_once('C:/xampp/htdocs/webtpe/Web2TPE/tpe/libs/smarty-3.1.39/libs/Smarty.class.php');
+require_once('C:/xampp/htdocs/Web2TPE/tpe/libs/smarty-3.1.39/libs/Smarty.class.php');
 
 class StoreView
 {
