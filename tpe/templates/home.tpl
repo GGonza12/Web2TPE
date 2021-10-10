@@ -48,22 +48,3 @@
  
 {/foreach}
 </table>
-
-<table>
-	
-    <thead>
-        <tr>
-            <th>Id Empresa</th>
-            <th>Empresa</th>
-        </tr>
-    </thead>
-    <tbody>
-    {foreach from= $companys item= $company}
-		<tr>
-			<td>{$company->id_empresa}</td>
-            <td>{$company->empresa}</td>
-        </tr>
-    </tbody>
- 
-{/foreach}
-</table>

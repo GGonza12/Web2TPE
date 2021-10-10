@@ -13,8 +13,17 @@ class StoreView
     function ShowGames($games)
     {
         $this->smarty->assign('titulo', 'Juegos');
+
         $this->smarty->assign('juegos', $games);
+       // $this->smarty->assing('aa',$a);
         $this->smarty->display('templates/home.tpl');
+
+    }
+    function ShowCompanys($company) {
+        $this->smarty->assign('titulo2', 'Empresas');
+        $this->smarty->assign('company', $company);
+        $this->smarty->display('templates/empresas.tpl');
+        
     }
     
     function ShowGame($game)
@@ -24,12 +33,11 @@ class StoreView
         $this->smarty->display('templates/ViewGame.tpl');
     }
 
-    function ShowCompanys($companys)
-    {
-        $this->smarty->assing('titlecomp', $companys->empresa);
-        $this->smarty->assing('companys',$companys);
-        $this->smarty->display('templates/home.tpl');
-    }
+    //function ShowCompanys($companys)
+    //{
+        
+   //     $this->smarty->display('templates/home.tpl');
+   // }
 
     function showHomeLocation(){
         header("Location: " . BASE_URL . "home");
