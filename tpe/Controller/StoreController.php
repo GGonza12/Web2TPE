@@ -12,15 +12,12 @@ class StoreController{
         $this->view = new StoreView();
     }
 
-    function showGames(){
+    function showHome(){
         $games = $this->model->GetGames();
         
-        $this->view->ShowGames($games);
-        
-    }
-    function showCompany(){
         $company = $this->model->GetCompanys();
-        $this->view->ShowCompanys($company);
+        $this->view->ShowGames($games,$company);
+        
     }
     function showGamesOfCompany($id){
         $games = $this->model->GamesOfCompany($id);

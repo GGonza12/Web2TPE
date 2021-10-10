@@ -18,8 +18,8 @@ $storeController = new StoreController();
 // determina que camino seguir según la acción
 switch ($params[0]) {
     case 'home':
-        $storeController->showGames(); 
-        $storeController->showCompany();
+        $storeController->showHome(); 
+       // $storeController->showCompany();
         break;
     case 'CreateGame': 
         $storeController->createGame($_POST['juego'],$_POST['descripcion'],$_POST['precio'],$_POST['empresa']); 

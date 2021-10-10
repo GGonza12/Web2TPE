@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-10 03:35:30
+/* Smarty version 3.1.39, created on 2021-10-10 03:57:07
   from 'C:\xampp\htdocs\Web2TPE\tpe\templates\home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61624362bf5bf8_26111348',
+  'unifunc' => 'content_6162487343d016_24247918',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd0bd6023481350a864032ecea634e4ef20364da8' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2TPE\\tpe\\templates\\home.tpl',
-      1 => 1633829677,
+      1 => 1633831018,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61624362bf5bf8_26111348 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6162487343d016_24247918 (Smarty_Internal_Template $_smarty_tpl) {
 ?><h3>Agregar juego:</h3>
 
 
@@ -97,7 +97,36 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         </select>
         <input type="submit" value="Listar">
 </form>
+<h1><?php echo $_smarty_tpl->tpl_vars['titulo2']->value;?>
+</h1>
 
+<table>
+	
+    <thead>
+        <tr>
+            <th>Id Empresa</th>
+            <th>Empresa</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['company']->value, 'empresas');
+$_smarty_tpl->tpl_vars['empresas']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['empresas']->value) {
+$_smarty_tpl->tpl_vars['empresas']->do_else = false;
+?>
+		<tr>
+			<td><?php echo $_smarty_tpl->tpl_vars['empresas']->value->id_empresa;?>
+</td>
+            <td><?php echo $_smarty_tpl->tpl_vars['empresas']->value->empresa;?>
+</td>
+        </tr>
+    </tbody>
+ 
+<?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+</table>
 
 
 <?php }
