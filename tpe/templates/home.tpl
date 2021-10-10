@@ -34,7 +34,7 @@
     </thead>
     <tbody>
     {foreach from=$juegos item=$juego}
-		<tr>
+		<tr> 
 			<td>{$juego->id_juego}</td>
             <td>{$juego->juego}</td>
             <td>{$juego->descripcion}</td>
@@ -48,3 +48,17 @@
  
 {/foreach}
 </table>
+<h3>Filtrar juegos de una empresa</h3>
+<form action="listar" method="post">
+        <select name="empresa">
+            <option value=1>CD PROJEKT RED</option>
+            <option value=2>505 Games</option>
+            <option value=3>Electronic Arts</option>
+            <option value=4>CAPCOM</option>
+            <option value=5>Rockstar Games</option>
+        </select>
+        <input type="submit" value="Listar">
+</form>
+
+
+

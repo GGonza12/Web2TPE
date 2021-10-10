@@ -22,6 +22,10 @@ class StoreController{
         $company = $this->model->GetCompanys();
         $this->view->ShowCompanys($company);
     }
+    function showGamesOfCompany($id){
+        $games = $this->model->GamesOfCompany($id);
+        $this->view->ShowGamesOfCompany($games);
+    }
 
     function createGame($juego,$descripcion,$precio,$empresa){
         $this->model->InsertGame($juego,$descripcion,$precio,$empresa);

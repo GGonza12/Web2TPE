@@ -30,6 +30,9 @@ switch ($params[0]) {
     case 'viewGame': 
         $storeController->viewGame($params[1]); 
         break;
+    case 'listar':
+        $storeController->showGamesOfCompany($_POST['empresa']);
+        break;
     default: 
         echo('404 Page not found'); 
         break;
