@@ -17,6 +17,13 @@
         
 </form>
 
+<h3>Agregar Empresa:</h3>
+
+<form action="CreateCompany" method="post">
+        <input type="text" placeholder="Inserte Empresa" name="empresa">
+        <input type="submit" value="Agregar">        
+</form>
+
 <h1>{$titulo}</h1>
 <table>
 
@@ -48,6 +55,7 @@
  
 {/foreach}
 </table>
+
 <h3>Filtrar juegos de una empresa</h3>
 <form action="listar" method="post">
         <select name="empresa">
@@ -67,6 +75,8 @@
         <tr>
             <th>Id Empresa</th>
             <th>Empresa</th>
+            <th>modificar</th>
+            <th>eliminar</th>
         </tr>
     </thead>
     <tbody>
@@ -74,6 +84,8 @@
 		<tr>
 			<td>{$empresas->id_empresa}</td>
             <td>{$empresas->empresa}</td>
+             <td><a href="UpdateCompany/{$empresas->id_empresa}">Modificar</a></td>
+            <td><a href="DeleteCompany/{$empresas->id_empresa}">Eliminar</a></td>
         </tr>
     </tbody>
  

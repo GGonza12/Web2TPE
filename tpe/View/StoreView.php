@@ -1,5 +1,5 @@
 <?php
-require_once('C:/xampp/htdocs/Web2TPE/tpe/libs/smarty-3.1.39/libs/Smarty.class.php');
+require_once('C:\xampp\htdocs\webtpe\Web2TPE\tpe\libs\smarty-3.1.39\libs\Smarty.class.php');
 
 class StoreView
 {
@@ -32,11 +32,13 @@ class StoreView
         $this->smarty->display('templates/ViewGame.tpl');
     }
 
-    //function ShowCompanys($companys)
-    //{
-        
-   //     $this->smarty->display('templates/home.tpl');
-   // }
+    function UpdateViewCompany($id)
+    {
+        //$this->smarty->assing('titulo','Actualizar Empresa');
+        $this->smarty->assing('id',$id);
+        $this->smarty->display('templates/update.tpl');
+
+    }
 
     function showHomeLocation(){
         header("Location: " . BASE_URL . "home");

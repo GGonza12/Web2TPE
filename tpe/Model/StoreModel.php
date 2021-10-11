@@ -6,7 +6,6 @@
          $this->db = new PDO('mysql:host=localhost;'.'dbname=db_juegos;charset=utf8', 'root', '');
     }
     
-
     function GetGames(){
         $sentencia = $this->db->prepare("SELECT * FROM juegos");
         $sentencia->execute();
@@ -44,4 +43,19 @@
         return $juego;
     
     }
+
+    function InsertCompany($empresa){
+        $sentencia = $this->db->prepare("INSERT INTO empresas(empresa) VALUES(?)");
+        $sentencia->execute(array($empresa));
+    }
+
+    function UpdateData($id){
+        $sentencia = $db->prepare("UPDATE materias SET nombre=?, docente=? WHERE id_=?");
+        $sentencia->execute(array($materia,$profesor,$id));
+    }     
+
+    function UpdateViewCompany($id){
+        $sentencia = $db->prepare("UPDATE materias SET nombre=?, docente=? WHERE id_=?");
+        $sentencia->execute(array($materia,$profesor,$id));
+    }     
 }
