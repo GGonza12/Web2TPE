@@ -30,22 +30,27 @@ switch ($params[0]) {
     case 'viewGame': 
         $storeController->viewGame($params[1]); 
         break;
-    case 'listar':
+    case 'ShowGamesOfCompany':
         $storeController->showGamesOfCompany($_POST['empresa']);
         break;
     case 'CreateCompany':
         $storeController->CreateEmpresa($_POST['empresa']);
         break;  
-    case 'DeleteCompany':
-        $storeController->
+    case 'ShowGamesOfCompany':
+        $storeController->showGamesOfCompany($params[1]);
         break;
-    case 'UpdateCompany':
+    case 'UpdateViewCompany':
         var_dump($params);
-        $storeController->UpdateCompany($params[1]);
-
-        break; 
-    case 'UpdateViewCompany':     
-        break;
+        if ($params[1] == 'UpdateCompany'){
+            var_dump($_POST['empresa']);
+            var_dump($_POST['id']);
+            $storeController->UpdateCompany($_POST['empresa'],$_POST['id']);    
+            break;
+        }
+        else {
+            $storeController->ShowUpdateCompany($params[1]);
+            break; 
+        }
     default: 
         echo('404 Page not found'); 
         break;

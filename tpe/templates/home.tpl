@@ -57,7 +57,7 @@
 </table>
 
 <h3>Filtrar juegos de una empresa</h3>
-<form action="listar" method="post">
+<form action="ShowGamesOfCompany" method="post">
         <select name="empresa">
             <option value=1>CD PROJEKT RED</option>
             <option value=2>505 Games</option>
@@ -84,7 +84,7 @@
 		<tr>
 			<td>{$empresas->id_empresa}</td>
             <td>{$empresas->empresa}</td>
-             <td><a href="UpdateCompany/{$empresas->id_empresa}">Modificar</a></td>
+             <td><a href="UpdateViewCompany/{$empresas->id_empresa}">Modificar</a></td>
             <td><a href="DeleteCompany/{$empresas->id_empresa}">Eliminar</a></td>
         </tr>
     </tbody>

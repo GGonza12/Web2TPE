@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-10 03:57:07
+/* Smarty version 3.1.39, created on 2021-10-11 05:02:46
   from 'C:\xampp\htdocs\Web2TPE\tpe\templates\home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6162487343d016_24247918',
+  'unifunc' => 'content_6163a956497f48_37690243',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd0bd6023481350a864032ecea634e4ef20364da8' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2TPE\\tpe\\templates\\home.tpl',
-      1 => 1633831018,
+      1 => 1633921362,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6162487343d016_24247918 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6163a956497f48_37690243 (Smarty_Internal_Template $_smarty_tpl) {
 ?><h3>Agregar juego:</h3>
 
 
@@ -38,6 +38,13 @@ function content_6162487343d016_24247918 (Smarty_Internal_Template $_smarty_tpl)
         </select>
         <input type="submit" value="Agregar">
         
+</form>
+
+<h3>Agregar Empresa:</h3>
+
+<form action="CreateCompany" method="post">
+        <input type="text" placeholder="Inserte Empresa" name="empresa">
+        <input type="submit" value="Agregar">        
 </form>
 
 <h1><?php echo $_smarty_tpl->tpl_vars['titulo']->value;?>
@@ -86,8 +93,9 @@ $_smarty_tpl->tpl_vars['juego']->do_else = false;
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 </table>
+
 <h3>Filtrar juegos de una empresa</h3>
-<form action="listar" method="post">
+<form action="ShowGamesOfCompany" method="post">
         <select name="empresa">
             <option value=1>CD PROJEKT RED</option>
             <option value=2>505 Games</option>
@@ -106,6 +114,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         <tr>
             <th>Id Empresa</th>
             <th>Empresa</th>
+            <th>modificar</th>
+            <th>eliminar</th>
         </tr>
     </thead>
     <tbody>
@@ -120,6 +130,10 @@ $_smarty_tpl->tpl_vars['empresas']->do_else = false;
 </td>
             <td><?php echo $_smarty_tpl->tpl_vars['empresas']->value->empresa;?>
 </td>
+             <td><a href="UpdateViewCompany/<?php echo $_smarty_tpl->tpl_vars['empresas']->value->id_empresa;?>
+">Modificar</a></td>
+            <td><a href="DeleteCompany/<?php echo $_smarty_tpl->tpl_vars['empresas']->value->id_empresa;?>
+">Eliminar</a></td>
         </tr>
     </tbody>
  

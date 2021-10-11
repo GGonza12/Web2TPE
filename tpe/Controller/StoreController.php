@@ -1,6 +1,6 @@
 <?php
-require_once 'C:\xampp\htdocs\webtpe\Web2TPE\tpe\Model\StoreModel.php';
-require_once 'C:\xampp\htdocs\webtpe\Web2TPE\tpe\View\StoreView.php';
+require_once 'C:\xampp\htdocs\Web2TPE\tpe\Model\StoreModel.php';
+require_once 'C:\xampp\htdocs\Web2TPE\tpe\View\StoreView.php';
 
 class StoreController{
 
@@ -44,18 +44,23 @@ class StoreController{
         $this->view->ShowGame($game);
    }
 
-   function UpdateCompany($id){
+   function ShowUpdateCompany($id){
+    $company= $this->model->GetCompany($id);
+    $this->view->UpdateViewCompany($company);
+    
+    
+   }
 
-    $this->view->UpdateViewCompany($id);
-    
-    
+   function UpdateCompany($empresa,$id){
+       $this->model->UpdateComp($empresa,$id);
+       $this->view->showHomeLocation();
    }
 
    function DeleteCompany($id){
-
     $this->model->DeleteCompany($id);
-
+    $this->view->showHomeLocation();
    }
+
 }
 
 

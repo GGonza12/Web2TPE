@@ -1,7 +1,7 @@
-<h3>{$titulo}</h3>
 
-<form action="CreateCompany" method="post">
-        <input type="text" value="{$id}">        
-        <input type="text" placeholder="Inserte Empresa" name="empresa">
-        <input type="submit" value="Agregar">      
+<form action="UpdateCompany" method="post">
+        <input type="text" placeholder="{$empresa}" name="empresa" >
+        <input hidden type="text"  value="{$id}" name="id">
+        <input type="submit" value="Modificar">
+  
 </form>

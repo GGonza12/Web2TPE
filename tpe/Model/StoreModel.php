@@ -24,6 +24,12 @@
         $empresas = $sentencia->fetchAll(PDO::FETCH_OBJ);
         return $empresas;
     }
+    function GetCompany($id){
+        $sentencia = $this->db->prepare("SELECT * FROM empresas WHERE id_empresa=?");
+        $sentencia->execute(array($id));
+        $empresas = $sentencia->fetch(PDO::FETCH_OBJ);
+        return $empresas;
+    }
     function GamesOfCompany($id){
         $sentencia = $this->db->prepare("SELECT a.*, b.* FROM juegos a INNER JOIN empresas b WHERE a.id_empresa=? AND b.id_empresa=?");
         $sentencia->execute(array($id,$id));
@@ -49,13 +55,20 @@
         $sentencia->execute(array($empresa));
     }
 
-    function UpdateData($id){
-        $sentencia = $db->prepare("UPDATE materias SET nombre=?, docente=? WHERE id_=?");
-        $sentencia->execute(array($materia,$profesor,$id));
-    }     
+    function UpdateComp($empresa,$id){
+        $sentencia = $this->db->prepare("UPDATE empresas SET empresa=? WHERE id_empresa=?");
+        $sentencia->execute(array($empresa,$id));
+        
+}
+    function DeleteCompany($id){
+        $sentencia = $this->db->prepare("DELETE FROM empresas WHERE id_empresa=?");
+        $sentencia->execute(array($id));
+    }
+    
+    function ShowGamesOfCompany($id){
+        $sentencia = $this->db->prepare("SELECT a.*, b.* FROM juegos a INNER JOIN empresas b WHERE a.id_empresa=? AND b.id_empresa=?");
+        $sentencia->execute(array($id,$id));
+    }
 
-    function UpdateViewCompany($id){
-        $sentencia = $db->prepare("UPDATE materias SET nombre=?, docente=? WHERE id_=?");
-        $sentencia->execute(array($materia,$profesor,$id));
-    }     
+
 }
