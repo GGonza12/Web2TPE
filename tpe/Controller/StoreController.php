@@ -16,7 +16,7 @@ class StoreController{
     }
 
     function showHome(){
-        $this->authHelper->CheckLoggedIn();
+        $this->authHelper->CheckLoggedIn(); 
         $games = $this->model->GetGames();        
         $company = $this->model->GetCompanys();
         $this->view->ShowGames($games,$company);
@@ -28,19 +28,19 @@ class StoreController{
     }
 
     function createGame($juego,$descripcion,$precio,$empresa){
-        $this->authHelper->CheckLoggedIn();
+        $this->authHelper->CheckAdmin();
         $this->model->InsertGame($juego,$descripcion,$precio,$empresa);
         $this->view->ShowHomeLocation();
     }
 
     function CreateEmpresa($empresa){
-        $this->authHelper->CheckLoggedIn();
+        $this->authHelper->CheckAdmin();
         $this->model->InsertCompany($empresa);
         $this->view->ShowHomeLocation();
     }
 
     function deleteGame($id){
-        $this->authHelper->CheckLoggedIn();
+        $this->authHelper->CheckAdmin();
         $this->model->Delete($id);
         $this->view->showHomeLocation();
     }
@@ -52,6 +52,7 @@ class StoreController{
    }
 
    function ShowUpdateCompany($id){
+    $this->authHelper->CheckAdmin();
     $this->authHelper->CheckLoggedIn();
     $company= $this->model->GetCompany($id);
     $this->view->UpdateViewCompany($company);
@@ -60,13 +61,13 @@ class StoreController{
    }
 
    function UpdateCompany($empresa,$id){
-    $this->authHelper->CheckLoggedIn();
+    $this->authHelper->CheckAdmin();
        $this->model->UpdateComp($empresa,$id);
        $this->view->showHomeLocation();
    }
 
    function DeleteCompany($id){
-    $this->authHelper->CheckLoggedIn();
+    $this->authHelper->CheckAdmin();
     $this->model->DeleteCompany($id);
     $this->view->showHomeLocation();
    }

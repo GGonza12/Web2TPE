@@ -12,9 +12,10 @@ class UserModel {
     }
 
     function CreateUser($user,$email,$password){
-        $rol= 'admin';
-        $query = $this->db->prepare("INSERT INTO usuarios(usuario,email,contraseña,rol) VALUES(?,?,?,?)");
-        $query->execute(array($user,$email,$password,$rol));
+        $rol= 'publico';
+        $passwordhash = password_hash($password, PASSWORD_BCRYPT);
+        $query = $this->db->prepare("INSERT INTO usuarios(usuario,email,contrasena,rol) VALUES(?,?,?,?)");
+        $query->execute(array($user,$email,$passwordhash,$rol));
     }
     
         
