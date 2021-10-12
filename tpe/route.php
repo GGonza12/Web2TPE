@@ -1,5 +1,6 @@
 <?php
 require_once ('Controller/StoreController.php');
+require_once ('Controller/LoginController.php');
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
@@ -14,12 +15,24 @@ if (!empty($_GET['action'])) {
 $params = explode('/', $action);
 
 $storeController = new StoreController();
+$loginController = new LoginController();
 
 // determina que camino seguir según la acción
 switch ($params[0]) {
+    case 'login':
+        $loginController->login();
+        break;
+    case 'logout':
+        $loginController->logout();
+        break;
+    case 'verify':
+        $loginController->VefiryLogin();
+        break;
+    case 'createacount':
+        $loginController->SignIn($_POST['user'],$_POST['email'],$_POST['password']);
+        break;
     case 'home':
         $storeController->showHome(); 
-       // $storeController->showCompany();
         break;
     case 'CreateGame': 
         $storeController->createGame($_POST['juego'],$_POST['descripcion'],$_POST['precio'],$_POST['empresa']); 

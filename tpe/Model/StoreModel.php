@@ -65,10 +65,7 @@
         $sentencia->execute(array($id));
     }
     
-    function ShowGamesOfCompany($id){
-        $sentencia = $this->db->prepare("SELECT a.*, b.* FROM juegos a INNER JOIN empresas b WHERE a.id_empresa=? AND b.id_empresa=?");
-        $sentencia->execute(array($id,$id));
-    }
+
 
 
 }
