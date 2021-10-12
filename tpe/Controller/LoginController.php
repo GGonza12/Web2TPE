@@ -54,7 +54,6 @@ class LoginController {
                 session_start();
                 $_SESSION["email"] = $email;
                 $_SESSION["rol"] == $user->rol;
-
                     
                 $this->view->ShowHome();
             } 

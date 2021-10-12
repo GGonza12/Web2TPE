@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="css/style.css">
 <a href="logout">Cerrar sesión</a>
 <h3>Agregar juego:</h3>
 

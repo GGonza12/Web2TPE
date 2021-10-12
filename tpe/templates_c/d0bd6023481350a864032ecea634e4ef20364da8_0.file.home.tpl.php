@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-12 04:12:36
+/* Smarty version 3.1.39, created on 2021-10-12 18:01:47
   from 'C:\xampp\htdocs\Web2TPE\tpe\templates\home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6164ef14e161c9_87597425',
+  'unifunc' => 'content_6165b16b452534_12083116',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd0bd6023481350a864032ecea634e4ef20364da8' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2TPE\\tpe\\templates\\home.tpl',
-      1 => 1634004754,
+      1 => 1634054398,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,9 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6164ef14e161c9_87597425 (Smarty_Internal_Template $_smarty_tpl) {
-?><a href="logout">Cerrar sesión</a>
+function content_6165b16b452534_12083116 (Smarty_Internal_Template $_smarty_tpl) {
+?><link rel="stylesheet" href="css/style.css">
+<a href="logout">Cerrar sesión</a>
 <h3>Agregar juego:</h3>
 
 
