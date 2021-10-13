@@ -13,7 +13,6 @@
       <div class="card-body">
         <h5 class="card-title">{$juego->juego}</h5>
         <p class="card-text">{$juego->descripcion}</p>
-        
         <p class="card-text"><small class="text-muted">Precio: ${$juego->precio}</small></p>
       </div>
     </div>

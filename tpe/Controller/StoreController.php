@@ -16,51 +16,54 @@ class StoreController{
     }
 
     function showHome(){
-        $this->authHelper->CheckLoggedIn(); 
+        $this->authHelper->CheckLoggedIn();
+        $rol = $this->authHelper->admin();
         $games = $this->model->GetGames();        
         $company = $this->model->GetCompanys();
-        $this->view->ShowGamesHome($games,$company);
+        $this->view->ShowGamesHome($games,$company,$rol);
         
     }
     function ShowStore(){
         $this->authHelper->CheckLoggedIn();
+
         $games = $this->model->GetGames();
         $this->view->ShowGamesStore($games);
+
     }
 
     function showGamesOfCompany($id){
-        $this->authHelper->CheckLoggedIn();
+
         $company = $this->model->GetCompany($id);
         $games = $this->model->GamesOfCompany($id);
         $this->view->ShowGamesOfCompany($games,$company);
     }
 
     function createGame($juego,$imagen,$categorias,$descripcion,$precio,$empresa){
-        $this->authHelper->CheckLoggedIn();
+
         $this->model->InsertGame($juego,$imagen,$categorias,$descripcion,$precio,$empresa);
         $this->view->ShowHomeLocation();
     }
 
     function CreateEmpresa($empresa){
-        $this->authHelper->CheckLoggedIn();
+
         $this->model->InsertCompany($empresa);
         $this->view->ShowHomeLocation();
     }
 
     function deleteGame($id){
-        $this->authHelper->CheckLoggedIn();
+
         $this->model->Delete($id);
         $this->view->showHomeLocation();
     }
     
     function viewGame($id){
-        $this->authHelper->CheckLoggedIn();
+
         $game = $this->model->GetGame($id);
         $this->view->ShowGame($game);
    }
 
    function ShowUpdateCompany($id){
-    $this->authHelper->CheckLoggedIn();
+
     $company= $this->model->GetCompany($id);
     $this->view->UpdateViewCompany($company);
     
@@ -68,13 +71,13 @@ class StoreController{
    }
 
    function UpdateCompany($empresa,$id){
-    $this->authHelper->CheckLoggedIn();
+
        $this->model->UpdateComp($empresa,$id);
        $this->view->showHomeLocation();
    }
 
    function DeleteCompany($id){
-    $this->authHelper->CheckLoggedIn();
+
     $this->model->DeleteCompany($id);
     $this->view->showHomeLocation();
    }

@@ -13,11 +13,13 @@ class AuthHelper {
             header("Location: ".BASE_URL."login");
         }
     }
-    function CheckAdmin(){
-        session_start();
-        if(($_SESSION["rol"] != 'admin')){
-
-            header("Location: ".BASE_URL."home");
+    function admin(){
+        if((isset($_SESSION["email"]) && $_SESSION["rol"]=='admin')){
+            $rol = true;
         }
+        else{
+            $rol = false;
+        }
+        return $rol;
     }
 }

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-12 23:52:53
+/* Smarty version 3.1.39, created on 2021-10-13 05:11:19
   from 'C:\xampp\htdocs\Web2TPE\tpe\templates\home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_616603b56b4018_95594197',
+  'unifunc' => 'content_61664e57cbd902_85681475',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd0bd6023481350a864032ecea634e4ef20364da8' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2TPE\\tpe\\templates\\home.tpl',
-      1 => 1634075571,
+      1 => 1634094676,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_616603b56b4018_95594197 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61664e57cbd902_85681475 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -75,8 +75,11 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             <th>Descripcion</th>
             <th>Precio</th>
             <th>Id_empresa</th>
-            <th>eliminar</th>
-            <th>Detalles</th>
+            <?php if ($_smarty_tpl->tpl_vars['rol']->value == true) {?>
+                
+                <th>eliminar</th>
+                <th>Detalles</th>
+            <?php }?>
 
         </tr>
     </thead>
@@ -100,10 +103,13 @@ $_smarty_tpl->tpl_vars['juego']->do_else = false;
 </td>
             <td><?php echo $_smarty_tpl->tpl_vars['juego']->value->id_empresa;?>
 </td>
-            <td><a href="deleteGame/<?php echo $_smarty_tpl->tpl_vars['juego']->value->id_juego;?>
+            <?php if ($_smarty_tpl->tpl_vars['rol']->value == true) {?>
+                
+                <td><a href="deleteGame/<?php echo $_smarty_tpl->tpl_vars['juego']->value->id_juego;?>
 ">eliminar</a></td>
-            <td><a href="viewGame/<?php echo $_smarty_tpl->tpl_vars['juego']->value->id_juego;?>
+                <td><a href="viewGame/<?php echo $_smarty_tpl->tpl_vars['juego']->value->id_juego;?>
 ">Detalles</a></td>
+            <?php }?>
             
         </tr>
     </tbody>
@@ -134,8 +140,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         <tr>
             <th>Id Empresa</th>
             <th>Empresa</th>
+        <?php if ($_smarty_tpl->tpl_vars['rol']->value == true) {?>
             <th>modificar</th>
             <th>eliminar</th>
+        <?php }?>
+
+
         </tr>
     </thead>
     <tbody>
@@ -150,10 +160,15 @@ $_smarty_tpl->tpl_vars['empresas']->do_else = false;
 </td>
             <td><?php echo $_smarty_tpl->tpl_vars['empresas']->value->empresa;?>
 </td>
-             <td><a href="UpdateViewCompany/<?php echo $_smarty_tpl->tpl_vars['empresas']->value->id_empresa;?>
+        <?php if ($_smarty_tpl->tpl_vars['rol']->value == true) {?>
+            <td><a href="UpdateViewCompany/<?php echo $_smarty_tpl->tpl_vars['empresas']->value->id_empresa;?>
 ">Modificar</a></td>
             <td><a href="DeleteCompany/<?php echo $_smarty_tpl->tpl_vars['empresas']->value->id_empresa;?>
-">Eliminar</a></td>
+" >Eliminar</a></td>
+        <?php }?>
+            
+
+
         </tr>
     </tbody>
  

@@ -39,8 +39,11 @@
             <th>Descripcion</th>
             <th>Precio</th>
             <th>Id_empresa</th>
-            <th>eliminar</th>
-            <th>Detalles</th>
+            {if $rol == true}
+                
+                <th>eliminar</th>
+                <th>Detalles</th>
+            {/if}
 
         </tr>
     </thead>
@@ -53,8 +56,11 @@
             <td>{$juego->descripcion}</td>
             <td>{$juego->precio}</td>
             <td>{$juego->id_empresa}</td>
-            <td><a href="deleteGame/{$juego->id_juego}">eliminar</a></td>
-            <td><a href="viewGame/{$juego->id_juego}">Detalles</a></td>
+            {if $rol == true}
+                
+                <td><a href="deleteGame/{$juego->id_juego}">eliminar</a></td>
+                <td><a href="viewGame/{$juego->id_juego}">Detalles</a></td>
+            {/if}
             
         </tr>
     </tbody>
@@ -82,8 +88,12 @@
         <tr>
             <th>Id Empresa</th>
             <th>Empresa</th>
+        {if $rol == true}
             <th>modificar</th>
             <th>eliminar</th>
+        {/if}
+
+
         </tr>
     </thead>
     <tbody>
@@ -91,8 +101,13 @@
 		<tr>
 			<td>{$empresas->id_empresa}</td>
             <td>{$empresas->empresa}</td>
-             <td><a href="UpdateViewCompany/{$empresas->id_empresa}">Modificar</a></td>
-            <td><a href="DeleteCompany/{$empresas->id_empresa}">Eliminar</a></td>
+        {if $rol == true}
+            <td><a href="UpdateViewCompany/{$empresas->id_empresa}">Modificar</a></td>
+            <td><a href="DeleteCompany/{$empresas->id_empresa}" >Eliminar</a></td>
+        {/if}
+            
+
+
         </tr>
     </tbody>
  

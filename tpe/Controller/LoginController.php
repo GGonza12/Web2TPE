@@ -27,23 +27,6 @@ class LoginController {
         $this->view->ShowLogin("Cerraste sesión");
     }
 
-    function VefiryLoginAdmin(){
-        if (!empty($_POST['email']) && !empty($_POST['password'])){
-            $email = $_POST['email'];
-            $password = $_POST['password'];
-
-            $user = $this->model->getUser($email);
-            if (($user && password_verify($password, $user->contrasena)) && ($user->rol == 'admin' )){
-                session_start();
-                $_SESSION["email"] = $email;
-
-                $this->view->ShowHome();
-            } 
-            else {
-                $this->view->ShowLogin('Acceso denegado.');
-            }
-        }
-    }
     function VefiryLogin(){
         if (!empty($_POST['email']) && !empty($_POST['password'])){
             $email = $_POST['email'];
@@ -53,7 +36,7 @@ class LoginController {
             if ($user && password_verify($password, $user->contrasena)){
                 session_start();
                 $_SESSION["email"] = $email;
-                $_SESSION["rol"] == $user->rol;
+                $_SESSION["rol"] = $user->rol;
                     
                 $this->view->ShowHome();
             } 

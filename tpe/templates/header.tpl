@@ -37,14 +37,7 @@
                         <a class="nav-link" href="store">Tienda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="comunidad">Comunidad</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="perfil">Perfil</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="carrito">Carrito</a>
-                    </li>
+                        <a class="nav-link" href="login">Iniciar sesión/Crear cuenta</a>
 
                 </ul>
             </div>

@@ -43,6 +43,9 @@ switch ($params[0]) {
     case 'deleteGame': 
         $storeController->deleteGame($params[1]); 
         break;
+    case 'DeleteCompany': 
+        $storeController->DeleteCompany($params[1]); 
+        break;
     case 'viewGame': 
         $storeController->viewGame($params[1]); 
         break;

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-13 02:25:18
+/* Smarty version 3.1.39, created on 2021-10-13 04:02:34
   from 'C:\xampp\htdocs\Web2TPE\tpe\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6166276e3b1d09_17315651',
+  'unifunc' => 'content_61663e3a24e0d7_64959516',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'bb81400e126464ca25c91233b1e09d36299a83a0' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2TPE\\tpe\\templates\\header.tpl',
-      1 => 1634084709,
+      1 => 1634090551,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6166276e3b1d09_17315651 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61663e3a24e0d7_64959516 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
     
 <html lang="en">
@@ -60,14 +60,7 @@ function content_6166276e3b1d09_17315651 (Smarty_Internal_Template $_smarty_tpl)
                         <a class="nav-link" href="store">Tienda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="comunidad">Comunidad</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="perfil">Perfil</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="carrito">Carrito</a>
-                    </li>
+                        <a class="nav-link" href="login">Iniciar sesión/Crear cuenta</a>
 
                 </ul>
             </div>
