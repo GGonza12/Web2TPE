@@ -1,5 +1,6 @@
+{include file="header.tpl"}
 <h1>{$titulo}</h1>
-<table>
+<table class="table table-hover">
 	
     <thead>
         <tr>
@@ -24,3 +25,4 @@
     </tbody>
 
 </table>
+{include file="footer.tpl"}

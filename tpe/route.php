@@ -56,10 +56,7 @@ switch ($params[0]) {
         $storeController->showGamesOfCompany($params[1]);
         break;
     case 'UpdateViewCompany':
-        var_dump($params);
         if ($params[1] == 'UpdateCompany'){
-            var_dump($_POST['empresa']);
-            var_dump($_POST['id']);
             $storeController->UpdateCompany($_POST['empresa'],$_POST['id']);    
             break;
         }

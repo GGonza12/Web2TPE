@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-12 23:57:09
+/* Smarty version 3.1.39, created on 2021-10-13 02:09:25
   from 'C:\xampp\htdocs\Web2TPE\tpe\templates\store.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_616604b5718573_49319864',
+  'unifunc' => 'content_616623b545c3f6_61244465',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e1cc1a52a8015d08bdc3d644317df130fed3528a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2TPE\\tpe\\templates\\store.tpl',
-      1 => 1634075559,
+      1 => 1634083763,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_616604b5718573_49319864 (Smarty_Internal_Template $_smarty_tpl) {
+function content_616623b545c3f6_61244465 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -47,7 +47,8 @@ $_smarty_tpl->tpl_vars['juego']->do_else = false;
 </h5>
         <p class="card-text"><?php echo $_smarty_tpl->tpl_vars['juego']->value->descripcion;?>
 </p>
-        <p class="card-text"><small class="text-muted">$<?php echo $_smarty_tpl->tpl_vars['juego']->value->precio;?>
+        
+        <p class="card-text"><small class="text-muted">Precio: $<?php echo $_smarty_tpl->tpl_vars['juego']->value->precio;?>
 </small></p>
       </div>
     </div>
