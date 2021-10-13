@@ -1,4 +1,5 @@
-<link rel="stylesheet" href="css/style.css">
+{include file="header.tpl"}
+
 <a href="logout">Cerrar sesión</a>
 <h3>Agregar juego:</h3>
 
@@ -6,17 +7,18 @@
 <form action="CreateGame" method="post">
 
         <input type="text" placeholder="Juego" name="juego">
+        <input type="text" placeholder="Inserte url de imagen" name="imagen">
+        <input type="text" placeholder="Categorias" name="categorias">
         <input type="text" placeholder="Descripcion" name="descripcion">
         <input type="number" placeholder="Precio" name="precio">
         <select name="empresa">
-            <option value=1>CD PROJEKT RED</option>
-            <option value=2>505 Games</option>
-            <option value=3>Electronic Arts</option>
-            <option value=4>CAPCOM</option>
-            <option value=5>Rockstar Games</option>
+        {foreach from= $company item= $empresas}
+            <option value={$empresas->id_empresa}>{$empresas->empresa}</option>
+        {/foreach}
         </select>
+    
         <input type="submit" value="Agregar">
-        
+    
 </form>
 
 <h3>Agregar Empresa:</h3>
@@ -27,12 +29,13 @@
 </form>
 
 <h1>{$titulo}</h1>
-<table>
+<table class="table table-hover">
 
     <thead>
         <tr>
             <th>Id juego</th>
             <th>Juego</th>
+            <th>Categoria</th>
             <th>Descripcion</th>
             <th>Precio</th>
             <th>Id_empresa</th>
@@ -46,6 +49,7 @@
 		<tr> 
 			<td>{$juego->id_juego}</td>
             <td>{$juego->juego}</td>
+            <td>{$juego->categorias}</td>
             <td>{$juego->descripcion}</td>
             <td>{$juego->precio}</td>
             <td>{$juego->id_empresa}</td>
@@ -71,7 +75,8 @@
 </form>
 <h1>{$titulo2}</h1>
 
-<table>
+<table class="table table-hover">
+
 	
     <thead>
         <tr>
@@ -94,4 +99,4 @@
 {/foreach}
 </table>
 
-
+{include file="footer.tpl"}

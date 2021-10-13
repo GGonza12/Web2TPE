@@ -146,19 +146,6 @@ header {
     justify-content: flex-end;
 }
 
- /* un scroll horizontal de imagenes demostrativas del juego  */
-
-.scroll {
-    margin: 4px, 4px;
-    padding: 4px;
-    background-color: white;
-    overflow: auto;
-    white-space: nowrap;
-    width: 100%;
-    height: 110px;
-    border: solid;
-}
-
 /* Fin Tienda celular  */
 
 .informacion {
@@ -168,8 +155,6 @@ header {
 
 
 .tabla{
-    border: solid black 1px;
-    width:100%;
     grid-area: premios;
     text-align: center;
 }
@@ -190,10 +175,7 @@ footer {
     grid-area: tabla-ad;
 }
 
-table,th,tr,td{
-    border: solid 2px rgb(55, 17, 194);
-    background-color: rgb(159, 232, 235);
-}
+
 .oculto {
     display: none;
 }
@@ -272,50 +254,11 @@ table,th,tr,td{
         ;
     }
 
-    .redes {
-        height: 30px;
-        width: 30px;
-        border-radius: 10px;
-    }
 
-    .agregar-tabla {
-        display: grid;
-        justify-content: center;
-    }
-
-    .imagen-de-juego {
-        height: 253px;
-        width: 450px;
-        margin-right: 5px;
-        border: solid;
-    }
-
-    .gif {
-        width: 100%;
-        height: 500px;
-    }
-
-     /* un scroll horizontal de imagenes demostrativas del juego  */
     .juego {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     }
-
-    .imagenes-demostrativas {
-    width: 200px;
-    height: 120px;
-    }
-
-    .scroll {
-    margin: 4px, 4px;
-    padding: 4px;
-    background-color: white;
-    overflow: auto;
-    white-space: nowrap;
-    width: 100%;
-    height: 145px;
-    }
-
 
     /* final de la tienda */
 

@@ -19,28 +19,31 @@ class StoreController{
         $this->authHelper->CheckLoggedIn(); 
         $games = $this->model->GetGames();        
         $company = $this->model->GetCompanys();
-        $this->view->ShowGames($games,$company);
+        $this->view->ShowGamesHome($games,$company);
         
     }
-    function showGamesOfCompany($id){
-        $games = $this->model->GamesOfCompany($id);
-        $this->view->ShowGamesOfCompany($games);
+    function ShowStore(){
+        $games = $this->model->GetGames();
+        $this->view->ShowGamesStore($games);
     }
 
-    function createGame($juego,$descripcion,$precio,$empresa){
-        $this->authHelper->CheckAdmin();
-        $this->model->InsertGame($juego,$descripcion,$precio,$empresa);
+    function showGamesOfCompany($id){
+        $company = $this->model->GetCompany($id);
+        $games = $this->model->GamesOfCompany($id);
+        $this->view->ShowGamesOfCompany($games,$company);
+    }
+
+    function createGame($juego,$imagen,$categorias,$descripcion,$precio,$empresa){
+        $this->model->InsertGame($juego,$imagen,$categorias,$descripcion,$precio,$empresa);
         $this->view->ShowHomeLocation();
     }
 
     function CreateEmpresa($empresa){
-        $this->authHelper->CheckAdmin();
         $this->model->InsertCompany($empresa);
         $this->view->ShowHomeLocation();
     }
 
     function deleteGame($id){
-        $this->authHelper->CheckAdmin();
         $this->model->Delete($id);
         $this->view->showHomeLocation();
     }

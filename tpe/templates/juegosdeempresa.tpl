@@ -1,6 +1,6 @@
-<h1>Juegos</h1>
-
-<table>
+{include file="header.tpl"}
+<h1>{$titulo}</h1>
+<table class="table table-hover">
 	
     <thead>
         <tr>
@@ -18,3 +18,5 @@
  
 {/foreach}
 </table>
+
+{include file="footer.tpl"}

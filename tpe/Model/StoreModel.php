@@ -13,9 +13,10 @@
         return $juegos;
     }
 
-    function InsertGame($juego,$descripcion,$precio,$id_empresa){
-        $sentencia = $this->db->prepare("INSERT INTO juegos(juego,descripcion,precio,id_empresa) VALUES(?, ?, ?, ?)");
-        $sentencia->execute(array($juego,$descripcion,$precio,$id_empresa));
+    function InsertGame($juego,$imagen,$categorias,$descripcion,$precio,$id_empresa){
+    
+        $sentencia = $this->db->prepare("INSERT INTO juegos(juego,imagen,categorias,descripcion,precio,id_empresa) VALUES(?, ?, ?, ?, ?, ?)");
+        $sentencia->execute(array($juego,$imagen,$categorias,$descripcion,$precio,$id_empresa));
     }
 
     function GetCompanys(){

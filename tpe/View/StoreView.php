@@ -10,7 +10,7 @@ class StoreView
         $this->smarty = new Smarty();
     }
 
-    function ShowGames($games, $company)
+    function ShowGamesHome($games, $company)
     {
         $this->smarty->assign('titulo', 'Juegos');
         $this->smarty->assign('juegos', $games);
@@ -19,8 +19,13 @@ class StoreView
         $this->smarty->display('templates/home.tpl');
 
     }
+    function ShowGamesStore($games){
+        $this->smarty->assign('juegos', $games);
+        $this->smarty->display('templates/store.tpl');
+    }
 
-    function ShowGamesOfCompany($games) {
+    function ShowGamesOfCompany($games,$company) {
+        $this->smarty->assign('titulo',$company->empresa);
         $this->smarty->assign('games',$games);
         $this->smarty->display('templates/juegosdeempresa.tpl');
     }
