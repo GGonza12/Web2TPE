@@ -5,7 +5,10 @@
     <thead>
         <tr>
         <th>Empresa</th>
-        <th>juego</th>
+        <th>Juego</th>
+        <th>Descripcion</th>
+        <th>Categorias</th>
+        <th>Precio</th>
         </tr>
     </thead>
     <tbody>
@@ -13,6 +16,10 @@
 		<tr>
 			<td>{$game->empresa}</td>
             <td>{$game->juego}</td>
+            <td>{$game->descripcion}</td>
+            <td>{$game->categorias}</td>
+            <td>${$game->precio}</td>
+
         </tr>
     </tbody>
  

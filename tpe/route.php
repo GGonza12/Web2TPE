@@ -55,7 +55,7 @@ switch ($params[0]) {
         break;
     //COMPANYS:    
     case 'CreateCompany':
-        $storeController->CreateEmpresa($_POST['empresa'],$_POST['descripcion']);
+        $storeController->CreateEmpresa($_POST['empresa'],$_POST['informacion']);
         break;
     case 'DeleteCompany':
         $storeController->DeleteCompany($params[1]);
@@ -67,7 +67,7 @@ switch ($params[0]) {
         $storeController->ShowUpdateCompany($params[1]);
         break;
     case 'UpdateCompany':
-        $storeController->UpdateCompany($_POST['empresa'], $_POST['id'],$_POST['descripcion']);
+        $storeController->UpdateCompany($_POST['empresa'], $_POST['id'],$_POST['informacion']);
         break;
     case 'Companys':
         $storeController->ShowCompanys();
