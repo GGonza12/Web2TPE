@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-15 00:13:18
+/* Smarty version 3.1.39, created on 2021-10-15 01:28:04
   from 'C:\xampp\htdocs\webtpe\Web2TPE\tpe\templates\footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6168ab7e106091_34178417',
+  'unifunc' => 'content_6168bd0421ba44_87196946',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '03f6a4fbf1d7d67664f4f89e4f8d3bb1a701ab99' => 
     array (
       0 => 'C:\\xampp\\htdocs\\webtpe\\Web2TPE\\tpe\\templates\\footer.tpl',
-      1 => 1634249592,
+      1 => 1634254082,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6168ab7e106091_34178417 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6168bd0421ba44_87196946 (Smarty_Internal_Template $_smarty_tpl) {
 ?>        <!-- Footer -->
         <footer class="page-footer font-small mdb-color lighten-3 pt-4 linea borde-negro">
 

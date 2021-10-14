@@ -281,15 +281,9 @@ footer {
         width: 180px;
         height: 180px;
     }
-    /* Login */
-    .login {
-        border: solid 2px black;
+    .putvideos {
         display: flex;
-        justify-content: center;
-    }
-    .newcount {
-        border: solid 2px black;
-        display: flex;
-        justify-content: center;
+        justify-content: row;
+        justify-content: space-around;
     }
 }
