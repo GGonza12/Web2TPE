@@ -83,7 +83,6 @@
                                 </p>
                             </li>
                         </ul>
-
                     </div>
                     <!-- Grid column -->
 
@@ -95,14 +94,15 @@
                         <!-- Social -->
                         <h5 class="font-weight-bold text-uppercase mb-4">Follow Us</h5>
 
-                        <!-- Facebook -->
-                        <img src="images/home/facebook.png" alt="Facebook" class="redes">
-                        <!-- Twitter -->
-                        <img src="images/home/twitter.png" alt="twitter" class="redes">
-                        <!-- Instagram -->
-                        <img src="images/home/instagram.png" alt="instagram" class="redes">
-                        <!-- Youtube -->
-                        <img src="images/home/youtube.png" alt="youtube" class="redes">
+                       <!-- Facebook -->
+                     <img src="imgs/facebook.png" alt="Facebook" class="redes">
+           <!-- Twitter -->
+                    <img src="imgs/twitter.png" alt="twitter" class="redes">
+           <!-- Instagram -->
+                    <img src="imgs/instagram.png" alt="instagram" class="redes">
+           <!-- Youtube -->
+                    <img src="imgs/youtube.png" alt="youtube" class="redes">
+  
 
                     </div>
                     <!-- Grid column -->
@@ -124,6 +124,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
             crossorigin="anonymous"></script>
+
 </body>
 
 </html>

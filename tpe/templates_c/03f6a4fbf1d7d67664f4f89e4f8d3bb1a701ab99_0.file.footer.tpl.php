@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-14 21:12:45
+/* Smarty version 3.1.39, created on 2021-10-14 22:51:05
   from 'C:\xampp\htdocs\webtpe\Web2TPE\tpe\templates\footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6168812da50a35_83026679',
+  'unifunc' => 'content_616898394a9949_59043019',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '03f6a4fbf1d7d67664f4f89e4f8d3bb1a701ab99' => 
     array (
       0 => 'C:\\xampp\\htdocs\\webtpe\\Web2TPE\\tpe\\templates\\footer.tpl',
-      1 => 1634237687,
+      1 => 1634244640,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6168812da50a35_83026679 (Smarty_Internal_Template $_smarty_tpl) {
+function content_616898394a9949_59043019 (Smarty_Internal_Template $_smarty_tpl) {
 ?>        <!-- Footer -->
         <footer class="page-footer font-small mdb-color lighten-3 pt-4 linea borde-negro">
 
@@ -106,7 +106,6 @@ function content_6168812da50a35_83026679 (Smarty_Internal_Template $_smarty_tpl)
                                 </p>
                             </li>
                         </ul>
-
                     </div>
                     <!-- Grid column -->
 
@@ -118,14 +117,15 @@ function content_6168812da50a35_83026679 (Smarty_Internal_Template $_smarty_tpl)
                         <!-- Social -->
                         <h5 class="font-weight-bold text-uppercase mb-4">Follow Us</h5>
 
-                        <!-- Facebook -->
-                        <img src="images/home/facebook.png" alt="Facebook" class="redes">
-                        <!-- Twitter -->
-                        <img src="images/home/twitter.png" alt="twitter" class="redes">
-                        <!-- Instagram -->
-                        <img src="images/home/instagram.png" alt="instagram" class="redes">
-                        <!-- Youtube -->
-                        <img src="images/home/youtube.png" alt="youtube" class="redes">
+                       <!-- Facebook -->
+                     <img src="imgs/facebook.png" alt="Facebook" class="redes">
+           <!-- Twitter -->
+                    <img src="imgs/twitter.png" alt="twitter" class="redes">
+           <!-- Instagram -->
+                    <img src="imgs/instagram.png" alt="instagram" class="redes">
+           <!-- Youtube -->
+                    <img src="imgs/youtube.png" alt="youtube" class="redes">
+  
 
                     </div>
                     <!-- Grid column -->
@@ -149,6 +149,7 @@ function content_6168812da50a35_83026679 (Smarty_Internal_Template $_smarty_tpl)
             integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
             crossorigin="anonymous"><?php echo '</script'; ?>
 >
+
 </body>
 
 </html><?php }
