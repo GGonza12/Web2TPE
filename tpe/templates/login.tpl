@@ -1,7 +1,7 @@
 {include file="header.tpl"}
 <h3>Iniciar sesión</h3>
-<div >
 
+<div><div>
 <form action="verify" method="POST">
     <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Email</label>
@@ -15,7 +15,7 @@
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
-</div>
+
 
 <h4>{$error}</h4>
 <br>
