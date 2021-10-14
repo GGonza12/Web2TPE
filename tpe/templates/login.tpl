@@ -1,6 +1,8 @@
 {include file="header.tpl"}
+
+
 <h3>Iniciar sesión</h3>
-<div >
+
 
 <form action="verify" method="POST">
     <div class="mb-3">
@@ -15,11 +17,10 @@
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
-</div>
+<h3>Crear cuenta</h3>
 
 <h4>{$error}</h4>
 <br>
-<h3>Crear cuenta</h3>
 <form action="createacount" method="POST">
     <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Usuario</label>
@@ -36,5 +37,7 @@
 
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+</div>
+
 
 {include file="footer.tpl"}
