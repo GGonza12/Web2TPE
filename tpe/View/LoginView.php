@@ -1,6 +1,6 @@
 <?php
 
-require_once('C:/xampp/htdocs/webtpe/Web2TPE/tpe/libs/smarty-3.1.39/libs/Smarty.class.php');
+require_once('../tpe/libs/smarty-3.1.39/libs/Smarty.class.php');
 class LoginView{
 
     private $smarty;
