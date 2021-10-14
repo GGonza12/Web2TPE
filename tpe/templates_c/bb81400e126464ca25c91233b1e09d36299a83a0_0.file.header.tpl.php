@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-15 00:00:29
+/* Smarty version 3.1.39, created on 2021-10-15 00:17:47
   from 'C:\xampp\htdocs\Web2TPE\tpe\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6168a87d2ee966_82500253',
+  'unifunc' => 'content_6168ac8b46cd52_00372173',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'bb81400e126464ca25c91233b1e09d36299a83a0' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2TPE\\tpe\\templates\\header.tpl',
-      1 => 1634248827,
+      1 => 1634249543,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6168a87d2ee966_82500253 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6168ac8b46cd52_00372173 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 
 <html lang="en">
@@ -30,7 +30,8 @@ function content_6168a87d2ee966_82500253 (Smarty_Internal_Template $_smarty_tpl)
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="Juegos,Videojuegos,venta,videos,grupos,foros,hardware,software">
-    <link rel="shortcut icon" href="imgs/favicon.gif" type="image/x-icon">
+    <link rel="shortcut icon" href="<?php echo BASE_URL;?>
+imgs/favicon.gif" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="<?php echo BASE_URL;?>
