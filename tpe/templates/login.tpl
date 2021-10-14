@@ -2,10 +2,6 @@
 
 
 <h3>Iniciar sesión</h3>
-<<<<<<< HEAD
-=======
-
->>>>>>> css
 
 <div><div>
 <form action="verify" method="POST">
@@ -20,12 +16,6 @@
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-
-<<<<<<< HEAD
-
-=======
-<h3>Crear cuenta</h3>
->>>>>>> css
 
 <h4>{$error}</h4>
 <br>
