@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-14 02:50:48
+/* Smarty version 3.1.39, created on 2021-10-15 00:44:28
   from 'C:\xampp\htdocs\Web2TPE\tpe\templates\login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61677ee8eeaca1_39652602',
+  'unifunc' => 'content_6168b2ccce99f9_38279508',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '28867df3ded87648d425b3b7bf88ec2f44d301a5' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2TPE\\tpe\\templates\\login.tpl',
-      1 => 1634169322,
+      1 => 1634251466,
       2 => 'file',
     ),
   ),
@@ -22,10 +22,14 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_61677ee8eeaca1_39652602 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6168b2ccce99f9_38279508 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
+
+
 <h3>Iniciar sesión</h3>
+
+<div><div>
 <form action="verify" method="POST">
     <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Email</label>
@@ -36,17 +40,12 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
         <label for="exampleInputPassword1" class="form-label">Contraseña</label>
         <input type="password" class="form-control" id="exampleInputPassword1" name="password">
     </div>
-    <div class="mb-3 form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-    </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
 <h4><?php echo $_smarty_tpl->tpl_vars['error']->value;?>
 </h4>
 <br>
-<h3>Crear cuenta</h3>
 <form action="createacount" method="POST">
     <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Usuario</label>
@@ -63,6 +62,8 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
 
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+</div>
+
 
 <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 }
