@@ -95,13 +95,13 @@
                         <h5 class="font-weight-bold text-uppercase mb-4">Follow Us</h5>
 
                        <!-- Facebook -->
-                     <img src="imgs/facebook.png" alt="Facebook" class="redes">
+                     <img src="{BASE_URL}imgs/facebook.png" alt="Facebook" class="redes">
            <!-- Twitter -->
-                    <img src="imgs/twitter.png" alt="twitter" class="redes">
+                    <img src="{BASE_URL}imgs/twitter.png" alt="twitter" class="redes">
            <!-- Instagram -->
-                    <img src="imgs/instagram.png" alt="instagram" class="redes">
+                    <img src="{BASE_URL}imgs/instagram.png" alt="instagram" class="redes">
            <!-- Youtube -->
-                    <img src="imgs/youtube.png" alt="youtube" class="redes">
+                    <img src="{BASE_URL}imgs/youtube.png" alt="youtube" class="redes">
   
 
                     </div>

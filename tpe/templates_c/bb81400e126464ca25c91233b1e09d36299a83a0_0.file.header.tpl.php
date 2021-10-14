@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-14 22:58:37
+/* Smarty version 3.1.39, created on 2021-10-15 00:00:29
   from 'C:\xampp\htdocs\Web2TPE\tpe\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_616899fdca5c81_84544532',
+  'unifunc' => 'content_6168a87d2ee966_82500253',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'bb81400e126464ca25c91233b1e09d36299a83a0' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2TPE\\tpe\\templates\\header.tpl',
-      1 => 1634245075,
+      1 => 1634248827,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_616899fdca5c81_84544532 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6168a87d2ee966_82500253 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 
 <html lang="en">
@@ -33,7 +33,8 @@ function content_616899fdca5c81_84544532 (Smarty_Internal_Template $_smarty_tpl)
     <link rel="shortcut icon" href="imgs/favicon.gif" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL;?>
+/css/style.css">
     <title>AstroGames</title>
 </head>
 
@@ -42,7 +43,8 @@ function content_616899fdca5c81_84544532 (Smarty_Internal_Template $_smarty_tpl)
     <header>
         <nav class="navbar navbar-light bg-light header">
             <div class="container-fluid">
-              <img src="imgs/logo.png" alt="icon" width="30" height="24" class="d-inline-block align-text-top logo">
+              <img src="<?php echo BASE_URL;?>
+imgs/logo.png" alt="icon" width="30" height="24" class="d-inline-block align-text-top logo">
                 </h1>AstroGames</h1>
             </div>
         </nav>

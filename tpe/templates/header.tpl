@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="imgs/favicon.gif" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="{BASE_URL}/css/style.css">
     <title>AstroGames</title>
 </head>
 
@@ -19,7 +19,7 @@
     <header>
         <nav class="navbar navbar-light bg-light header">
             <div class="container-fluid">
-              <img src="imgs/logo.png" alt="icon" width="30" height="24" class="d-inline-block align-text-top logo">
+              <img src="{BASE_URL}imgs/logo.png" alt="icon" width="30" height="24" class="d-inline-block align-text-top logo">
                 </h1>AstroGames</h1>
             </div>
         </nav>

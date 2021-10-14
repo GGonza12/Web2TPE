@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-14 22:58:37
+/* Smarty version 3.1.39, created on 2021-10-15 00:00:10
   from 'C:\xampp\htdocs\Web2TPE\tpe\templates\footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_616899fdd52323_26026158',
+  'unifunc' => 'content_6168a86af0fd24_37660073',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e369d4e0eb80bceb7505b2843f88aee7c0d9e8d0' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2TPE\\tpe\\templates\\footer.tpl',
-      1 => 1634245075,
+      1 => 1634248808,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_616899fdd52323_26026158 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6168a86af0fd24_37660073 (Smarty_Internal_Template $_smarty_tpl) {
 ?>        <!-- Footer -->
         <footer class="page-footer font-small mdb-color lighten-3 pt-4 linea borde-negro">
 
@@ -118,13 +118,17 @@ function content_616899fdd52323_26026158 (Smarty_Internal_Template $_smarty_tpl)
                         <h5 class="font-weight-bold text-uppercase mb-4">Follow Us</h5>
 
                        <!-- Facebook -->
-                     <img src="imgs/facebook.png" alt="Facebook" class="redes">
+                     <img src="<?php echo BASE_URL;?>
+imgs/facebook.png" alt="Facebook" class="redes">
            <!-- Twitter -->
-                    <img src="imgs/twitter.png" alt="twitter" class="redes">
+                    <img src="<?php echo BASE_URL;?>
+imgs/twitter.png" alt="twitter" class="redes">
            <!-- Instagram -->
-                    <img src="imgs/instagram.png" alt="instagram" class="redes">
+                    <img src="<?php echo BASE_URL;?>
+imgs/instagram.png" alt="instagram" class="redes">
            <!-- Youtube -->
-                    <img src="imgs/youtube.png" alt="youtube" class="redes">
+                    <img src="<?php echo BASE_URL;?>
+imgs/youtube.png" alt="youtube" class="redes">
   
 
                     </div>

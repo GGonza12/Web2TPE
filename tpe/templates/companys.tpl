@@ -1,13 +1,17 @@
 {include file="header.tpl"}
 {if $rol == true}
 
-    <form action="CreateCompany" method="post">
-
-        <input type="text" placeholder="Empresa" name="empresa">
-        <input type="text" placeholder="Descripcion" name="descripcion">
-        <input type="submit" value="Agregar">
-
-    </form>
+  <div class="card" style="width: 18rem;">
+  <form action="{BASE_URL}CreateCompany" method="post">
+  <div class="mb-3">
+  <input type="text" class="form-control" placeholder="Empresa" name="empresa" >
+  </div>
+  <div class="mb-3">
+  <input type="text" class="form-control" placeholder="Descripcion" name="descripcion" >
+  </div>
+  <button type="submit" class="btn btn-primary">Agregar</button>
+  </form>
+  </div>
 {/if}
 {foreach from=$companys item=$company}
 
