@@ -20,10 +20,6 @@ class StoreController
     function showHome()
     {
         $this->authHelper->CheckLoggedIn();
-        $rol = $this->authHelper->admin();
-        $games = $this->model->GetGames();
-        $company = $this->model->GetCompanys();
-        $this->view->ShowGamesHome($games, $company, $rol);
     }
     function ShowStore()
     {
@@ -76,10 +72,10 @@ class StoreController
         $this->view->showStoreLocation();
     }
 
-    function CreateEmpresa($empresa,$descripcion)
+    function CreateEmpresa($empresa,$informacion)
     {
         $this->authHelper->CheckLoggedIn();
-        $this->model->InsertCompany($empresa,$descripcion);
+        $this->model->InsertCompany($empresa,$informacion);
         $this->view->showCompanysLocation();
         
     }
@@ -99,10 +95,10 @@ class StoreController
         $this->view->ShowCompanys($rol,$companys);
     }
 
-    function UpdateCompany($empresa, $id,$descripcion)
+    function UpdateCompany($empresa, $id,$informacion)
     {
         $this->authHelper->CheckLoggedIn();
-        $this->model->UpdateComp($empresa, $id, $descripcion);
+        $this->model->UpdateComp($empresa, $id,$informacion);
         $this->view->showCompanysLocation();
     }
 

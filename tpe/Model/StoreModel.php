@@ -56,14 +56,14 @@
         
     }
 
-    function InsertCompany($empresa,$descripcion){
-        $sentencia = $this->db->prepare("INSERT INTO empresas(empresa,descripcion) VALUES(?,?)");
-        $sentencia->execute(array($empresa,$descripcion));
+    function InsertCompany($empresa,$informacion){
+        $sentencia = $this->db->prepare("INSERT INTO empresas(empresa,informacion) VALUES(?,?)");
+        $sentencia->execute(array($empresa,$informacion));
     }
 
-    function UpdateComp($empresa,$id,$descripcion){
-        $sentencia = $this->db->prepare("UPDATE empresas SET empresa=?,descripcion=? WHERE id_empresa=?");
-        $sentencia->execute(array($empresa,$descripcion,$id));
+    function UpdateComp($empresa,$id,$informacion){
+        $sentencia = $this->db->prepare("UPDATE empresas SET empresa=?,informacion=? WHERE id_empresa=?");
+        $sentencia->execute(array($empresa,$informacion,$id));
         
 }
     function DeleteCompany($id){

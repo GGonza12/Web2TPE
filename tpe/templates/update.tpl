@@ -5,7 +5,7 @@
 <input type="text" class="form-control" placeholder="{$empresa}" name="empresa" >
 </div>
 <div class="mb-3">
-<input type="text" class="form-control" placeholder="{$descripcion}" name="descripcion" >
+<input type="text" class="form-control" placeholder="{$informacion}" name="informacion" >
 </div>
 <input hidden type="text"  value="{$id}" name="id">
 <button type="submit" class="btn btn-primary">Modificar</button>
