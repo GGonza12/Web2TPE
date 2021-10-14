@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-14 20:38:39
+/* Smarty version 3.1.39, created on 2021-10-14 22:35:15
   from 'C:\xampp\htdocs\Web2TPE\tpe\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6168792f0042a5_33969246',
+  'unifunc' => 'content_616894831c0cf2_53627249',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'bb81400e126464ca25c91233b1e09d36299a83a0' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2TPE\\tpe\\templates\\header.tpl',
-      1 => 1634236688,
+      1 => 1634243709,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6168792f0042a5_33969246 (Smarty_Internal_Template $_smarty_tpl) {
+function content_616894831c0cf2_53627249 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 
 <html lang="en">
@@ -61,6 +61,10 @@ home">Inicio</a>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo BASE_URL;?>
 store">Tienda</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="<?php echo BASE_URL;?>
+Companys">Companys</a>
                     </li>
                     <li class="nav-item">
                         <a class="btn btn-primary" href="<?php echo BASE_URL;?>
