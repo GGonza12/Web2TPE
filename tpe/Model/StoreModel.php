@@ -54,16 +54,16 @@
         $sentencia = $this->db->prepare("UPDATE juegos SET juego=?,imagen=?,categorias=?,descripcion=?,precio=?,id_empresa=? WHERE id_juego=?");
         $sentencia->execute(array($juego,$imagen,$categorias,$descripcion,$precio,$id_empresa,$id_juego));
         
-}
-
-    function InsertCompany($empresa){
-        $sentencia = $this->db->prepare("INSERT INTO empresas(empresa) VALUES(?)");
-        $sentencia->execute(array($empresa));
     }
 
-    function UpdateComp($empresa,$id){
-        $sentencia = $this->db->prepare("UPDATE empresas SET empresa=? WHERE id_empresa=?");
-        $sentencia->execute(array($empresa,$id));
+    function InsertCompany($empresa,$descripcion){
+        $sentencia = $this->db->prepare("INSERT INTO empresas(empresa,descripcion) VALUES(?,?)");
+        $sentencia->execute(array($empresa,$descripcion));
+    }
+
+    function UpdateComp($empresa,$id,$descripcion){
+        $sentencia = $this->db->prepare("UPDATE empresas SET empresa=?,descripcion=? WHERE id_empresa=?");
+        $sentencia->execute(array($empresa,$descripcion,$id));
         
 }
     function DeleteCompany($id){
