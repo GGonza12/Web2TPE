@@ -34,6 +34,7 @@ switch ($params[0]) {
     case 'home':
         $storeController->showHome();
         break;
+    //STORE:
     case 'store':
         $storeController->ShowStore();
         break;
@@ -43,9 +44,6 @@ switch ($params[0]) {
     case 'deleteGame':
         $storeController->deleteGame($params[1]);
         break;
-    case 'DeleteCompany':
-        $storeController->DeleteCompany($params[1]);
-        break;
     case 'viewGame':
         $storeController->viewGame($params[1]);
         break;
@@ -53,13 +51,14 @@ switch ($params[0]) {
         $storeController->ShowUpdateGame($params[1]);
         break;
     case 'UpdateGame':
-        $storeController->UpdateGame($_POST['id'],$_POST['juego'],$_POST['imagen'],$_POST['categorias'],$_POST['descripcion'],$_POST['precio'],$_POST['empresa']);
+        $storeController->UpdateGame($_POST['id'], $_POST['juego'], $_POST['imagen'], $_POST['categorias'], $_POST['descripcion'], $_POST['precio'], $_POST['empresa']);
         break;
-    case 'ShowGamesOfCompany':
-        $storeController->showGamesOfCompany($_POST['empresa']);
-        break;
+    //COMPANYS:    
     case 'CreateCompany':
-        $storeController->CreateEmpresa($_POST['empresa']);
+        $storeController->CreateEmpresa($_POST['empresa'],$_POST['descripcion']);
+        break;
+    case 'DeleteCompany':
+        $storeController->DeleteCompany($params[1]);
         break;
     case 'ShowGamesOfCompany':
         $storeController->showGamesOfCompany($params[1]);
@@ -68,11 +67,11 @@ switch ($params[0]) {
         $storeController->ShowUpdateCompany($params[1]);
         break;
     case 'UpdateCompany':
-        $storeController->UpdateCompany($_POST['empresa'], $_POST['id']);
+        $storeController->UpdateCompany($_POST['empresa'], $_POST['id'],$_POST['descripcion']);
         break;
     case 'Companys':
-        $storeController->UpdateCompany($_POST['empresa'], $_POST['id']);
-    break;
+        $storeController->ShowCompanys();
+        break;
     default:
         echo ('404 Page not found');
         break;

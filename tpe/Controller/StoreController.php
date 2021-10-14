@@ -76,13 +76,13 @@ class StoreController
         $this->view->showStoreLocation();
     }
 
-    function CreateEmpresa($empresa)
+    function CreateEmpresa($empresa,$descripcion)
     {
         $this->authHelper->CheckLoggedIn();
-        $this->model->InsertCompany($empresa);
-        $this->view->ShowHomeLocation();
+        $this->model->InsertCompany($empresa,$descripcion);
+        $this->view->showCompanysLocation();
+        
     }
-
 
     function ShowUpdateCompany($id)
     {
@@ -91,18 +91,26 @@ class StoreController
         $this->view->UpdateViewCompany($company);
     }
 
-    function UpdateCompany($empresa, $id)
+    function ShowCompanys()
     {
         $this->authHelper->CheckLoggedIn();
-        $this->model->UpdateComp($empresa, $id);
-        $this->view->showHomeLocation();
+        $rol = $this->authHelper->admin();
+        $companys = $this->model->GetCompanys();
+        $this->view->ShowCompanys($rol,$companys);
+    }
+
+    function UpdateCompany($empresa, $id,$descripcion)
+    {
+        $this->authHelper->CheckLoggedIn();
+        $this->model->UpdateComp($empresa, $id, $descripcion);
+        $this->view->showCompanysLocation();
     }
 
     function DeleteCompany($id)
     {
         $this->authHelper->CheckLoggedIn();
         $this->model->DeleteCompany($id);
-        $this->view->showHomeLocation();
+        $this->view->showCompanysLocation();
     }
-    
+
 }
