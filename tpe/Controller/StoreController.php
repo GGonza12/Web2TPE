@@ -104,4 +104,5 @@ class StoreController
         $this->model->DeleteCompany($id);
         $this->view->showHomeLocation();
     }
+    
 }

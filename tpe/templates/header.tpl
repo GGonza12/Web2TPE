@@ -37,6 +37,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{BASE_URL}store">Tienda</a>
                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="{BASE_URL}Companys">Companys</a>
+                    </li>
                     <li class="nav-item">
                         <a class="btn btn-primary" href="{BASE_URL}logout">Cerrar sesión</a>
 

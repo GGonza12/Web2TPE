@@ -70,6 +70,9 @@ switch ($params[0]) {
     case 'UpdateCompany':
         $storeController->UpdateCompany($_POST['empresa'], $_POST['id']);
         break;
+    case 'Companys':
+        $storeController->UpdateCompany($_POST['empresa'], $_POST['id']);
+    break;
     default:
         echo ('404 Page not found');
         break;
