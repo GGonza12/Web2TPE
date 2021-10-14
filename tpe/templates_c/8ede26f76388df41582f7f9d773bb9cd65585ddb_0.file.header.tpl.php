@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-14 21:16:24
+/* Smarty version 3.1.39, created on 2021-10-14 22:24:15
   from 'C:\xampp\htdocs\webtpe\Web2TPE\tpe\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_616882087f61f2_57901768',
+  'unifunc' => 'content_616891efdae013_39452252',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8ede26f76388df41582f7f9d773bb9cd65585ddb' => 
     array (
       0 => 'C:\\xampp\\htdocs\\webtpe\\Web2TPE\\tpe\\templates\\header.tpl',
-      1 => 1634238980,
+      1 => 1634243052,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_616882087f61f2_57901768 (Smarty_Internal_Template $_smarty_tpl) {
+function content_616891efdae013_39452252 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 
 <html lang="en">
@@ -30,6 +30,7 @@ function content_616882087f61f2_57901768 (Smarty_Internal_Template $_smarty_tpl)
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="Juegos,Videojuegos,venta,videos,grupos,foros,hardware,software">
+    <link rel="shortcut icon" href="imgs/favicon.gif" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
@@ -41,6 +42,7 @@ function content_616882087f61f2_57901768 (Smarty_Internal_Template $_smarty_tpl)
     <header>
         <nav class="navbar navbar-light bg-light header">
             <div class="container-fluid">
+              <img src="imgs/logo.png" alt="icon" width="30" height="24" class="d-inline-block align-text-top logo">
                 </h1>AstroGames</h1>
             </div>
         </nav>
