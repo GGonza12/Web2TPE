@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-13 04:02:34
+/* Smarty version 3.1.39, created on 2021-10-14 20:38:39
   from 'C:\xampp\htdocs\Web2TPE\tpe\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61663e3a24e0d7_64959516',
+  'unifunc' => 'content_6168792f0042a5_33969246',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'bb81400e126464ca25c91233b1e09d36299a83a0' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2TPE\\tpe\\templates\\header.tpl',
-      1 => 1634090551,
+      1 => 1634236688,
       2 => 'file',
     ),
   ),
@@ -20,9 +20,9 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61663e3a24e0d7_64959516 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6168792f0042a5_33969246 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
-    
+
 <html lang="en">
 
 <head>
@@ -30,7 +30,8 @@ function content_61663e3a24e0d7_64959516 (Smarty_Internal_Template $_smarty_tpl)
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="Juegos,Videojuegos,venta,videos,grupos,foros,hardware,software">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
     <title>AstroGames</title>
 </head>
@@ -54,17 +55,20 @@ function content_61663e3a24e0d7_64959516 (Smarty_Internal_Template $_smarty_tpl)
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="home">Inicio</a>
+                        <a class="nav-link active" aria-current="page" href="<?php echo BASE_URL;?>
+home">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="store">Tienda</a>
+                        <a class="nav-link" href="<?php echo BASE_URL;?>
+store">Tienda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="login">Iniciar sesión/Crear cuenta</a>
+                        <a class="btn btn-primary" href="<?php echo BASE_URL;?>
+logout">Cerrar sesión</a>
 
+                    </li>
                 </ul>
             </div>
         </div>
-    </nav>
-<?php }
+</nav><?php }
 }

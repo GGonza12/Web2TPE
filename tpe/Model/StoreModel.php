@@ -50,6 +50,11 @@
         return $juego;
     
     }
+    function UpdateGame($id_juego,$juego,$imagen,$categorias,$descripcion,$precio,$id_empresa){
+        $sentencia = $this->db->prepare("UPDATE juegos SET juego=?,imagen=?,categorias=?,descripcion=?,precio=?,id_empresa=? WHERE id_juego=?");
+        $sentencia->execute(array($juego,$imagen,$categorias,$descripcion,$precio,$id_empresa,$id_juego));
+        
+}
 
     function InsertCompany($empresa){
         $sentencia = $this->db->prepare("INSERT INTO empresas(empresa) VALUES(?)");

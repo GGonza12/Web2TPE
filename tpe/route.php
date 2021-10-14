@@ -1,8 +1,8 @@
 <?php
-require_once ('Controller/StoreController.php');
-require_once ('Controller/LoginController.php');
+require_once('Controller/StoreController.php');
+require_once('Controller/LoginController.php');
 
-define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
+define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
 
 
 // lee la acción
@@ -29,45 +29,48 @@ switch ($params[0]) {
         $loginController->VefiryLogin();
         break;
     case 'createacount':
-        $loginController->SignIn($_POST['user'],$_POST['email'],$_POST['password']);
+        $loginController->SignIn($_POST['user'], $_POST['email'], $_POST['password']);
         break;
     case 'home':
-        $storeController->showHome(); 
+        $storeController->showHome();
         break;
     case 'store':
         $storeController->ShowStore();
         break;
-    case 'CreateGame': 
-        $storeController->createGame($_POST['juego'],$_POST['imagen'],$_POST['categorias'],$_POST['descripcion'],$_POST['precio'],$_POST['empresa']); 
+    case 'CreateGame':
+        $storeController->createGame($_POST['juego'], $_POST['imagen'], $_POST['categorias'], $_POST['descripcion'], $_POST['precio'], $_POST['empresa']);
         break;
-    case 'deleteGame': 
-        $storeController->deleteGame($params[1]); 
+    case 'deleteGame':
+        $storeController->deleteGame($params[1]);
         break;
-    case 'DeleteCompany': 
-        $storeController->DeleteCompany($params[1]); 
+    case 'DeleteCompany':
+        $storeController->DeleteCompany($params[1]);
         break;
-    case 'viewGame': 
-        $storeController->viewGame($params[1]); 
+    case 'viewGame':
+        $storeController->viewGame($params[1]);
+        break;
+    case 'UpdateViewGame':
+        $storeController->ShowUpdateGame($params[1]);
+        break;
+    case 'UpdateGame':
+        $storeController->UpdateGame($_POST['id'],$_POST['juego'],$_POST['imagen'],$_POST['categorias'],$_POST['descripcion'],$_POST['precio'],$_POST['empresa']);
         break;
     case 'ShowGamesOfCompany':
         $storeController->showGamesOfCompany($_POST['empresa']);
         break;
     case 'CreateCompany':
         $storeController->CreateEmpresa($_POST['empresa']);
-        break;  
+        break;
     case 'ShowGamesOfCompany':
         $storeController->showGamesOfCompany($params[1]);
         break;
     case 'UpdateViewCompany':
-        if ($params[1] == 'UpdateCompany'){
-            $storeController->UpdateCompany($_POST['empresa'],$_POST['id']);    
-            break;
-        }
-        else {
-            $storeController->ShowUpdateCompany($params[1]);
-            break; 
-        }
-    default: 
-        echo('404 Page not found'); 
+        $storeController->ShowUpdateCompany($params[1]);
+        break;
+    case 'UpdateCompany':
+        $storeController->UpdateCompany($_POST['empresa'], $_POST['id']);
+        break;
+    default:
+        echo ('404 Page not found');
         break;
 }
