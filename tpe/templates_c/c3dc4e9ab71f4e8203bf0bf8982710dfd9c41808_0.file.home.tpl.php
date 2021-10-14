@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-15 00:01:52
+/* Smarty version 3.1.39, created on 2021-10-15 00:03:29
   from 'C:\xampp\htdocs\webtpe\Web2TPE\tpe\templates\home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6168a8d0627513_07142696',
+  'unifunc' => 'content_6168a9311217c3_94003217',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c3dc4e9ab71f4e8203bf0bf8982710dfd9c41808' => 
     array (
       0 => 'C:\\xampp\\htdocs\\webtpe\\Web2TPE\\tpe\\templates\\home.tpl',
-      1 => 1634248910,
+      1 => 1634248970,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6168a8d0627513_07142696 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6168a9311217c3_94003217 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
         <section class="seccion borde-negro">
