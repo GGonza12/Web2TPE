@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-14 22:04:59
+/* Smarty version 3.1.39, created on 2021-10-15 00:13:27
   from 'C:\xampp\htdocs\webtpe\Web2TPE\tpe\templates\companys.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61688d6b9ca838_79992950',
+  'unifunc' => 'content_6168ab877f2435_04230047',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'df0dcaab663c62e3a934c38d019529ec40949f30' => 
     array (
       0 => 'C:\\xampp\\htdocs\\webtpe\\Web2TPE\\tpe\\templates\\companys.tpl',
-      1 => 1634241898,
+      1 => 1634249592,
       2 => 'file',
     ),
   ),
@@ -22,17 +22,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_61688d6b9ca838_79992950 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6168ab877f2435_04230047 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 if ($_smarty_tpl->tpl_vars['rol']->value == true) {?>
 
-    <form action="CreateCompany" method="post">
-
-        <input type="text" placeholder="Empresa" name="empresa">
-        <input type="text" placeholder="Descripcion" name="descripcion">
-        <input type="submit" value="Agregar">
-
-    </form>
+  <div class="card" style="width: 18rem;">
+  <form action="<?php echo BASE_URL;?>
+CreateCompany" method="post">
+  <div class="mb-3">
+  <input type="text" class="form-control" placeholder="Empresa" name="empresa" >
+  </div>
+  <div class="mb-3">
+  <input type="text" class="form-control" placeholder="Descripcion" name="descripcion" >
+  </div>
+  <button type="submit" class="btn btn-primary">Agregar</button>
+  </form>
+  </div>
 <?php }
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['companys']->value, 'company');
 $_smarty_tpl->tpl_vars['company']->do_else = true;
