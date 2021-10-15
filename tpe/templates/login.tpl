@@ -19,6 +19,7 @@
 
 <h4>{$error}</h4>
 <br>
+<h3>Crear cuenta</h3>
 <form action="createacount" method="POST">
     <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Usuario</label>
