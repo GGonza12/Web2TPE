@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-15 00:17:47
+/* Smarty version 3.1.39, created on 2021-10-15 02:12:22
   from 'C:\xampp\htdocs\Web2TPE\tpe\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6168ac8b46cd52_00372173',
+  'unifunc' => 'content_6168c766d13c63_88269089',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'bb81400e126464ca25c91233b1e09d36299a83a0' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2TPE\\tpe\\templates\\header.tpl',
-      1 => 1634249543,
+      1 => 1634256739,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6168ac8b46cd52_00372173 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6168c766d13c63_88269089 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 
 <html lang="en">
@@ -52,7 +52,8 @@ imgs/logo.png" alt="icon" width="30" height="24" class="d-inline-block align-tex
     </header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light navegador">
         <div class="container-fluid">
-            <a class="navbar-brand" href="home">Navegador</a>
+            <a class="navbar-brand" href="<?php echo BASE_URL;?>
+home">Navegador</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
