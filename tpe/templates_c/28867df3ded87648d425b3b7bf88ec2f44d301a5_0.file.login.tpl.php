@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-15 01:49:49
+/* Smarty version 3.1.39, created on 2021-10-15 02:16:18
   from 'C:\xampp\htdocs\Web2TPE\tpe\templates\login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6168c21d8ccd01_95785024',
+  'unifunc' => 'content_6168c852ee98c6_20159413',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '28867df3ded87648d425b3b7bf88ec2f44d301a5' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2TPE\\tpe\\templates\\login.tpl',
-      1 => 1634255384,
+      1 => 1634256739,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6168c21d8ccd01_95785024 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6168c852ee98c6_20159413 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -46,6 +46,7 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
 <h4><?php echo $_smarty_tpl->tpl_vars['error']->value;?>
 </h4>
 <br>
+<h3>Crear cuenta</h3>
 <form action="createacount" method="POST">
     <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Usuario</label>
