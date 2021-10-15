@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-15 00:13:27
+/* Smarty version 3.1.39, created on 2021-10-15 01:59:09
   from 'C:\xampp\htdocs\webtpe\Web2TPE\tpe\templates\companys.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6168ab877f2435_04230047',
+  'unifunc' => 'content_6168c44d2fac22_97018032',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'df0dcaab663c62e3a934c38d019529ec40949f30' => 
     array (
       0 => 'C:\\xampp\\htdocs\\webtpe\\Web2TPE\\tpe\\templates\\companys.tpl',
-      1 => 1634249592,
+      1 => 1634255436,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6168ab877f2435_04230047 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6168c44d2fac22_97018032 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 if ($_smarty_tpl->tpl_vars['rol']->value == true) {?>
 
@@ -33,7 +33,7 @@ CreateCompany" method="post">
   <input type="text" class="form-control" placeholder="Empresa" name="empresa" >
   </div>
   <div class="mb-3">
-  <input type="text" class="form-control" placeholder="Descripcion" name="descripcion" >
+  <input type="text" class="form-control" placeholder="Informacion" name="informacion" >
   </div>
   <button type="submit" class="btn btn-primary">Agregar</button>
   </form>
@@ -49,7 +49,7 @@ $_smarty_tpl->tpl_vars['company']->do_else = false;
   <div class="card-body">
     <h5 class="card-title"><?php echo $_smarty_tpl->tpl_vars['company']->value->empresa;?>
 </h5>
-    <p class="card-text"><?php echo $_smarty_tpl->tpl_vars['company']->value->descripcion;?>
+    <p class="card-text"><?php echo $_smarty_tpl->tpl_vars['company']->value->informacion;?>
 </p>
     <?php if ($_smarty_tpl->tpl_vars['rol']->value == true) {?>
        <a href="<?php echo BASE_URL;?>

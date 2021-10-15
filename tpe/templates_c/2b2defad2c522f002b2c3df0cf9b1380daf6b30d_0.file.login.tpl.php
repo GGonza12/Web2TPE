@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-14 23:11:59
+/* Smarty version 3.1.39, created on 2021-10-15 01:50:09
   from 'C:\xampp\htdocs\webtpe\Web2TPE\tpe\templates\login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61689d1f761629_68867292',
+  'unifunc' => 'content_6168c2317db372_30601807',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2b2defad2c522f002b2c3df0cf9b1380daf6b30d' => 
     array (
       0 => 'C:\\xampp\\htdocs\\webtpe\\Web2TPE\\tpe\\templates\\login.tpl',
-      1 => 1634245917,
+      1 => 1634251553,
       2 => 'file',
     ),
   ),
@@ -22,14 +22,14 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_61689d1f761629_68867292 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6168c2317db372_30601807 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
 
 <h3>Iniciar sesión</h3>
 
-
+<div><div>
 <form action="verify" method="POST">
     <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Email</label>
@@ -42,8 +42,6 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-
-<h3>Crear cuenta</h3>
 
 <h4><?php echo $_smarty_tpl->tpl_vars['error']->value;?>
 </h4>
