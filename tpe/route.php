@@ -30,6 +30,7 @@ switch ($params[0]) {
         break;
     case 'createacount':
         $loginController->SignIn($_POST['user'], $_POST['email'], $_POST['password']);
+        $loginController->VefiryLogin();
         break;
     case 'home':
         $storeController->showHome();

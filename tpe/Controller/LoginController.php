@@ -18,7 +18,6 @@ class LoginController {
 
     function SignIn($user,$email,$password){
         $this->model->CreateUser($user,$email,$password);
-        $this->view->ShowLogin("usuario creado con exito");
     }
 
     function logout(){
@@ -37,7 +36,6 @@ class LoginController {
                 session_start();
                 $_SESSION["email"] = $email;
                 $_SESSION["rol"] = $user->rol;
-                    
                 $this->view->ShowHome();
             } 
             else {

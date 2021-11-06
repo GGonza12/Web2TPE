@@ -1,18 +1,21 @@
 <?php
-require_once './Model/StoreModel.php';
+require_once './Model/GamesModel.php';
+require_once './Model/CompanysModel.php';
 require_once './View/StoreView.php';
 require_once './Helpers/AuthHelper.php';
 
 class StoreController
 {
 
-    private $model;
+    private $modelGame;
+    private $modelCompany;
     private $view;
     private $authHelper;
 
     function __construct()
     {
-        $this->model = new StoreModel();
+        $this->modelGame = new GamesModel();
+        $this->modelCompany = new CompanysModel();
         $this->view = new StoreView();
         $this->authHelper = new AuthHelper();
     }
@@ -26,16 +29,16 @@ class StoreController
     {
         $this->authHelper->CheckLoggedIn();
         $rol = $this->authHelper->admin();
-        $games = $this->model->GetGames();
-        $company = $this->model->GetCompanys();
+        $games = $this->modelGame->GetGames();
+        $company = $this->modelCompany->GetCompanys();
         $this->view->ShowGamesStore($games, $company, $rol);
     }
 
     function showGamesOfCompany($id)
     {
         $this->authHelper->CheckLoggedIn();
-        $company = $this->model->GetCompany($id);
-        $games = $this->model->GamesOfCompany($id);
+        $company = $this->modelCompany->GetCompany($id);
+        $games = $this->modelCompany->GamesOfCompany($id);
         $this->view->ShowGamesOfCompany($games, $company);
     }
 
@@ -44,7 +47,7 @@ class StoreController
         $this->authHelper->CheckLoggedIn();
         $rol = $this->authHelper->admin();
         if($rol == true){
-            $this->model->InsertGame($juego, $imagen, $categorias, $descripcion, $precio, $empresa);
+            $this->modelGame->InsertGame($juego, $imagen, $categorias, $descripcion, $precio, $empresa);
             $this->view->ShowStoreLocation();
         }
         else{
@@ -56,7 +59,7 @@ class StoreController
         $this->authHelper->CheckLoggedIn();
         $rol = $this->authHelper->admin();
         if($rol == true){
-            $this->model->Delete($id);
+            $this->modelGame->Delete($id);
             $this->view->showStoreLocation();
         }
         else{
@@ -68,7 +71,7 @@ class StoreController
     function viewGame($id)
     {
         $this->authHelper->CheckLoggedIn();
-        $game = $this->model->GetGame($id);
+        $game = $this->modelGame->GetGame($id);
         $this->view->ShowGame($game);
     }
     function ShowUpdateGame($id)
@@ -76,8 +79,8 @@ class StoreController
         $this->authHelper->CheckLoggedIn();
         $rol = $this->authHelper->admin();
         if($rol == true){
-            $game = $this->model->GetGame($id);
-            $company = $this->model->GetCompanys();
+            $game = $this->modelGame->GetGame($id);
+            $company = $this->modelCompany->GetCompanys();
             $this->view->UpdateViewGame($game,$company);
         }
         else{
@@ -90,7 +93,7 @@ class StoreController
         $this->authHelper->CheckLoggedIn();
         $rol = $this->authHelper->admin();
         if($rol == true){
-            $this->model->UpdateGame($id_juego,$juego,$imagen,$categorias,$descripcion,$precio,$id_empresa);
+            $this->modelGame->UpdateGame($id_juego,$juego,$imagen,$categorias,$descripcion,$precio,$id_empresa);
             $this->view->showStoreLocation();
         }
         else{
@@ -103,7 +106,7 @@ class StoreController
         $this->authHelper->CheckLoggedIn();
         $rol = $this->authHelper->admin();
         if($rol == true){
-            $this->model->InsertCompany($empresa,$descripcion);
+            $this->modelCompany->InsertCompany($empresa,$descripcion);
             $this->view->showCompanysLocation();
         }
         else{
@@ -117,7 +120,7 @@ class StoreController
         $this->authHelper->CheckLoggedIn();
         $rol = $this->authHelper->admin();
         if($rol == true){
-            $company = $this->model->GetCompany($id);
+            $company = $this->modelCompany->GetCompany($id);
             $this->view->UpdateViewCompany($company);
         }
         else{
@@ -129,7 +132,7 @@ class StoreController
     {
         $this->authHelper->CheckLoggedIn();
         $rol = $this->authHelper->admin();
-        $companys = $this->model->GetCompanys();
+        $companys = $this->modelCompany->GetCompanys();
         $this->view->ShowCompanys($rol,$companys);
     }
 
@@ -138,7 +141,7 @@ class StoreController
         $this->authHelper->CheckLoggedIn();
         $rol = $this->authHelper->admin();
         if($rol == true){
-            $this->model->UpdateComp($empresa, $id, $descripcion);
+            $this->modelCompany->UpdateComp($empresa, $id, $descripcion);
             $this->view->showCompanysLocation();
         }
         else{
@@ -151,7 +154,7 @@ class StoreController
         $this->authHelper->CheckLoggedIn();
         $rol = $this->authHelper->admin();
         if($rol == true){
-            $this->model->DeleteCompany($id);
+            $this->modelCompany->DeleteCompany($id);
             $this->view->showCompanysLocation();
         }
         else{
