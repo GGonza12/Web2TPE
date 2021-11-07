@@ -16,6 +16,16 @@ class LoginView{
         $this->smarty->display('templates/login.tpl');
     }
 
+    function ShowUsers($usuarios){
+        $this->smarty->assign('titulo','lista usuarios');
+        $this->smarty->assign('usuarios',$usuarios);
+        $this->smarty->display('templates/permisos.tpl');
+    }
+
+    function ShowAdmin(){
+        header("Location: ".BASE_URL."administrador");
+    }
+
     function ShowHome(){
         header("Location: ".BASE_URL."home");
     }
