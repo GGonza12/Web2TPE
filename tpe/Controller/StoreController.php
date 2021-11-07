@@ -74,6 +74,7 @@ class StoreController
         $game = $this->modelGame->GetGame($id);
         $this->view->ShowGame($game);
     }
+    
     function ShowUpdateGame($id)
     {
         $this->authHelper->CheckLoggedIn();

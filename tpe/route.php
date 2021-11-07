@@ -19,6 +19,15 @@ $loginController = new LoginController();
 
 // determina que camino seguir según la acción
 switch ($params[0]) {
+    case 'administrador':
+        $loginController->administrador();
+     break;
+    case'agregarPermiso':
+        $loginController->agregerPermiso($params[1]);    
+         break;
+    case'quitarPermiso':
+       $loginController->quitarPermiso($params[1]);   
+        break;          
     case 'login':
         $loginController->login();
         break;

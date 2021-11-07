@@ -8,8 +8,10 @@ class LoginController {
 
     function __construct()
     {
+        
         $this->model = new UserModel();
         $this->view = new LoginView();
+
     }
 
     function login(){
@@ -44,5 +46,21 @@ class LoginController {
         }
     }
 
-    
+    function administrador(){
+
+        $usuarios = $this->model->getUsers();
+        $this->view->ShowUsers($usuarios);
+
+    }
+
+    function agregerPermiso($id){
+        $this->model->agregarPermiso($id);
+        $this->view->ShowAdmin();
+        
+    }
+
+    function quitarPermiso($id){
+        $this->model->quitarPermiso($id);
+        $this->view->ShowAdmin();
+    }
 }
