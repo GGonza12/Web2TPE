@@ -17,6 +17,7 @@
     
         $sentencia = $this->db->prepare("INSERT INTO comentarios(comentario,imagen) VALUES(?, ?)");
         $sentencia->execute(array($comentario,$imagen));
+        return $this->db->lastInsertId();
     }
 
     function DeleteComent($id){
