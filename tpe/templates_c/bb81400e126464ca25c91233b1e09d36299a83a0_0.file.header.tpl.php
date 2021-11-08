@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-15 02:12:22
+/* Smarty version 3.1.39, created on 2021-11-08 00:59:45
   from 'C:\xampp\htdocs\Web2TPE\tpe\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6168c766d13c63_88269089',
+  'unifunc' => 'content_618868716cc0e6_72258838',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'bb81400e126464ca25c91233b1e09d36299a83a0' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2TPE\\tpe\\templates\\header.tpl',
-      1 => 1634256739,
+      1 => 1636329577,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6168c766d13c63_88269089 (Smarty_Internal_Template $_smarty_tpl) {
+function content_618868716cc0e6_72258838 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 
 <html lang="en">
@@ -75,7 +75,6 @@ Companys">Companys</a>
                     <li class="nav-item">
                         <a class="btn btn-primary" href="<?php echo BASE_URL;?>
 logout">Cerrar sesión</a>
-
                     </li>
                 </ul>
             </div>

@@ -44,7 +44,6 @@
                     </li>
                     <li class="nav-item">
                         <a class="btn btn-primary" href="{BASE_URL}logout">Cerrar sesión</a>
-
                     </li>
                 </ul>
             </div>
