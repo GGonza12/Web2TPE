@@ -12,6 +12,7 @@ $router->addroute('comentarios', 'POST','ApiComentsController','AgregarComentari
 $router->addRoute('comentario/:ID', 'GET', 'ApiComentsController', 'ObtenerComentario');
 $router->addroute('comentario/:ID', 'DELETE','ApiComentsController','EliminarComentario');
 $router->addroute('comentario/:ID', 'PUT','ApiComentsController','ModificarComentario');
+$router->addroute('comentario/puntaje/:ID', 'PUT','ApiComentsController','ModificarPuntaje');
 
 // rutea
 $router->route($_GET["resource"], $_SERVER['REQUEST_METHOD']);

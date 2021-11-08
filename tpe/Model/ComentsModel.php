@@ -37,6 +37,10 @@
         $sentencia->execute(array($comentario,$imagen,$id));
         
     }
+    function UpdateScore($score,$id){
+        $sentencia = $this->db->prepare("UPDATE comentarios SET puntaje=? WHERE id_comentario=?");
+        $sentencia->execute(array($score,$id));
+    }
 
 
 }
