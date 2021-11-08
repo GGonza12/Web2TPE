@@ -6,34 +6,34 @@
          $this->db = new PDO('mysql:host=localhost;'.'dbname=db_juegos;charset=utf8', 'root', '');
     }
     
-    function GetGames(){
-        $sentencia = $this->db->prepare("SELECT * FROM juegos");
+    function GetComents(){
+        $sentencia = $this->db->prepare("SELECT * FROM comentarios");
         $sentencia->execute();
-        $juegos = $sentencia->fetchAll(PDO::FETCH_OBJ);
-        return $juegos;
+        $comentarios = $sentencia->fetchAll(PDO::FETCH_OBJ);
+        return $comentarios;
     }
 
-    function InsertGame($juego,$imagen,$categorias,$descripcion,$precio,$id_empresa){
+    function InsertComent($comentario,$imagen){
     
-        $sentencia = $this->db->prepare("INSERT INTO juegos(juego,imagen,categorias,descripcion,precio,id_empresa) VALUES(?, ?, ?, ?, ?, ?)");
-        $sentencia->execute(array($juego,$imagen,$categorias,$descripcion,$precio,$id_empresa));
+        $sentencia = $this->db->prepare("INSERT INTO comentarios(comentario,imagen) VALUES(?, ?)");
+        $sentencia->execute(array($comentario,$imagen));
     }
 
-    function Delete($id){
-        $sentencia = $this->db->prepare("DELETE FROM juegos WHERE id_juego=?");
+    function DeleteComent($id){
+        $sentencia = $this->db->prepare("DELETE FROM comentarios WHERE id_comentario=?");
         $sentencia->execute(array($id));
     }
 
-    function GetGame($id){
-        $sentencia = $this->db->prepare("SELECT * from juegos WHERE id_juego=?");
+    function GetComent($id){
+        $sentencia = $this->db->prepare("SELECT * from comentarios WHERE id_comentario=?");
         $sentencia->execute(array($id));
-        $juego = $sentencia->fetch(PDO::FETCH_OBJ);
-        return $juego;
+        $comentario = $sentencia->fetch(PDO::FETCH_OBJ);
+        return $comentario;
     
     }
-    function UpdateGame($id_juego,$juego,$imagen,$categorias,$descripcion,$precio,$id_empresa){
-        $sentencia = $this->db->prepare("UPDATE juegos SET juego=?,imagen=?,categorias=?,descripcion=?,precio=?,id_empresa=? WHERE id_juego=?");
-        $sentencia->execute(array($juego,$imagen,$categorias,$descripcion,$precio,$id_empresa,$id_juego));
+    function UpdateComent($comentario,$imagen,$id){
+        $sentencia = $this->db->prepare("UPDATE comentarios SET comentario=?,imagen=? WHERE id_comentario=?");
+        $sentencia->execute(array($comentario,$imagen,$id));
         
     }
 
