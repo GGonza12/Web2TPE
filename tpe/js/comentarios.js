@@ -21,39 +21,39 @@ document.addEventListener("DOMContentLoaded", function () {
                 eliminarComentario(btn);
             },
             puntuar: function(event){
-                let btn = event.target.getAttribute('data-id');
-                console.log(btn);
+                let id = event.target.getAttribute('data-id');
+                console.log(id);
                 let puntaje = document.querySelector("#puntaje").value;
                 console.log(puntaje);
-                puntuarComentario(puntaje);
+                puntuarComentario(puntaje,id);
             }
 
         }
     });
 
-    async function getComents() {
+  //  async function getComents() {
         //fetch para traer todas las tareas
-        try {
-            let response = await fetch(`${API_URL}s`, {
-                "method": "POST",
-                "mode": 'cors',
-                "headers": { "Content-type": "application/json" },
-            });
-            let coments = await response.json();
-            if (response.status == 200) {
-                app.coments = coments;
-                console.log(coments);
-            }
-
-        } catch (error) {
-            console.log(error);
-        }
-    }
+  //      try {
+   //         let response = await fetch(`${API_URL}s`, {
+   //             "method": "POST",
+   //             "mode": 'cors',
+   //             "headers": { "Content-type": "application/json" },
+   //         });
+   //         let coments = await response.json();
+   //         if (response.status == 200) {
+   //             app.coments = coments;
+   //             console.log(coments);
+   //         }
+//
+   //     } catch (error) {
+   //         console.log(error);
+   //     }
+   // }
 
 
 
     async function getComents() {
-        //fetch para traer todas las tareas
+        //fetch para traer todos loscomentarios de ese juego
         try {
             let response = await fetch(`${API_URL}/juego/${id}`, {
                 "method": "GET",
@@ -70,22 +70,21 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log(error);
         }
     }
-    async function puntuarComentario(puntaje,id_comentario) {
+    async function puntuarComentario(puntaje,id) {
+        console.log(puntaje);
         let datos = {
-            "puntaje": puntaje,
-            "id_comentario": id_comentario,
+            "puntaje": puntaje
         };
 
         try {
-            let puntuar = await fetch(`${API_URL}/puntaje/`, {
+            let puntuar = await fetch(`${API_URL}/puntaje/${id}`, {
                 "method": "PUT",
-                "mode": 'cors',
-        //        "headers": { "Content-type": "application/json" },
+                "headers": { "Content-type": "application/json" },
                 "body": JSON.stringify(datos),
 
             });
             if (puntuar.status == 200) {
-                console.log("Agregado!");
+                console.log("Puntuado!");
                 getComents();
             }
         }
@@ -98,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let comentario = document.querySelector("#comentario").value;
         console.log(comentario);
         let id_juego = document.querySelector("#id_juego").innerHTML;
-        console.log(idjuego);
+        console.log(id_juego);
         let datos = {
             "comentario": comentario,
             "imagen": "atest",

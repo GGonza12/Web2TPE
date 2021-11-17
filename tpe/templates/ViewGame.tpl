@@ -36,18 +36,19 @@
     <button id="agregar_comentario" class="btn btn-primary">Agregar</button>
 </form>
 {literal}
+
     <div id="comentarios">
         {{titulo}}
         <div v-for="coment in coments">
             <p>Comentario: {{ coment.comentario }}</p>
             <span>
                 <p>Puntaje: {{coment.puntaje}} </p>
-                <input type="range" min="1" max="5" list="listatamanos" id="puntaje">
-                <datalist id="listatamanos">
+                <input type="range" min="1" max="5" list="rango" id="puntaje" >
+                <datalist id="rango">
 
                     <option value="1" label="1">
 
-                    <option value="2" label="22">
+                    <option value="2" label="2">
 
                     <option value="3" label="3">
 
@@ -57,7 +58,6 @@
 
                 </datalist>
                 <button v-on:click="puntuar" class="btn btn-primary" :data-id="coment.id_comentario">Puntuar</button>
-
             </span>
             <button :data-id="coment.id_comentario" id="btn-eliminar" v-on:click="delet"
                 class="btn btn-primary">Eliminar</button>

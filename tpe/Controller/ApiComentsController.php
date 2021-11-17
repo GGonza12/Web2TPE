@@ -99,11 +99,11 @@ class ApiComentsController
 //            $this->view->response("El comentario no se pudo modificar", 500);
 //        }
 //    }
-    function ModificarPuntaje()
+    function ModificarPuntaje($params = [])
     {
+        $id = $params[':ID'];
         $body = $this->getBody();
         $puntaje = $body->puntaje;
-        $id = $body->id_comentario;
         $this->modelcoment->UpdateScore($puntaje, $id);
         if ($id != 0) {
             $this->view->response("El puntaje se modifico con exito con el id= $id", 200);

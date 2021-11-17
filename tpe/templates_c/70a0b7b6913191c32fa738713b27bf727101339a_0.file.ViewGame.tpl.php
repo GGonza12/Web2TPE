@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-11-17 21:30:35
+/* Smarty version 3.1.39, created on 2021-11-18 00:30:42
   from 'C:\xampp\htdocs\Web2TPE\tpe\templates\ViewGame.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6195666b3e55f8_70998129',
+  'unifunc' => 'content_619590a2b7a1a6_95043417',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '70a0b7b6913191c32fa738713b27bf727101339a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2TPE\\tpe\\templates\\ViewGame.tpl',
-      1 => 1637180553,
+      1 => 1637191838,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6195666b3e55f8_70998129 (Smarty_Internal_Template $_smarty_tpl) {
+function content_619590a2b7a1a6_95043417 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <h1><?php echo $_smarty_tpl->tpl_vars['titulo']->value;?>
@@ -70,18 +70,19 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
     <button id="agregar_comentario" class="btn btn-primary">Agregar</button>
 </form>
 
+
     <div id="comentarios">
         {{titulo}}
         <div v-for="coment in coments">
             <p>Comentario: {{ coment.comentario }}</p>
             <span>
                 <p>Puntaje: {{coment.puntaje}} </p>
-                <input type="range" min="1" max="5" list="listatamanos" id="puntaje">
-                <datalist id="listatamanos">
+                <input type="range" min="1" max="5" list="rango" id="puntaje" >
+                <datalist id="rango">
 
                     <option value="1" label="1">
 
-                    <option value="2" label="22">
+                    <option value="2" label="2">
 
                     <option value="3" label="3">
 
@@ -91,7 +92,6 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
 
                 </datalist>
                 <button v-on:click="puntuar" class="btn btn-primary" :data-id="coment.id_comentario">Puntuar</button>
-
             </span>
             <button :data-id="coment.id_comentario" id="btn-eliminar" v-on:click="delet"
                 class="btn btn-primary">Eliminar</button>
