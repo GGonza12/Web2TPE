@@ -13,16 +13,22 @@
         return $comentarios;
     }
 
-    function InsertComent($comentario,$imagen){
+    function InsertComent($comentario,$imagen,$id_juego,$id_usuario){
     
-        $sentencia = $this->db->prepare("INSERT INTO comentarios(comentario,imagen) VALUES(?, ?)");
-        $sentencia->execute(array($comentario,$imagen));
+        $sentencia = $this->db->prepare("INSERT INTO comentarios(comentario,imagen,id_juego,id_usuario) VALUES(?, ?,?,?)");
+        $sentencia->execute(array($comentario,$imagen,$id_juego,$id_usuario));
         return $this->db->lastInsertId();
     }
 
     function DeleteComent($id){
         $sentencia = $this->db->prepare("DELETE FROM comentarios WHERE id_comentario=?");
         $sentencia->execute(array($id));
+    }
+    function GetComentsByGame($id){
+        $sentencia = $this->db->prepare("SELECT * FROM comentarios WHERE id_juego=?");
+        $sentencia->execute(array($id));
+        $comentarios = $sentencia->fetchAll(PDO::FETCH_OBJ);
+        return $comentarios;
     }
 
     function GetComent($id){
