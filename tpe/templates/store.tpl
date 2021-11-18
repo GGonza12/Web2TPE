@@ -1,30 +1,31 @@
-{include file="header.tpl"}
+{include file="header.tpl" assing='rol'}
+
 {if $rol == true}
     <div class="card" style="width: 18rem;">
-    <form action="{BASE_URL}CreateGame" method="post">
-  <div class="mb-3">
-    <input type="text" class="form-control" placeholder="Juego" name="juego">
-  </div>
-  <div class="mb-3">
-  <input type="text" class="form-control" placeholder="Imagen" name="imagen">
-</div>
-  <div class="mb-3">
-  <input type="text" class="form-control" placeholder="Categorias" name="categorias">
-</div>
-<div class="mb-3">
-<input type="text" class="form-control" placeholder="Descripcion" name="descripcion">
-</div>
-<div class="mb-3">
-<input type="number" class="form-control" placeholder="Precio" name="precio">
-</div>
-<select class="form-select" aria-label="Default select example" name="empresa">
-{foreach from= $company item= $empresas}
-    <option value={$empresas->id_empresa}>{$empresas->empresa}</option>
-{/foreach}
-</select>
-  <button type="submit" class="btn btn-primary">Agregar</button>
-</form>
-</div>
+        <form action="{BASE_URL}CreateGame" method="post">
+            <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Juego" name="juego">
+            </div>
+            <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Imagen" name="imagen">
+            </div>
+            <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Categorias" name="categorias">
+            </div>
+            <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Descripcion" name="descripcion">
+            </div>
+            <div class="mb-3">
+                <input type="number" class="form-control" placeholder="Precio" name="precio">
+            </div>
+            <select class="form-select" aria-label="Default select example" name="empresa">
+                {foreach from= $company item= $empresas}
+                    <option value={$empresas->id_empresa}>{$empresas->empresa}</option>
+                {/foreach}
+            </select>
+            <button type="submit" class="btn btn-primary">Agregar</button>
+        </form>
+    </div>
 
 {/if}
 {foreach from=$juegos item=$juego}

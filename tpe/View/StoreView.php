@@ -9,7 +9,8 @@ class StoreView
     {
         $this->smarty = new Smarty();
     }
-    function ShowHome(){
+    function ShowHome($rol){
+        $this->smarty->assign('rol', $rol);
         $this->smarty->display('templates/home.tpl');
     }
     function ShowGamesStore($games, $company, $rol)

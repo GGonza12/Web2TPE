@@ -10,7 +10,8 @@ class LoginView{
     }
     
         
-    function ShowLogin($error = ""){
+    function ShowLogin($rol,$error = ""){
+        $this->smarty->assign('rol', $rol);
         $this->smarty->assign('titulo', 'Log In');
         $this->smarty->assign('error', $error);
         $this->smarty->display('templates/login.tpl');

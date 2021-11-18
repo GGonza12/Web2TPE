@@ -15,7 +15,8 @@ class LoginController {
     }
 
     function login(){
-        $this->view->ShowLogin();
+        $rol = $this->authHelper->admin();
+        $this->view->ShowLogin($rol);
     }
 
     function SignIn($user,$email,$password){

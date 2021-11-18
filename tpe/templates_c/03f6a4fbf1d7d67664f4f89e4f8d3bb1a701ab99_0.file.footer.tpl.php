@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-15 01:28:04
+/* Smarty version 3.1.39, created on 2021-11-18 00:41:08
   from 'C:\xampp\htdocs\webtpe\Web2TPE\tpe\templates\footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6168bd0421ba44_87196946',
+  'unifunc' => 'content_619593148fb3a0_61925735',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '03f6a4fbf1d7d67664f4f89e4f8d3bb1a701ab99' => 
     array (
       0 => 'C:\\xampp\\htdocs\\webtpe\\Web2TPE\\tpe\\templates\\footer.tpl',
-      1 => 1634254082,
+      1 => 1637192298,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6168bd0421ba44_87196946 (Smarty_Internal_Template $_smarty_tpl) {
+function content_619593148fb3a0_61925735 (Smarty_Internal_Template $_smarty_tpl) {
 ?>        <!-- Footer -->
         <footer class="page-footer font-small mdb-color lighten-3 pt-4 linea borde-negro">
 
@@ -153,7 +153,6 @@ imgs/youtube.png" alt="youtube" class="redes">
             integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
             crossorigin="anonymous"><?php echo '</script'; ?>
 >
-
 </body>
 
 </html><?php }

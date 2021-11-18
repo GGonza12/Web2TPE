@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-15 01:28:04
+/* Smarty version 3.1.39, created on 2021-11-18 01:26:04
   from 'C:\xampp\htdocs\webtpe\Web2TPE\tpe\templates\home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6168bd041c8787_85663859',
+  'unifunc' => 'content_61959d9ce783b2_97056513',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c3dc4e9ab71f4e8203bf0bf8982710dfd9c41808' => 
     array (
       0 => 'C:\\xampp\\htdocs\\webtpe\\Web2TPE\\tpe\\templates\\home.tpl',
-      1 => 1634254065,
+      1 => 1637195157,
       2 => 'file',
     ),
   ),
@@ -22,8 +22,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6168bd041c8787_85663859 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+function content_61959d9ce783b2_97056513 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('assing'=>'rol'), 0, false);
 ?>
 <section class="seccion borde-negro">
   <h4>Juegos Top del mes:</h4>
@@ -83,9 +83,6 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
         </div>
     </div>
 </div>
-
-
-
 
 <div class="card-group">
     <div class="card">

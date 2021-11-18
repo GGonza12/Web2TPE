@@ -19,7 +19,8 @@
     <header>
         <nav class="navbar navbar-light bg-light header">
             <div class="container-fluid">
-              <img src="{BASE_URL}imgs/logo.png" alt="icon" width="30" height="24" class="d-inline-block align-text-top logo">
+                <img src="{BASE_URL}imgs/logo.png" alt="icon" width="30" height="24"
+                    class="d-inline-block align-text-top logo">
                 </h1>AstroGames</h1>
             </div>
         </nav>
@@ -39,12 +40,17 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{BASE_URL}store">Tienda</a>
                     </li>
-                     <li class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link" href="{BASE_URL}Companys">Companys</a>
                     </li>
                     <li class="nav-item">
                         <a class="btn btn-primary" href="{BASE_URL}logout">Cerrar sesión</a>
                     </li>
+                    {if $rol == true}
+                        <li class="nav-item">
+                            <a class="btn btn-primary" href="{BASE_URL}Permisos">Permisos</a>
+                        </li>
+                    {/if}
                 </ul>
             </div>
         </div>

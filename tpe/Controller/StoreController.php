@@ -21,9 +21,9 @@ class StoreController
     }
 
     function showHome()
-    {
+    {   $rol = $this->authHelper->admin();
         $this->authHelper->CheckLoggedIn();
-        $this->view->ShowHome();
+        $this->view->ShowHome($rol);
     }
     function ShowStore()
     {
@@ -51,7 +51,7 @@ class StoreController
             $this->view->ShowStoreLocation();
         }
         else{
-            $this->view->ShowHome();
+            $this->view->ShowHome($rol);
         }
     }
     function deleteGame($id)
@@ -63,7 +63,7 @@ class StoreController
             $this->view->showStoreLocation();
         }
         else{
-            $this->view->ShowHome();
+            $this->view->ShowHome($rol);
         }
         
     }
@@ -85,7 +85,7 @@ class StoreController
             $this->view->UpdateViewGame($game,$company);
         }
         else{
-            $this->view->ShowHome();
+            $this->view->ShowHome($rol);
         }
     }
 
@@ -98,7 +98,7 @@ class StoreController
             $this->view->showStoreLocation();
         }
         else{
-            $this->view->ShowHome();
+            $this->view->ShowHome($rol);
         }
     }
 
@@ -111,7 +111,7 @@ class StoreController
             $this->view->showCompanysLocation();
         }
         else{
-            $this->view->ShowHome();
+            $this->view->ShowHome($rol);
         }
         
     }
@@ -125,7 +125,7 @@ class StoreController
             $this->view->UpdateViewCompany($company);
         }
         else{
-            $this->view->ShowHome();
+            $this->view->ShowHome($rol);
         }
     }
 
@@ -146,7 +146,7 @@ class StoreController
             $this->view->showCompanysLocation();
         }
         else{
-            $this->view->ShowHome();
+            $this->view->ShowHome($rol);
         }
     }
 
@@ -159,7 +159,7 @@ class StoreController
             $this->view->showCompanysLocation();
         }
         else{
-            $this->view->ShowHome();
+            $this->view->ShowHome($rol);
         }
         
     }
