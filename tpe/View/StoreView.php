@@ -27,8 +27,9 @@ class StoreView
         $this->smarty->display('templates/juegosdeempresa.tpl');
     }
 
-    function ShowGame($game)
+    function ShowGame($rol,$game)
     {
+        $this->smarty->assign('rol',$rol);
         $this->smarty->assign('titulo', $game->juego);
         $this->smarty->assign('juego', $game);
         $this->smarty->display('templates/ViewGame.tpl');

@@ -11,7 +11,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         data: {
             titulo: "Comentarios",
-            coments: [], // this->smarty->assign("tareas",  $tareas)
+            valor: 1,
+            coments: [], // Comentarios
 
         },
         methods: {
@@ -19,15 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 let btn = event.target.getAttribute('data-id');
                 console.log(btn);
                 eliminarComentario(btn);
-            },
-            puntuar: function(event){
-                let id = event.target.getAttribute('data-id');
-                console.log(id);
-                let puntaje = document.querySelector("#puntaje").value;
-                console.log(puntaje);
-                puntuarComentario(puntaje,id);
             }
-
         }
     });
 
@@ -52,7 +45,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-    async function getComents() {
+    async function getComents(event) {
+        
         //fetch para traer todos loscomentarios de ese juego
         try {
             let response = await fetch(`${API_URL}/juego/${id}`, {
@@ -98,8 +92,11 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log(comentario);
         let id_juego = document.querySelector("#id_juego").innerHTML;
         console.log(id_juego);
+        let puntaje = document.querySelector("#puntaje").value;
+        console.log(puntaje);
         let datos = {
             "comentario": comentario,
+            "puntaje": puntaje,
             "imagen": "atest",
             "id_juego": id_juego,
             "id_usuario": 10,
