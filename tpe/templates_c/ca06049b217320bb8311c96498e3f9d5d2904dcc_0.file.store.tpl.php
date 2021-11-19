@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-11-18 01:12:34
+/* Smarty version 3.1.39, created on 2021-11-19 00:55:01
   from 'C:\xampp\htdocs\webtpe\Web2TPE\tpe\templates\store.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61959a728eb211_00719233',
+  'unifunc' => 'content_6196e7d52ff8e6_44304899',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ca06049b217320bb8311c96498e3f9d5d2904dcc' => 
     array (
       0 => 'C:\\xampp\\htdocs\\webtpe\\Web2TPE\\tpe\\templates\\store.tpl',
-      1 => 1637194323,
+      1 => 1637279699,
       2 => 'file',
     ),
   ),
@@ -22,8 +22,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_61959a728eb211_00719233 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('assing'=>'rol'), 0, false);
+function content_6196e7d52ff8e6_44304899 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('assing'=>'rol,logged'), 0, false);
 ?>
 
 <?php if ($_smarty_tpl->tpl_vars['rol']->value == true) {?>

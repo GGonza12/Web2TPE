@@ -21,17 +21,20 @@ class StoreController
     }
 
     function showHome()
-    {   $rol = $this->authHelper->admin();
+    {   
         $this->authHelper->CheckLoggedIn();
-        $this->view->ShowHome($rol);
+        $rol = $this->authHelper->admin();
+        $logged = $this->authHelper->logged();
+        $this->view->ShowHome($rol,$logged);
     }
     function ShowStore()
     {
         $this->authHelper->CheckLoggedIn();
+        $logged = $this->authHelper->logged();
         $rol = $this->authHelper->admin();
         $games = $this->modelGame->GetGames();
         $company = $this->modelCompany->GetCompanys();
-        $this->view->ShowGamesStore($games, $company, $rol);
+        $this->view->ShowGamesStore($games, $company, $rol,$logged);
     }
 
     function showGamesOfCompany($id)
@@ -45,25 +48,27 @@ class StoreController
     function createGame($juego, $imagen, $categorias, $descripcion, $precio, $empresa)
     {
         $this->authHelper->CheckLoggedIn();
+        $logged = $this->authHelper->logged();
         $rol = $this->authHelper->admin();
         if($rol == true){
             $this->modelGame->InsertGame($juego, $imagen, $categorias, $descripcion, $precio, $empresa);
             $this->view->ShowStoreLocation();
         }
         else{
-            $this->view->ShowHome($rol);
+            $this->view->ShowHome($rol,$logged);
         }
     }
     function deleteGame($id)
     {
         $this->authHelper->CheckLoggedIn();
         $rol = $this->authHelper->admin();
+        $logged = $this->authHelper->logged();
         if($rol == true){
             $this->modelGame->Delete($id);
             $this->view->showStoreLocation();
         }
         else{
-            $this->view->ShowHome($rol);
+            $this->view->ShowHome($rol,$logged);
         }
         
     }
@@ -78,6 +83,7 @@ class StoreController
     function ShowUpdateGame($id)
     {
         $this->authHelper->CheckLoggedIn();
+        $logged = $this->authHelper->logged();
         $rol = $this->authHelper->admin();
         if($rol == true){
             $game = $this->modelGame->GetGame($id);
@@ -85,33 +91,35 @@ class StoreController
             $this->view->UpdateViewGame($game,$company);
         }
         else{
-            $this->view->ShowHome($rol);
+            $this->view->ShowHome($rol,$logged);
         }
     }
 
     function UpdateGame($id_juego,$juego,$imagen,$categorias,$descripcion,$precio,$id_empresa)
     {
         $this->authHelper->CheckLoggedIn();
+        $logged = $this->authHelper->logged();
         $rol = $this->authHelper->admin();
         if($rol == true){
             $this->modelGame->UpdateGame($id_juego,$juego,$imagen,$categorias,$descripcion,$precio,$id_empresa);
             $this->view->showStoreLocation();
         }
         else{
-            $this->view->ShowHome($rol);
+            $this->view->ShowHome($rol,$logged);
         }
     }
 
     function CreateEmpresa($empresa,$descripcion)
     {
         $this->authHelper->CheckLoggedIn();
+        $logged = $this->authHelper->logged();
         $rol = $this->authHelper->admin();
         if($rol == true){
             $this->modelCompany->InsertCompany($empresa,$descripcion);
             $this->view->showCompanysLocation();
         }
         else{
-            $this->view->ShowHome($rol);
+            $this->view->ShowHome($rol,$logged);
         }
         
     }
@@ -119,47 +127,51 @@ class StoreController
     function ShowUpdateCompany($id)
     {
         $this->authHelper->CheckLoggedIn();
+        $logged = $this->authHelper->logged();
         $rol = $this->authHelper->admin();
         if($rol == true){
             $company = $this->modelCompany->GetCompany($id);
             $this->view->UpdateViewCompany($company);
         }
         else{
-            $this->view->ShowHome($rol);
+            $this->view->ShowHome($rol,$logged);
         }
     }
 
     function ShowCompanys()
     {
         $this->authHelper->CheckLoggedIn();
+        $logged = $this->authHelper->logged();
         $rol = $this->authHelper->admin();
         $companys = $this->modelCompany->GetCompanys();
-        $this->view->ShowCompanys($rol,$companys);
+        $this->view->ShowCompanys($rol,$logged,$companys);
     }
 
     function UpdateCompany($empresa, $id,$descripcion)
     {
         $this->authHelper->CheckLoggedIn();
+        $logged = $this->authHelper->logged();
         $rol = $this->authHelper->admin();
         if($rol == true){
             $this->modelCompany->UpdateComp($empresa, $id, $descripcion);
             $this->view->showCompanysLocation();
         }
         else{
-            $this->view->ShowHome($rol);
+            $this->view->ShowHome($rol,$logged);
         }
     }
 
     function DeleteCompany($id)
     {
         $this->authHelper->CheckLoggedIn();
+        $logged = $this->authHelper->logged();
         $rol = $this->authHelper->admin();
         if($rol == true){
             $this->modelCompany->DeleteCompany($id);
             $this->view->showCompanysLocation();
         }
         else{
-            $this->view->ShowHome($rol);
+            $this->view->ShowHome($rol,$logged);
         }
         
     }

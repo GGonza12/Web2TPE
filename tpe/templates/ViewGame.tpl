@@ -1,4 +1,4 @@
-{include file="header.tpl"}
+{include file="header.tpl" assing='rol,logged'}
 <h1>{$titulo}</h1>
 <table class="table table-hover">
 

@@ -1,4 +1,4 @@
-{include file="header.tpl"}
+{include file="header.tpl" assing='rol,logged'}
 <div class="card" style="width: 18rem;">
 <form action="{BASE_URL}UpdateCompany" method="post">
 <div class="mb-3">

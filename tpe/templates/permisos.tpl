@@ -1,4 +1,4 @@
-{include file="header.tpl"}
+{include file="header.tpl" assing='rol,logged'}
 <h2>{$titulo}</h2>
 
 <h3> Listado de permisos.</h3>
@@ -22,6 +22,7 @@
              <td>{$usuario->rol}</td>
              <td><a href="{BASE_URL}agregarPermiso/{$usuario->id_usuario}">Agregar Permiso<a></td>
              <td><a href="{BASE_URL}quitarPermiso/{$usuario->id_usuario}">Eliminar Permiso<a></td>
+             
         </tr>
     </tbody>
  

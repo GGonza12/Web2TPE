@@ -1,4 +1,4 @@
-{include file="header.tpl"}
+{include file="header.tpl" assing='rol,logged'}
 <h2>{$titulo}</h2>
 
 <div class="card" style="width: 18rem;">

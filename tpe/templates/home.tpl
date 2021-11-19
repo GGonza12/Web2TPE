@@ -1,4 +1,4 @@
-{include file="header.tpl" assing='rol'}
+{include file="header.tpl" assing='rol,logged'}
 <section class="seccion borde-negro">
   <h4>Juegos Top del mes:</h4>
 

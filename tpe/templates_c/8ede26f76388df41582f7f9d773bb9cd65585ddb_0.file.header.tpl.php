@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-11-18 01:25:48
+/* Smarty version 3.1.39, created on 2021-11-19 00:53:54
   from 'C:\xampp\htdocs\webtpe\Web2TPE\tpe\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61959d8c975f75_86229992',
+  'unifunc' => 'content_6196e7920f2378_39999302',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8ede26f76388df41582f7f9d773bb9cd65585ddb' => 
     array (
       0 => 'C:\\xampp\\htdocs\\webtpe\\Web2TPE\\tpe\\templates\\header.tpl',
-      1 => 1637195137,
+      1 => 1637279614,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61959d8c975f75_86229992 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6196e7920f2378_39999302 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 
 <html lang="en">
@@ -73,14 +73,16 @@ store">Tienda</a>
                         <a class="nav-link" href="<?php echo BASE_URL;?>
 Companys">Companys</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="btn btn-primary" href="<?php echo BASE_URL;?>
+                    <?php if ($_smarty_tpl->tpl_vars['logged']->value == true) {?>
+                        <li class="nav-item">
+                            <a class="btn btn-primary" href="<?php echo BASE_URL;?>
 logout">Cerrar sesión</a>
-                    </li>
+                        </li>  
+                    <?php }?>
                     <?php if ($_smarty_tpl->tpl_vars['rol']->value == true) {?>
                         <li class="nav-item">
                             <a class="btn btn-primary" href="<?php echo BASE_URL;?>
-Permisos">Permisos</a>
+administrador">Administrador</a>
                         </li>
                     <?php }?>
                 </ul>

@@ -9,12 +9,14 @@ class StoreView
     {
         $this->smarty = new Smarty();
     }
-    function ShowHome($rol){
+    function ShowHome($rol,$logged){
+        $this->smarty->assign('logged', $logged);
         $this->smarty->assign('rol', $rol);
         $this->smarty->display('templates/home.tpl');
     }
-    function ShowGamesStore($games, $company, $rol)
+    function ShowGamesStore($games, $company, $rol, $logged)
     {
+        $this->smarty->assign('logged', $logged);
         $this->smarty->assign('rol', $rol);
         $this->smarty->assign('juegos', $games);
         $this->smarty->assign('company', $company);
@@ -48,8 +50,9 @@ class StoreView
         $this->smarty->assign('informacion', $company->informacion);
         $this->smarty->display('templates/update.tpl');
     }
-    function ShowCompanys($rol,$companys)
+    function ShowCompanys($rol,$logged,$companys)
     {
+        $this->smarty->assign('logged', $logged);
         $this->smarty->assign('rol', $rol);
         $this->smarty->assign('companys',$companys);
         $this->smarty->display('templates/companys.tpl');

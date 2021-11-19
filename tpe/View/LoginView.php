@@ -9,18 +9,22 @@ class LoginView{
         $this->smarty = new Smarty();
     }
     
-        
-    function ShowLogin($rol,$error = ""){
+    function ShowPermisos($rol,$logged,$usuarios){
+        $this->smarty->assign('rol', $rol);
+        $this->smarty->assign('logged', $logged);
+        $this->smarty->assign('titulo','lista usuarios');
+        $this->smarty->assign('usuarios',$usuarios);
+        $this->smarty->assign('rol', $rol);
+        $this->smarty->display('templates/permisos.tpl');
+    }
+
+
+    function ShowLogin($rol,$logged,$error = ""){
+        $this->smarty->assign('logged', $logged);
         $this->smarty->assign('rol', $rol);
         $this->smarty->assign('titulo', 'Log In');
         $this->smarty->assign('error', $error);
         $this->smarty->display('templates/login.tpl');
-    }
-
-    function ShowUsers($usuarios){
-        $this->smarty->assign('titulo','lista usuarios');
-        $this->smarty->assign('usuarios',$usuarios);
-        $this->smarty->display('templates/permisos.tpl');
     }
 
     function ShowAdmin(){

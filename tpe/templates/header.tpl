@@ -43,12 +43,14 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{BASE_URL}Companys">Companys</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="btn btn-primary" href="{BASE_URL}logout">Cerrar sesión</a>
-                    </li>
+                    {if $logged == true}
+                        <li class="nav-item">
+                            <a class="btn btn-primary" href="{BASE_URL}logout">Cerrar sesión</a>
+                        </li>  
+                    {/if}
                     {if $rol == true}
                         <li class="nav-item">
-                            <a class="btn btn-primary" href="{BASE_URL}Permisos">Permisos</a>
+                            <a class="btn btn-primary" href="{BASE_URL}administrador">Administrador</a>
                         </li>
                     {/if}
                 </ul>

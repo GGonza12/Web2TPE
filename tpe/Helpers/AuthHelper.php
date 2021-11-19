@@ -14,6 +14,19 @@ class AuthHelper {
             die();
         }
     }
+
+    function Logged(){
+        if((isset($_SESSION["email"]))){
+            $logged = true;
+            var_dump($logged);
+        }
+        else{
+            $logged = false;
+            var_dump($logged);
+        }
+        return $logged;
+    }
+
     function admin(){
         if((isset($_SESSION["email"]) && $_SESSION["rol"]=='admin')){
             $rol = true;

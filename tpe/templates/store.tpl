@@ -1,4 +1,4 @@
-{include file="header.tpl" assing='rol'}
+{include file="header.tpl" assing='rol,logged'}
 
 {if $rol == true}
     <div class="card" style="width: 18rem;">
