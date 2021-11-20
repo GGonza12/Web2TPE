@@ -19,15 +19,15 @@ $loginController = new LoginController();
 
 // determina que camino seguir según la acción
 switch ($params[0]) {
-     case 'administrador':
+    case 'administrador':
         $loginController->ShowPermisos();
-     break; 
-    case'agregarPermiso':
-        $loginController->agregerPermiso($params[1]);    
-         break;
-    case'quitarPermiso':
-       $loginController->quitarPermiso($params[1]);   
-        break;          
+        break;
+    case 'agregarPermiso':
+        $loginController->agregerPermiso($params[1]);
+        break;
+    case 'quitarPermiso':
+        $loginController->quitarPermiso($params[1]);
+        break;
     case 'login':
         $loginController->login();
         break;
@@ -41,10 +41,13 @@ switch ($params[0]) {
         $loginController->SignIn($_POST['user'], $_POST['email'], $_POST['password']);
         $loginController->VefiryLogin();
         break;
+    case 'eliminarUsuario':
+        $loginController->DeleteUser($params[1]);
+        break;
     case 'home':
         $storeController->showHome();
         break;
-    //STORE:
+        //STORE:
     case 'store':
         $storeController->ShowStore();
         break;
@@ -63,9 +66,9 @@ switch ($params[0]) {
     case 'UpdateGame':
         $storeController->UpdateGame($_POST['id'], $_POST['juego'], $_POST['imagen'], $_POST['categorias'], $_POST['descripcion'], $_POST['precio'], $_POST['empresa']);
         break;
-    //COMPANYS:    
+        //COMPANYS:    
     case 'CreateCompany':
-        $storeController->CreateEmpresa($_POST['empresa'],$_POST['informacion']);
+        $storeController->CreateEmpresa($_POST['empresa'], $_POST['informacion']);
         break;
     case 'DeleteCompany':
         $storeController->DeleteCompany($params[1]);
@@ -77,7 +80,7 @@ switch ($params[0]) {
         $storeController->ShowUpdateCompany($params[1]);
         break;
     case 'UpdateCompany':
-        $storeController->UpdateCompany($_POST['empresa'], $_POST['id'],$_POST['informacion']);
+        $storeController->UpdateCompany($_POST['empresa'], $_POST['id'], $_POST['informacion']);
         break;
     case 'Companys':
         $storeController->ShowCompanys();

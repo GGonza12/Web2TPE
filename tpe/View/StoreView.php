@@ -23,28 +23,36 @@ class StoreView
         $this->smarty->display('templates/store.tpl');
     }
 
-    function ShowGamesOfCompany($games, $company)
+    function ShowGamesOfCompany($games, $company,$rol, $logged)
     {
+        $this->smarty->assign('logged', $logged);
+        $this->smarty->assign('rol', $rol);
         $this->smarty->assign('titulo', $company->empresa);
         $this->smarty->assign('games', $games);
         $this->smarty->display('templates/juegosdeempresa.tpl');
     }
 
-    function ShowGame($game)
+    function ShowGame($game,$rol, $logged)
     {
+        $this->smarty->assign('logged', $logged,);
+        $this->smarty->assign('rol', $rol);
         $this->smarty->assign('titulo', $game->juego);
         $this->smarty->assign('juego', $game);
         $this->smarty->display('templates/ViewGame.tpl');
     }
-    function UpdateViewGame($game, $company)
+    function UpdateViewGame($game, $company,$logged,$rol)
     {
+        $this->smarty->assign('logged', $logged,);
+        $this->smarty->assign('rol', $rol);
         $this->smarty->assign('titulo', $game->juego);
         $this->smarty->assign('juego', $game);
         $this->smarty->assign('company', $company);
         $this->smarty->display('templates/updategame.tpl');
     }
-    function UpdateViewCompany($company)
+    function UpdateViewCompany($company,$logged,$rol)
     {
+        $this->smarty->assign('logged', $logged,);
+        $this->smarty->assign('rol', $rol);
         $this->smarty->assign('empresa', $company->empresa);
         $this->smarty->assign('id', $company->id_empresa);
         $this->smarty->assign('informacion', $company->informacion);
@@ -52,6 +60,8 @@ class StoreView
     }
     function ShowCompanys($rol,$logged,$companys)
     {
+        $this->smarty->assign('logged', $logged,);
+        $this->smarty->assign('rol', $rol);
         $this->smarty->assign('logged', $logged);
         $this->smarty->assign('rol', $rol);
         $this->smarty->assign('companys',$companys);

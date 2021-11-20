@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-15 01:59:48
+/* Smarty version 3.1.39, created on 2021-11-20 00:05:37
   from 'C:\xampp\htdocs\webtpe\Web2TPE\tpe\templates\update.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6168c474193ec8_36775830',
+  'unifunc' => 'content_61982dc1e96fc1_36456362',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7c3a7dd8b15e89b9e74d7c10daf5bd37305c17da' => 
     array (
       0 => 'C:\\xampp\\htdocs\\webtpe\\Web2TPE\\tpe\\templates\\update.tpl',
-      1 => 1634255436,
+      1 => 1637279797,
       2 => 'file',
     ),
   ),
@@ -22,8 +22,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6168c474193ec8_36775830 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+function content_61982dc1e96fc1_36456362 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('assing'=>'rol,logged'), 0, false);
 ?>
 <div class="card" style="width: 18rem;">
 <form action="<?php echo BASE_URL;?>

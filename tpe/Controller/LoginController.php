@@ -70,6 +70,12 @@ class LoginController {
         
     }
 
+    function DeleteUser($id){
+        $this->model->DeleteUser($id);
+        $this->view->ShowAdmin();
+        
+    }
+
     function quitarPermiso($id){
         $this->model->quitarPermiso($id);
         $this->view->ShowAdmin();

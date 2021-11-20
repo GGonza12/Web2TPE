@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-11-19 00:55:01
+/* Smarty version 3.1.39, created on 2021-11-20 01:18:02
   from 'C:\xampp\htdocs\webtpe\Web2TPE\tpe\templates\store.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6196e7d52ff8e6_44304899',
+  'unifunc' => 'content_61983eba149d61_71343215',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ca06049b217320bb8311c96498e3f9d5d2904dcc' => 
     array (
       0 => 'C:\\xampp\\htdocs\\webtpe\\Web2TPE\\tpe\\templates\\store.tpl',
-      1 => 1637279699,
+      1 => 1637367473,
       2 => 'file',
     ),
   ),
@@ -22,19 +22,19 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6196e7d52ff8e6_44304899 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61983eba149d61_71343215 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('assing'=>'rol,logged'), 0, false);
 ?>
 
 <?php if ($_smarty_tpl->tpl_vars['rol']->value == true) {?>
     <div class="card" style="width: 18rem;">
         <form action="<?php echo BASE_URL;?>
-CreateGame" method="post">
+CreateGame" method="post" enctype="multipart/form-data">
             <div class="mb-3">
                 <input type="text" class="form-control" placeholder="Juego" name="juego">
             </div>
             <div class="mb-3">
-                <input type="text" class="form-control" placeholder="Imagen" name="imagen">
+                <input type="file" class="form-control" placeholder="Imagen" name="input_name" id="imageToUpload">
             </div>
             <div class="mb-3">
                 <input type="text" class="form-control" placeholder="Categorias" name="categorias">
@@ -63,7 +63,9 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         </form>
     </div>
 
-<?php }
+<?php }?>
+
+<?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['juegos']->value, 'juego');
 $_smarty_tpl->tpl_vars['juego']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['juego']->value) {

@@ -13,6 +13,7 @@ $router->addroute('comentarios', 'POST','ApiComentsController','AgregarComentari
 $router->addRoute('comentario/:ID', 'GET', 'ApiComentsController', 'ObtenerComentario');
 $router->addroute('comentario/:ID', 'DELETE','ApiComentsController','EliminarComentario');
 $router->addroute('comentario/puntaje/:ID', 'PUT','ApiComentsController','ModificarPuntaje');
+$router->addroute('comentario/puntaje/:ID', 'POST','ApiComentsController','InsertarImagen');
 //$router->addroute('comentario/:ID', 'PUT','ApiComentsController','ModificarComentario');
 $router->addroute('comentario/juego/:ID', 'GET','ApiComentsController','ObtenerComentariosJuego');
 

@@ -12,6 +12,7 @@
         <th>Rol</th>
         <th>Agregar</th>
         <th>Quitar</th>
+        <th>Eliminar Usuario</th>
         </tr>
     </thead>
     <tbody>
@@ -22,7 +23,7 @@
              <td>{$usuario->rol}</td>
              <td><a href="{BASE_URL}agregarPermiso/{$usuario->id_usuario}">Agregar Permiso<a></td>
              <td><a href="{BASE_URL}quitarPermiso/{$usuario->id_usuario}">Eliminar Permiso<a></td>
-             
+             <td><a href="{BASE_URL}eliminarUsuario/{$usuario->id_usuario}">Eliminar Usuario<a></td>
         </tr>
     </tbody>
  

@@ -48,5 +48,10 @@
         $sentencia->execute(array($score,$id));
     }
 
+    function UploadImage($fileTemp){
+        $fileTemp viene del controler $_FILES["input_name"]["tmp_name"]
+        move_uploaded_file($fileTemp, $filepath)
+
+    }
 
 }

@@ -65,6 +65,8 @@
     </div>
 
 {/literal}
+
+
 {include file="footer.tpl"}
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script type="text/javascript" src="../js/comentarios.js"></script>
