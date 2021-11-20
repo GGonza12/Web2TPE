@@ -30,7 +30,7 @@
 {foreach from=$juegos item=$juego}
 
 
-    <div class="card mb-3" style="max-width: 540px;">
+    <div class="card mb-3" style="max-width: 90%;">
         <div class="row g-0">
             <div class="col-md-4">
                 <img src="{$juego->imagen}" class="img-fluid rounded-start" alt="{$juego->juego}">
@@ -51,4 +51,5 @@
         </div>
     </div>
 {/foreach}
+
 {include file="footer.tpl"}

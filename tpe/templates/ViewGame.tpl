@@ -1,37 +1,19 @@
 {include file="header.tpl"}
-<h1>{$titulo}</h1>
-<table class="table table-hover">
-
-    <thead>
-        <tr>
-            <th>Id juego</th>
-            <th>Juego</th>
-            <th>Categoria</th>
-            <th>Descripcion</th>
-            <th>Precio</th>
-            <th>Id_empresa</th>
-
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td id="id_juego">{$juego->id_juego}</td>
-            <td>{$juego->juego}</td>
-            <td>{$juego->categorias}</td>
-            <td>{$juego->descripcion}</td>
-            <td>${$juego->precio}</td>
-            <td>{$juego->id_empresa}</td>
-        </tr>
-    </tbody>
-
-</table>
-
+<div class="container">
+    <h1>{$titulo}</h1>
+    <div class="row">
+        <div class="col-md-12">
+            <img src="{$juego->imagen}" class="img-fluid rounded-start"
+                style="float:left;width:225px;height:225px; margin-right:10px;">
+            <p>{$juego->descripcion}</p>
+            <p>Precio: ${$juego->precio}</p>
+            <p hidden id="id_juego">{$juego->id_juego}</p>
+        </div>
+    </div>
+</div>
 <form>
     <div class="mb-3">
-        <input type="text" class="form-control" placeholder="Ingrese comentario" name="comentario" id="comentario">
-    </div>
-    <div class="mb-3">
-        <input hidden type="text" value="{$juego->juego}" class="form-control" name="id_comentario" id="id_juego">
+        <textarea class="form-control" placeholder="Ingrese comentario" name="comentario" id="comentario"></textarea>
     </div>
     <input type="range" min="1" max="5" list="rango" id="puntaje">
     <datalist id="rango">
@@ -54,8 +36,8 @@
                 <p>Puntaje: {{coment.puntaje}} </p>
             </span>
 
-                <button :data-id="coment.id_comentario" id="btn-eliminar" v-on:click="delet"
-                class="btn btn-primary">Eliminar</button>                
+            <button :data-id="coment.id_comentario" id="btn-eliminar" v-on:click="delet"
+                class="btn btn-primary">Eliminar</button>
 
 
         </div>

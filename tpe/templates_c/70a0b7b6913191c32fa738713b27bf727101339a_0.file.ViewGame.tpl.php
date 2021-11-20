@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-11-19 03:06:17
+/* Smarty version 3.1.39, created on 2021-11-20 00:45:25
   from 'C:\xampp\htdocs\Web2TPE\tpe\templates\ViewGame.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_619706995b3926_59809343',
+  'unifunc' => 'content_619837150716f8_07214043',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '70a0b7b6913191c32fa738713b27bf727101339a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2TPE\\tpe\\templates\\ViewGame.tpl',
-      1 => 1637287576,
+      1 => 1637363635,
       2 => 'file',
     ),
   ),
@@ -22,50 +22,29 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_619706995b3926_59809343 (Smarty_Internal_Template $_smarty_tpl) {
+function content_619837150716f8_07214043 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
-<h1><?php echo $_smarty_tpl->tpl_vars['titulo']->value;?>
+<div class="container">
+    <h1><?php echo $_smarty_tpl->tpl_vars['titulo']->value;?>
 </h1>
-<table class="table table-hover">
-
-    <thead>
-        <tr>
-            <th>Id juego</th>
-            <th>Juego</th>
-            <th>Categoria</th>
-            <th>Descripcion</th>
-            <th>Precio</th>
-            <th>Id_empresa</th>
-
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td id="id_juego"><?php echo $_smarty_tpl->tpl_vars['juego']->value->id_juego;?>
-</td>
-            <td><?php echo $_smarty_tpl->tpl_vars['juego']->value->juego;?>
-</td>
-            <td><?php echo $_smarty_tpl->tpl_vars['juego']->value->categorias;?>
-</td>
-            <td><?php echo $_smarty_tpl->tpl_vars['juego']->value->descripcion;?>
-</td>
-            <td>$<?php echo $_smarty_tpl->tpl_vars['juego']->value->precio;?>
-</td>
-            <td><?php echo $_smarty_tpl->tpl_vars['juego']->value->id_empresa;?>
-</td>
-        </tr>
-    </tbody>
-
-</table>
-
+    <div class="row">
+        <div class="col-md-12">
+            <img src="<?php echo $_smarty_tpl->tpl_vars['juego']->value->imagen;?>
+" class="img-fluid rounded-start"
+                style="float:left;width:225px;height:225px; margin-right:10px;">
+            <p><?php echo $_smarty_tpl->tpl_vars['juego']->value->descripcion;?>
+</p>
+            <p>Precio: $<?php echo $_smarty_tpl->tpl_vars['juego']->value->precio;?>
+</p>
+            <p hidden id="id_juego"><?php echo $_smarty_tpl->tpl_vars['juego']->value->id_juego;?>
+</p>
+        </div>
+    </div>
+</div>
 <form>
     <div class="mb-3">
-        <input type="text" class="form-control" placeholder="Ingrese comentario" name="comentario" id="comentario">
-    </div>
-    <div class="mb-3">
-        <input hidden type="text" value="<?php echo $_smarty_tpl->tpl_vars['juego']->value->juego;?>
-" class="form-control" name="id_comentario" id="id_juego">
+        <textarea class="form-control" placeholder="Ingrese comentario" name="comentario" id="comentario"></textarea>
     </div>
     <input type="range" min="1" max="5" list="rango" id="puntaje">
     <datalist id="rango">
@@ -88,8 +67,8 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
                 <p>Puntaje: {{coment.puntaje}} </p>
             </span>
 
-                <button :data-id="coment.id_comentario" id="btn-eliminar" v-on:click="delet"
-                class="btn btn-primary">Eliminar</button>                
+            <button :data-id="coment.id_comentario" id="btn-eliminar" v-on:click="delet"
+                class="btn btn-primary">Eliminar</button>
 
 
         </div>

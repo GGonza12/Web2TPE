@@ -13,10 +13,10 @@
         return $comentarios;
     }
 
-    function InsertComent($comentario,$puntaje,$imagen,$id_juego,$id_usuario){
+    function InsertComent($comentario,$puntaje,$id_juego){
     
-        $sentencia = $this->db->prepare("INSERT INTO comentarios(comentario,puntaje,imagen,id_juego,id_usuario) VALUES(?,?, ?,?,?)");
-        $sentencia->execute(array($comentario,$puntaje,$imagen,$id_juego,$id_usuario));
+        $sentencia = $this->db->prepare("INSERT INTO comentarios(comentario,puntaje,id_juego) VALUES(?,?,?)");
+        $sentencia->execute(array($comentario,$puntaje,$id_juego));
         return $this->db->lastInsertId();
     }
 

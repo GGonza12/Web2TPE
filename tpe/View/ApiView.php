@@ -10,6 +10,7 @@ class APIView {
     private function _requestStatus($code) {
         $status = array (
             200 => "OK",
+            401 => "Unauthorized",
             404 => "Not Found",
             500 => "Internal Server Error"
         );

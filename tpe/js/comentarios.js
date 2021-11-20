@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         data: {
             titulo: "Comentarios",
-            valor: 1,
             coments: [], // Comentarios
 
         },
@@ -24,29 +23,30 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-  //  async function getComents() {
-        //fetch para traer todas las tareas
-  //      try {
-   //         let response = await fetch(`${API_URL}s`, {
-   //             "method": "POST",
-   //             "mode": 'cors',
-   //             "headers": { "Content-type": "application/json" },
-   //         });
-   //         let coments = await response.json();
-   //         if (response.status == 200) {
-   //             app.coments = coments;
-   //             console.log(coments);
-   //         }
-//
-   //     } catch (error) {
-   //         console.log(error);
-   //     }
-   // }
+    //  async function getComents() {
+    //fetch para traer todas las tareas
+    //      try {
+    //         let response = await fetch(`${API_URL}s`, {
+    //             "method": "POST",
+    //             "mode": 'cors',
+    //             "headers": { "Content-type": "application/json" },
+    //         });
+    //         let coments = await response.json();
+    //         if (response.status == 200) {
+    //             app.coments = coments;
+    //             console.log(coments);
+    //         }
+    //
+    //     } catch (error) {
+    //         console.log(error);
+    //     }
+    // }
 
 
 
-    async function getComents(event) {
-        
+    async function getComents() {
+
+
         //fetch para traer todos loscomentarios de ese juego
         try {
             let response = await fetch(`${API_URL}/juego/${id}`, {
@@ -59,33 +59,36 @@ document.addEventListener("DOMContentLoaded", function () {
                 app.coments = coments;
                 console.log(coments);
             }
+            if (response.status == 404) {
+                app.coments = [];
 
+            }
         } catch (error) {
             console.log(error);
         }
     }
-    async function puntuarComentario(puntaje,id) {
-        console.log(puntaje);
-        let datos = {
-            "puntaje": puntaje
-        };
-
-        try {
-            let puntuar = await fetch(`${API_URL}/puntaje/${id}`, {
-                "method": "PUT",
-                "headers": { "Content-type": "application/json" },
-                "body": JSON.stringify(datos),
-
-            });
-            if (puntuar.status == 200) {
-                console.log("Puntuado!");
-                getComents();
-            }
-        }
-        catch (error) {
-            console.log(error);
-        }
-    }
+    //    async function puntuarComentario(puntaje,id) {
+    //        console.log(puntaje);
+    //        let datos = {
+    //            "puntaje": puntaje
+    //        };
+    //
+    //        try {
+    //            let puntuar = await fetch(`${API_URL}/puntaje/${id}`, {
+    //                "method": "PUT",
+    //                "headers": { "Content-type": "application/json" },
+    //                "body": JSON.stringify(datos),
+    //
+    //            });
+    //            if (puntuar.status == 200) {
+    //                console.log("Puntuado!");
+    //                getComents();
+    //            }
+    //        }
+    //        catch (error) {
+    //            console.log(error);
+    //        }
+    //   }
     async function agregarcomentario(event) {
         event.preventDefault();
         let comentario = document.querySelector("#comentario").value;
@@ -97,9 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let datos = {
             "comentario": comentario,
             "puntaje": puntaje,
-            "imagen": "atest",
             "id_juego": id_juego,
-            "id_usuario": 10,
         };
 
         try {
@@ -114,6 +115,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 console.log("Agregado!");
                 getComents();
             }
+            else if (agregar.status == 401) {
+                alert("No tiene permisos para eliminar este comentario");
+            }
+
         }
         catch (error) {
             console.log(error);
@@ -135,9 +140,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 getComents();
 
             }
-            else {
-                console.log("error");
-                console.log(id);
+            else if (res.status == 401) {
+                alert("No tiene permisos para eliminar este comentario");
             }
         } catch (error) {
             console.log(error);

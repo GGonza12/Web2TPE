@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-14 23:57:58
+/* Smarty version 3.1.39, created on 2021-11-19 20:33:57
   from 'C:\xampp\htdocs\Web2TPE\tpe\templates\store.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6168a7e6de1e83_00915530',
+  'unifunc' => 'content_6197fc25ee03a1_58563411',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e1cc1a52a8015d08bdc3d644317df130fed3528a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2TPE\\tpe\\templates\\store.tpl',
-      1 => 1634248676,
+      1 => 1637350348,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6168a7e6de1e83_00915530 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6197fc25ee03a1_58563411 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 if ($_smarty_tpl->tpl_vars['rol']->value == true) {?>
     <div class="card" style="width: 18rem;">
@@ -69,7 +69,7 @@ $_smarty_tpl->tpl_vars['juego']->do_else = false;
 ?>
 
 
-    <div class="card mb-3" style="max-width: 540px;">
+    <div class="card mb-3" style="max-width: 90%;">
         <div class="row g-0">
             <div class="col-md-4">
                 <img src="<?php echo $_smarty_tpl->tpl_vars['juego']->value->imagen;?>
@@ -100,7 +100,8 @@ $_smarty_tpl->tpl_vars['juego']->do_else = false;
     </div>
 <?php
 }
-$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
-$_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+
+<?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 }
 }
