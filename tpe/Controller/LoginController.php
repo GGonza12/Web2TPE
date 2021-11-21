@@ -36,6 +36,7 @@ class LoginController {
             $user = $this->model->getUser($email);
             if ($user && password_verify($password, $user->contrasena)){
                 session_start();
+                $_SESSION["user"] = $user->id_usuario;
                 $_SESSION["email"] = $email;
                 $_SESSION["rol"] = $user->rol;
                 $this->view->ShowHome();

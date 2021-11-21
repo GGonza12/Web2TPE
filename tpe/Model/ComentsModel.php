@@ -13,10 +13,10 @@
         return $comentarios;
     }
 
-    function InsertComent($comentario,$puntaje,$id_juego){
+    function InsertComent($comentario,$puntaje,$id_juego,$id_usuario){
     
-        $sentencia = $this->db->prepare("INSERT INTO comentarios(comentario,puntaje,id_juego) VALUES(?,?,?)");
-        $sentencia->execute(array($comentario,$puntaje,$id_juego));
+        $sentencia = $this->db->prepare("INSERT INTO comentarios(comentario,puntaje,id_juego,id_usuario) VALUES(?,?,?,?)");
+        $sentencia->execute(array($comentario,$puntaje,$id_juego,$id_usuario));
         return $this->db->lastInsertId();
     }
 
@@ -25,7 +25,7 @@
         $sentencia->execute(array($id));
     }
     function GetComentsByGame($id){
-        $sentencia = $this->db->prepare("SELECT * FROM comentarios WHERE id_juego=?");
+        $sentencia = $this->db->prepare("SELECT coment.*, useer.usuario FROM comentarios coment INNER JOIN usuarios useer WHERE coment.id_juego=? AND coment.id_usuario = useer.id_usuario");
         $sentencia->execute(array($id));
         $comentarios = $sentencia->fetchAll(PDO::FETCH_OBJ);
         return $comentarios;

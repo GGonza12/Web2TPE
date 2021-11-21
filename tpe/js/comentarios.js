@@ -97,10 +97,14 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log(id_juego);
         let puntaje = document.querySelector("#puntaje").value;
         console.log(puntaje);
+        let div = document.querySelector("#coment");
+        let id_user= div.getAttribute("data-user");
+        console.log(id_user);
         let datos = {
             "comentario": comentario,
             "puntaje": puntaje,
             "id_juego": id_juego,
+            "id_usuario": id_user,
         };
 
         try {

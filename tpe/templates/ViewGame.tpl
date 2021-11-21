@@ -12,7 +12,7 @@
     </div>
 </div>
 <form>
-    <div class="mb-3">
+    <div class="mb-3" data-user="{$user}" id="coment">
         <textarea class="form-control" placeholder="Ingrese comentario" name="comentario" id="comentario"></textarea>
     </div>
     <input type="range" min="1" max="5" list="rango" id="puntaje">
@@ -27,14 +27,17 @@
 </form>
 {literal}
 
-    <div id="comentarios">
+    <div id="comentarios" >
         {{titulo}}
         <div v-for="coment in coments" :key="coment.id_comentario">
 
             <p>Comentario: {{ coment.comentario }}</p>
             <span>
                 <p>Puntaje: {{coment.puntaje}} </p>
+                <p>Usuario: {{coment.usuario}} </p>
+                
             </span>
+
 
             <button :data-id="coment.id_comentario" id="btn-eliminar" v-on:click="delet"
                 class="btn btn-primary">Eliminar</button>

@@ -70,10 +70,11 @@ class StoreController
 
     function viewGame($id)
     {
-        $rol = $this->authHelper->admin();
         $this->authHelper->CheckLoggedIn();
+        $rol = $this->authHelper->admin();
+        $user = $this->authHelper->CheckUser();
         $game = $this->modelGame->GetGame($id);
-        $this->view->ShowGame($rol,$game);
+        $this->view->ShowGame($rol,$user,$game);
     }
     
     function ShowUpdateGame($id)

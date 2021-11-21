@@ -5,6 +5,12 @@ class AuthHelper {
     {
         
     }
+    function CheckUser(){
+        if(isset($_SESSION["email"])){
+            $usuario = $_SESSION["user"];
+            return $usuario;
+        }
+    }
 
     function CheckLoggedIn(){
         session_start();

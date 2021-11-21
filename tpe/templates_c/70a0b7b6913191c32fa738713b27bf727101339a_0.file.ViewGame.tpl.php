@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-11-20 00:45:25
+/* Smarty version 3.1.39, created on 2021-11-21 01:33:18
   from 'C:\xampp\htdocs\Web2TPE\tpe\templates\ViewGame.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_619837150716f8_07214043',
+  'unifunc' => 'content_619993ceb43818_38976954',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '70a0b7b6913191c32fa738713b27bf727101339a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2TPE\\tpe\\templates\\ViewGame.tpl',
-      1 => 1637363635,
+      1 => 1637454796,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_619837150716f8_07214043 (Smarty_Internal_Template $_smarty_tpl) {
+function content_619993ceb43818_38976954 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <div class="container">
@@ -43,7 +43,8 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
     </div>
 </div>
 <form>
-    <div class="mb-3">
+    <div class="mb-3" data-user="<?php echo $_smarty_tpl->tpl_vars['user']->value;?>
+" id="coment">
         <textarea class="form-control" placeholder="Ingrese comentario" name="comentario" id="comentario"></textarea>
     </div>
     <input type="range" min="1" max="5" list="rango" id="puntaje">
@@ -58,14 +59,17 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
 </form>
 
 
-    <div id="comentarios">
+    <div id="comentarios" >
         {{titulo}}
         <div v-for="coment in coments" :key="coment.id_comentario">
 
             <p>Comentario: {{ coment.comentario }}</p>
             <span>
                 <p>Puntaje: {{coment.puntaje}} </p>
+                <p>Usuario: {{coment.usuario}} </p>
+                
             </span>
+
 
             <button :data-id="coment.id_comentario" id="btn-eliminar" v-on:click="delet"
                 class="btn btn-primary">Eliminar</button>

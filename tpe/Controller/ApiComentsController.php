@@ -92,8 +92,9 @@ class ApiComentsController
         $comentario = $body->comentario;
         $puntaje = $body->puntaje;
         $id_juego = $body->id_juego;
-        if (($rol == true || $rol == false) && (isset($comentario)&&isset($puntaje)&&isset($id_juego))){
-            $id = $this->modelcoment->InsertComent($comentario,$puntaje,$id_juego);
+        $id_usuario = $body->id_usuario;
+        if (($rol == true || $rol == false) && (isset($comentario)&&isset($puntaje)&&isset($id_juego)&&isset($id_usuario))){
+            $id = $this->modelcoment->InsertComent($comentario,$puntaje,$id_juego,$id_usuario);
         if ($id != 0) {
             $this->view->response("El comentario se insertó con el id=$id", 200);
         } else {
