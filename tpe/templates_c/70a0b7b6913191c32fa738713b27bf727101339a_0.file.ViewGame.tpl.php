@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-11-21 01:33:18
+/* Smarty version 3.1.39, created on 2021-11-21 20:55:06
   from 'C:\xampp\htdocs\Web2TPE\tpe\templates\ViewGame.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_619993ceb43818_38976954',
+  'unifunc' => 'content_619aa41a6d46b7_16836301',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '70a0b7b6913191c32fa738713b27bf727101339a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2TPE\\tpe\\templates\\ViewGame.tpl',
-      1 => 1637454796,
+      1 => 1637524038,
       2 => 'file',
     ),
   ),
@@ -22,8 +22,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_619993ceb43818_38976954 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+function content_619aa41a6d46b7_16836301 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('assing'=>'check'), 0, false);
 ?>
 <div class="container">
     <h1><?php echo $_smarty_tpl->tpl_vars['titulo']->value;?>

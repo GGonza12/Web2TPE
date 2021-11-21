@@ -27,7 +27,10 @@ switch ($params[0]) {
          break;
     case'quitarPermiso':
        $loginController->quitarPermiso($params[1]);   
-        break;          
+        break;
+    case 'eliminarUsuario':
+        $loginController->eliminarUsuario($params[1]);
+        break;         
     case 'login':
         $loginController->login();
         break;

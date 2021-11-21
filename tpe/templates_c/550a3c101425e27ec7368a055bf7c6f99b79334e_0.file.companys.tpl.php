@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-15 01:17:14
+/* Smarty version 3.1.39, created on 2021-11-21 21:18:26
   from 'C:\xampp\htdocs\Web2TPE\tpe\templates\companys.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6168ba7a63b1e6_13637376',
+  'unifunc' => 'content_619aa992514c26_20061429',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '550a3c101425e27ec7368a055bf7c6f99b79334e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2TPE\\tpe\\templates\\companys.tpl',
-      1 => 1634253227,
+      1 => 1637525789,
       2 => 'file',
     ),
   ),
@@ -22,9 +22,9 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6168ba7a63b1e6_13637376 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-if ($_smarty_tpl->tpl_vars['rol']->value == true) {?>
+function content_619aa992514c26_20061429 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('assing'=>'check'), 0, false);
+if ($_smarty_tpl->tpl_vars['check']->value == "admin") {?>
 
   <div class="card" style="width: 18rem;">
   <form action="<?php echo BASE_URL;?>
@@ -51,7 +51,7 @@ $_smarty_tpl->tpl_vars['company']->do_else = false;
 </h5>
     <p class="card-text"><?php echo $_smarty_tpl->tpl_vars['company']->value->informacion;?>
 </p>
-    <?php if ($_smarty_tpl->tpl_vars['rol']->value == true) {?>
+    <?php if ($_smarty_tpl->tpl_vars['check']->value == "admin") {?>
        <a href="<?php echo BASE_URL;?>
 UpdateViewCompany/<?php echo $_smarty_tpl->tpl_vars['company']->value->id_empresa;?>
 " class="card-link">Modificar</a>

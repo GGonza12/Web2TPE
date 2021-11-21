@@ -1,5 +1,5 @@
-{include file="header.tpl"}
-{if $rol == true}
+{include file="header.tpl" assing='check'}
+{if $check == "admin"}
 
   <div class="card" style="width: 18rem;">
   <form action="{BASE_URL}CreateCompany" method="post">
@@ -19,7 +19,7 @@
   <div class="card-body">
     <h5 class="card-title">{$company->empresa}</h5>
     <p class="card-text">{$company->informacion}</p>
-    {if $rol == true}
+    {if $check == "admin"}
        <a href="{BASE_URL}UpdateViewCompany/{$company->id_empresa}" class="card-link">Modificar</a>
        <a href="{BASE_URL}DeleteCompany/{$company->id_empresa}" class="card-link">Eliminar</a>
     {/if}

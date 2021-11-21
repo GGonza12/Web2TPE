@@ -10,16 +10,18 @@ class LoginView{
     }
     
         
-    function ShowLogin($error = ""){
+    function ShowLogin($check,$error = ""){
+        $this->smarty->assign('check',$check);
         $this->smarty->assign('titulo', 'Log In');
         $this->smarty->assign('error', $error);
         $this->smarty->display('templates/login.tpl');
     }
 
-    function ShowUsers($usuarios){
+    function ShowUsers($usuarios,$check){
+        $this->smarty->assign('check',$check);
         $this->smarty->assign('titulo','lista usuarios');
         $this->smarty->assign('usuarios',$usuarios);
-        $this->smarty->display('templates/permisos.tpl');
+        $this->smarty->display('templates/administrador.tpl');
     }
 
     function ShowAdmin(){

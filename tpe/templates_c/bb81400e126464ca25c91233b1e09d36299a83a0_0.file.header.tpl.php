@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-11-18 01:01:23
+/* Smarty version 3.1.39, created on 2021-11-21 22:19:52
   from 'C:\xampp\htdocs\Web2TPE\tpe\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_619597d3945006_65676187',
+  'unifunc' => 'content_619ab7f8003f26_56226100',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'bb81400e126464ca25c91233b1e09d36299a83a0' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2TPE\\tpe\\templates\\header.tpl',
-      1 => 1637193548,
+      1 => 1637529590,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_619597d3945006_65676187 (Smarty_Internal_Template $_smarty_tpl) {
+function content_619ab7f8003f26_56226100 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 
 <html lang="en">
@@ -72,10 +72,18 @@ store">Tienda</a>
                         <a class="nav-link" href="<?php echo BASE_URL;?>
 Companys">Companys</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="btn btn-primary" href="<?php echo BASE_URL;?>
+                    <?php if ($_smarty_tpl->tpl_vars['check']->value == "comun" || $_smarty_tpl->tpl_vars['check']->value == "admin") {?>
+                        <li class="nav-item">
+                            <a class="btn btn-outline-danger" href="<?php echo BASE_URL;?>
 logout">Cerrar sesión</a>
-                    </li>
+                        </li>
+                    <?php }?>
+                    <?php if ($_smarty_tpl->tpl_vars['check']->value == "admin") {?>
+                        <li class="nav-item">
+                            <a class="btn btn-outline-info" href="<?php echo BASE_URL;?>
+administrador">Administrador</a>
+                        </li>
+                    <?php }?>
                 </ul>
             </div>
         </div>

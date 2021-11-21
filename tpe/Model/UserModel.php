@@ -42,4 +42,9 @@ class UserModel
         $query = $this->db->prepare("UPDATE usuarios SET rol=? WHERE id_usuario=?");
         $query->execute(array($rol, $id));
     }
+    function deleteUser($id)
+    {
+        $query = $this->db->prepare("DELETE FROM usuarios WHERE id_usuario=?");
+        $query->execute(array($id));
+    }
 }

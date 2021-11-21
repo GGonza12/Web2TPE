@@ -11,6 +11,12 @@ class AuthHelper {
             return $usuario;
         }
     }
+    function CheckRol(){
+        if(isset($_SESSION["email"])){
+            $permiso = $_SESSION["rol"];
+            return $permiso;
+        }
+    }
 
     function CheckLoggedIn(){
         session_start();
@@ -20,13 +26,5 @@ class AuthHelper {
             die();
         }
     }
-    function admin(){
-        if((isset($_SESSION["email"]) && $_SESSION["rol"]=='admin')){
-            $rol = true;
-        }
-        else{
-            $rol = false;
-        }
-        return $rol;
-    }
+
 }

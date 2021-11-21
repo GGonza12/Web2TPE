@@ -1,5 +1,5 @@
-{include file="header.tpl"}
-{if $rol == true}
+{include file="header.tpl" assing='check'}
+{if $check == "admin"}
     <div class="card" style="width: 18rem;">
     <form action="{BASE_URL}CreateGame" method="post">
   <div class="mb-3">
@@ -42,7 +42,7 @@
                     <p class="card-text">{$juego->categorias}</p>
                     <p class="card-text"><small class="text-muted">Precio: ${$juego->precio}</small></p>
                     <a href="viewGame/{$juego->id_juego}" class="btn btn-primary">Detalles</a>
-                    {if $rol == true}
+                    {if $check == "admin"}
                         <a href="UpdateViewGame/{$juego->id_juego}">Modificar</a>
                         <a href="deleteGame/{$juego->id_juego}">eliminar</a>
                     {/if}

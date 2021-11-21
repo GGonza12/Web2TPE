@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-11-19 20:33:57
+/* Smarty version 3.1.39, created on 2021-11-21 21:16:36
   from 'C:\xampp\htdocs\Web2TPE\tpe\templates\store.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6197fc25ee03a1_58563411',
+  'unifunc' => 'content_619aa924032b09_57377003',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e1cc1a52a8015d08bdc3d644317df130fed3528a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2TPE\\tpe\\templates\\store.tpl',
-      1 => 1637350348,
+      1 => 1637525778,
       2 => 'file',
     ),
   ),
@@ -22,9 +22,9 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6197fc25ee03a1_58563411 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-if ($_smarty_tpl->tpl_vars['rol']->value == true) {?>
+function content_619aa924032b09_57377003 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('assing'=>'check'), 0, false);
+if ($_smarty_tpl->tpl_vars['check']->value == "admin") {?>
     <div class="card" style="width: 18rem;">
     <form action="<?php echo BASE_URL;?>
 CreateGame" method="post">
@@ -88,7 +88,7 @@ $_smarty_tpl->tpl_vars['juego']->do_else = false;
 </small></p>
                     <a href="viewGame/<?php echo $_smarty_tpl->tpl_vars['juego']->value->id_juego;?>
 " class="btn btn-primary">Detalles</a>
-                    <?php if ($_smarty_tpl->tpl_vars['rol']->value == true) {?>
+                    <?php if ($_smarty_tpl->tpl_vars['check']->value == "admin") {?>
                         <a href="UpdateViewGame/<?php echo $_smarty_tpl->tpl_vars['juego']->value->id_juego;?>
 ">Modificar</a>
                         <a href="deleteGame/<?php echo $_smarty_tpl->tpl_vars['juego']->value->id_juego;?>

@@ -42,9 +42,16 @@
                      <li class="nav-item">
                         <a class="nav-link" href="{BASE_URL}Companys">Companys</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="btn btn-primary" href="{BASE_URL}logout">Cerrar sesión</a>
-                    </li>
+                    {if $check == "comun" || $check == "admin"}
+                        <li class="nav-item">
+                            <a class="btn btn-outline-danger" href="{BASE_URL}logout">Cerrar sesión</a>
+                        </li>
+                    {/if}
+                    {if $check == "admin"}
+                        <li class="nav-item">
+                            <a class="btn btn-outline-info" href="{BASE_URL}administrador">Administrador</a>
+                        </li>
+                    {/if}
                 </ul>
             </div>
         </div>

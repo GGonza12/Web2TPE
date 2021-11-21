@@ -67,10 +67,10 @@ class ApiComentsController
     function EliminarComentario($params = [])
     {
         $this->authHelper->CheckLoggedIn();
-        $rol = $this->authHelper->admin();
+        $check = $this->authHelper->CheckRol();
         $id = $params[':ID'];
         $comentario = $this->modelcoment->GetComent($id);
-        if ($rol == true){
+        if($check == "admin"){
             if ($comentario) {
                 $this->modelcoment->DeleteComent($id);
                 $this->view->response("Comentario con id: $id eliminado con éxito", 200);
@@ -78,7 +78,7 @@ class ApiComentsController
                 $this->view->response("No existe el comentario al que eliminar con id: $id", 404);
             }
         }
-        else if ($rol == false){
+        else if ($check == "comun"){
             $this->view->response("No tiene permitido eliminar el comentario: $id", 401);
 
         }
@@ -87,13 +87,13 @@ class ApiComentsController
     function AgregarComentario()
     {
         $this->authHelper->CheckLoggedIn();
-        $rol = $this->authHelper->admin();
+        $check = $this->authHelper->CheckRol();
         $body = $this->getBody();
         $comentario = $body->comentario;
         $puntaje = $body->puntaje;
         $id_juego = $body->id_juego;
         $id_usuario = $body->id_usuario;
-        if (($rol == true || $rol == false) && (isset($comentario)&&isset($puntaje)&&isset($id_juego)&&isset($id_usuario))){
+        if (($check == "admin" || $check == "comun") && (isset($comentario)&&isset($puntaje)&&isset($id_juego)&&isset($id_usuario))){
             $id = $this->modelcoment->InsertComent($comentario,$puntaje,$id_juego,$id_usuario);
         if ($id != 0) {
             $this->view->response("El comentario se insertó con el id=$id", 200);

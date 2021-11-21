@@ -1,4 +1,4 @@
-{include file="header.tpl"}
+{include file="header.tpl" assing='check'}
 <div class="container">
     <h1>{$titulo}</h1>
     <div class="row">

@@ -1,4 +1,4 @@
-{include file="header.tpl"}
+{include file="header.tpl" assing='check'}
 
 
 <h3>Iniciar sesión</h3>

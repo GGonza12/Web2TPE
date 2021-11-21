@@ -1,4 +1,4 @@
-{include file="header.tpl"}
+{include file="header.tpl" assing='check'}
 <section class="seccion borde-negro">
   <h4>Juegos Top del mes:</h4>
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-10-2021 a las 01:40:50
+-- Tiempo de generación: 21-11-2021 a las 22:34:26
 -- Versión del servidor: 10.4.19-MariaDB
 -- Versión de PHP: 8.0.6
 
@@ -20,6 +20,40 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `db_juegos`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `comentarios`
+--
+
+CREATE TABLE `comentarios` (
+  `id_comentario` int(11) NOT NULL,
+  `comentario` varchar(450) NOT NULL,
+  `puntaje` int(2) NOT NULL,
+  `id_juego` tinyint(4) NOT NULL,
+  `id_usuario` tinyint(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `comentarios`
+--
+
+INSERT INTO `comentarios` (`id_comentario`, `comentario`, `puntaje`, `id_juego`, `id_usuario`) VALUES
+(86, 'test', 3, 6, 7),
+(88, 'test admin 2', 5, 6, 4),
+(89, 'test admin 3', 2, 6, 4),
+(90, '', 3, 6, 5),
+(91, 'comentario test 1\n', 3, 6, 5),
+(92, 'comentario tasdasdasdasdsa', 3, 6, 5),
+(93, 'comentario tasdasdasdasdsaasdasd', 4, 6, 5),
+(94, 'test2 coment\n', 2, 6, 7),
+(95, 'test2 coment 5\n', 5, 6, 7),
+(96, 'test2 coment 4\n', 4, 6, 7),
+(97, 'tesadasdasdas', 3, 2, 7),
+(98, 'juegzao', 5, 2, 7),
+(99, 'the witcher 3', 3, 6, 7),
+(100, ' Hotline miami', 4, 2, 7);
 
 -- --------------------------------------------------------
 
@@ -46,7 +80,8 @@ INSERT INTO `empresas` (`id_empresa`, `empresa`, `informacion`) VALUES
 (7, 'Sony', 'Sony Group Corporation, comúnmente referida como Sony, es una empresa multinacional japonesa con sede en Tokio y uno de los fabricantes más importantes a nivel mundial en electrónica de consumo: audio y vídeo, computación, fotografía, videojuegos, telefonía móvil, productos profesionales, etcétera.'),
 (9, 'Bethesda', 'Bethesda Softworks LLC es una empresa estadounidense dedicada a la distribución y desarrollo de videojuegos, filial de ZeniMax Media. Fue fundada en 1986 y actualmente tiene su sede en Rockville, Maryland. Es conocida por sus videojuegos de simulación deportiva, de acción y de rol.'),
 (12, 'Devolver Digital', 'Devolver Digital Inc. es un distribuidor de películas y videojuegos estadounidense con sede en Austin, Texas, que está principalmente asociado con las series Serious Sam y Hotline Miami.'),
-(13, 'Warner Bros. Interactive Entertainment', 'Warner Bros. Interactive Entertainment, Inc. es una división de Warner Bros. Home Entertainment Group. Es una empresa desarrolladora, distribuidora y licenciadora de videojuegos a nivel mundial de títulos propios y de terceros. Bajo el sello de WBIE está Warner Bros.');
+(13, 'Warner Bros. Interactive Entertainment', 'Warner Bros. Interactive Entertainment, Inc. es una división de Warner Bros. Home Entertainment Group. Es una empresa desarrolladora, distribuidora y licenciadora de videojuegos a nivel mundial de títulos propios y de terceros. Bajo el sello de WBIE está Warner Bros.'),
+(16, 'Comany test bug', 'dsajasjdas');
 
 -- --------------------------------------------------------
 
@@ -78,10 +113,11 @@ INSERT INTO `juegos` (`id_juego`, `juego`, `imagen`, `categorias`, `descripcion`
 (16, 'Serious Sam 3: BFE', 'https://media.vandal.net/m/14057/serious-sam-3-bfe-psn-2014515133338_1.jpg', 'FPS, Acción, Sangriento', 'Serious Sam 3: BFE es el glorioso regreso a la edad de oro de los shooters en primera persona donde los hombres eran hombres, la cobertura era para novatos y pulsar el gatillo hacía que las cosas hicieran bum. Como precuela del título independiente original, Serious Sam: The First Encounter, Serious Sam 3 transcurre durante la última lucha de la Tierra contra las legiones de bestias y mercenarios de Mental. Ambientado en los desmoronados templos de una civilización antigua y las derrumbadas ciudades del Egipto del siglo XXII, Serious Sam 3 es una emocionante fusión de los frenéticos shooters con la jugabilidad de los juegos modernos. SIN COBERTURA. VUELVE EL HOMBRE.', 440, 12),
 (17, 'DEATH STRANDING', 'https://gmedia.playstation.com/is/image/SIEPDC/death-stranding-key-art-01-ps4-es-7dec20?$native$', 'Sandbox, Buena trama.', 'Hideo Kojima, el legendario creador de videojuegos, nos ofrece una nueva experiencia que desafía a todos los géneros. Sam Bridges debe enfrentarse a un mundo transformado por el Death Stranding.', 27000, 2),
 (18, 'Control', 'https://image.api.playstation.com/vulcan/ap/rnd/202008/2111/hvVTsd8akckaGtN2eZ3yIuwc.png', 'Acción, Aventuras, Terror.', 'Control es un emocionante título de acción y aventuras en tercera persona con gráficos espectaculares que ha ganado más de 80 premios.', 1800, 2),
-(19, 'Resident Evil Village', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEv8IpdlW4tl4Umk-i9jxrsuHaBH1LBmwt1uoXNcjPVXwfzBj_Pe5tek7f6YxCv3vsGIM&usqp=CAU', 'Terror, FPS.', 'Vive el survival horror como nunca antes en la 8.ª entrega principal de la aclamada serie Resident Evil: Resident Evil Village. El terror más realista e inescapable, con gráficos hiperdetallados, intensa acción en 1.ª persona y una trama magistral.', 3500, 4),
+(19, 'Resident Evil Village', 'https://images.greenmangaming.com/bbd2316440504045b61415bf9da78c4c/faac1dba6c7b48be8f82856c887991b7.jpg', 'Terror, FPS.', 'Vive el survival horror como nunca antes en la 8.ª entrega principal de la aclamada serie Resident Evil: Resident Evil Village. El terror más realista e inescapable, con gráficos hiperdetallados, intensa acción en 1.ª persona y una trama magistral.', 3500, 4),
 (20, 'Street Fighter V', 'https://as.com/meristation/imagenes/2020/12/23/noticias/1608759221_959757_1608759267_noticia_normal_recorte1.jpg', 'Lucha, Acción.', 'Experimenta la intensidad de la batalla cara a cara en Street Fighter® V.Elige entre 16 personajes icónicos, cada uno con su propia historia personal y desafíos de entrenamiento únicos, y luego lucha contra amigos en línea o sin conexión con una sólida variedad de opciones para cada partida.', 500, 4),
 (21, 'DOOM Eternal', 'https://image.api.playstation.com/vulcan/ap/rnd/202010/0114/ERNPc4gFqeRDG1tYQIfOKQtM.png', 'FPS, Acción, Sangriento', 'Los ejércitos del infierno han invadido la Tierra. Ponte en la piel del Slayer en una épica campaña para un jugador y cruza dimensiones para detener la destrucción definitiva de la humanidad. No le tienen miedo a nada... salvo a ti.', 600, 9),
-(22, 'Prey', 'https://argengamestore.com/wp-content/uploads/2017/01/capsule_616x353-2.jpg', 'Ciencia Ficción, Espacio, Atmosférico.', 'En Prey os despertaréis a bordo de la Talos I, una estación espacial en órbita alrededor de la Luna en el año 2032. Sois el sujeto clave de un experimento que espera cambiar la humanidad para siempre... pero las cosas se han complicado de forma terrible.', 1200, 9);
+(22, 'Prey', 'https://argengamestore.com/wp-content/uploads/2017/01/capsule_616x353-2.jpg', 'Ciencia Ficción, Espacio, Atmosférico.', 'En Prey os despertaréis a bordo de la Talos I, una estación espacial en órbita alrededor de la Luna en el año 2032. Sois el sujeto clave de un experimento que espera cambiar la humanidad para siempre... pero las cosas se han complicado de forma terrible.', 1200, 9),
+(25, 'dsadsadasd', 'sadasdsadasd', 'asdasd', 'sadsadsadsa', 11, 16);
 
 -- --------------------------------------------------------
 
@@ -104,13 +140,26 @@ CREATE TABLE `usuarios` (
 INSERT INTO `usuarios` (`id_usuario`, `usuario`, `email`, `contrasena`, `rol`) VALUES
 (4, 'admin777', 'admin777@gmail.com', '$2y$10$CaBX6GgkRmip9ZPKpfOTReEfTwLUMKzk4tBbAIodiqI/6QY23uGv6', 'admin'),
 (5, 'test', 'test1@gmail.com', '$2y$10$Daqn23TG0RMRlHMUlsYWTeRUFoIqqLO0ryc2xsBiIiMAK.qu1yImK', 'admin'),
-(6, 'testpublico', 'publico@gmail.com', '$2y$10$bh8e27eDfyvJtFaHbGvFGujWXfPqHelRw8gk046zYe/pKB84GUMNu', 'publico'),
-(7, 'testpublico2', 'test2@gmail.com', '$2y$10$JCLY0fEqjIh7ZUYapkMYF.etbyIhxTQ7boRDFZEpt2RSTbsn3PLRW', 'publico'),
-(8, 'testlogin', 'testlogin@gmail.com', '$2y$10$uSjz28NbanHClBYWUMOpBOPe53hyJr3BsR1HarNLaqfLAByvcAOJW', 'admin');
+(6, 'testpublico', 'publico@gmail.com', '$2y$10$bh8e27eDfyvJtFaHbGvFGujWXfPqHelRw8gk046zYe/pKB84GUMNu', 'comun'),
+(7, 'testpublico2', 'test2@gmail.com', '$2y$10$JCLY0fEqjIh7ZUYapkMYF.etbyIhxTQ7boRDFZEpt2RSTbsn3PLRW', 'comun'),
+(8, 'testlogin', 'testlogin@gmail.com', '$2y$10$uSjz28NbanHClBYWUMOpBOPe53hyJr3BsR1HarNLaqfLAByvcAOJW', 'admin'),
+(9, 'test3', 'test3@gmail.com', '$2y$10$D8u5piCjL1sBpRRRdiJa/OMCEHNeGs84LOMyK.nr4CRiQHw0cHXuW', 'comun'),
+(10, 'test4', 'test4@gmail.com', '$2y$10$vCJ74rtUNtjhteIbCXJf/uywYS/TmjPBPbU71TMdlqncMO1gmHw6i', 'comun'),
+(12, 'test6', 'test6@gmail.com', '$2y$10$nB9DfwLWx.qlash/St6Wfu1J6Fw8Zv/4DdJMVVzsoMjFhDlaQFMmS', 'comun'),
+(13, 'test7', 'test7@gmail.com', '$2y$10$zj7GY71CoalHxB0WDrLsQO5BmEtqpDc4q4yiljivoovbcK5mzGYh6', 'comun'),
+(14, 'test1', 'test1@gmail.com', '$2y$10$pJ9BvXEL/62DovDT2Nqps.Z3Op32Rff2WjyLoMoklCFkUriRIFgWW', 'comun');
 
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `comentarios`
+--
+ALTER TABLE `comentarios`
+  ADD PRIMARY KEY (`id_comentario`),
+  ADD KEY `id_juego` (`id_juego`),
+  ADD KEY `id_usuario` (`id_usuario`);
 
 --
 -- Indices de la tabla `empresas`
@@ -136,26 +185,39 @@ ALTER TABLE `usuarios`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `comentarios`
+--
+ALTER TABLE `comentarios`
+  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=105;
+
+--
 -- AUTO_INCREMENT de la tabla `empresas`
 --
 ALTER TABLE `empresas`
-  MODIFY `id_empresa` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_empresa` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de la tabla `juegos`
 --
 ALTER TABLE `juegos`
-  MODIFY `id_juego` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id_juego` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_usuario` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Restricciones para tablas volcadas
 --
+
+--
+-- Filtros para la tabla `comentarios`
+--
+ALTER TABLE `comentarios`
+  ADD CONSTRAINT `comentarios_ibfk_1` FOREIGN KEY (`id_juego`) REFERENCES `juegos` (`id_juego`),
+  ADD CONSTRAINT `comentarios_ibfk_2` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`);
 
 --
 -- Filtros para la tabla `juegos`
