@@ -36,7 +36,8 @@ class LoginController
     }
 
     function VefiryLogin()
-    {
+    {   
+        $check = $this->authHelper->CheckRol();
         if (!empty($_POST['email']) && !empty($_POST['password'])) {
             $email = $_POST['email'];
             $password = $_POST['password'];
@@ -49,9 +50,10 @@ class LoginController
                 $_SESSION["rol"] = $user->rol;
                 $this->view->ShowHome();
             } else {
-                $this->view->ShowLogin('Acceso denegado.');
+                
+                $this->view->ShowLogin($check,'Acceso denegado.');
             }
-        }
+            }
     }
 
     function administrador()
