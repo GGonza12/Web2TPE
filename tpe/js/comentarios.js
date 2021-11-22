@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
         el: "#comentarios",
 
         data: {
-            titulo: "Comentarios",
+            titulo: "Comentarios:",
             coments: [], // Comentarios
 
         },

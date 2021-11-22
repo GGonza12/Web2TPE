@@ -26,7 +26,6 @@
     <button id="agregar_comentario" class="btn btn-primary">Agregar</button>
 </form>
 {literal}
-
     <div id="comentarios">
         {{titulo}}
         <div v-for="coment in coments" :key="coment.id_comentario">
@@ -41,13 +40,9 @@
 
             <button :data-id="coment.id_comentario" id="btn-eliminar" v-on:click="delet"
                 class="btn btn-primary">Eliminar</button>
-
-
         </div>
     </div>
-
 {/literal}
 {include file="footer.tpl"}
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script type="text/javascript" src="../js/comentarios.js"></script>
-<script type="text/javascript" src="../js/alert.js"></script>

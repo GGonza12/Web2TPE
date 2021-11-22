@@ -50,7 +50,6 @@ class LoginController
                 $_SESSION["rol"] = $user->rol;
                 $this->view->ShowHome();
             } else {
-                
                 $this->view->ShowLogin($check,'Acceso denegado.');
             }
             }
