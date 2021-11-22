@@ -27,7 +27,7 @@
 </form>
 {literal}
 
-    <div id="comentarios" >
+    <div id="comentarios">
         {{titulo}}
         <div v-for="coment in coments" :key="coment.id_comentario">
 
@@ -35,7 +35,7 @@
             <span>
                 <p>Puntaje: {{coment.puntaje}} </p>
                 <p>Usuario: {{coment.usuario}} </p>
-                
+
             </span>
 
 
@@ -50,3 +50,4 @@
 {include file="footer.tpl"}
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script type="text/javascript" src="../js/comentarios.js"></script>
+<script type="text/javascript" src="../js/alert.js"></script>

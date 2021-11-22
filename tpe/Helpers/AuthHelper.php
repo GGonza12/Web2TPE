@@ -11,13 +11,14 @@ class AuthHelper {
             return $usuario;
         }
     }
-    function CheckRol(){
+    // CheckRol sirve para ver que rol tiene el usuario registrado.
+    function CheckRol(){     
         if(isset($_SESSION["email"])){
             $permiso = $_SESSION["rol"];
             return $permiso;
         }
     }
-
+    //Para confirmar si el usuario esta logueado.
     function CheckLoggedIn(){
         session_start();
         if(!isset($_SESSION["email"])){

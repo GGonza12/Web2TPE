@@ -62,7 +62,6 @@ class ApiComentsController
         } else {
             return $this->view->response('No hay comentarios', 404);
         }
-        
     }
     function EliminarComentario($params = [])
     {
@@ -80,7 +79,6 @@ class ApiComentsController
         }
         else if ($check == "comun"){
             $this->view->response("No tiene permitido eliminar el comentario: $id", 401);
-
         }
     }
 
@@ -105,6 +103,8 @@ class ApiComentsController
             $this->view->response("No tiene permitido comentar.", 401);
         }
     }
+
+    //Ignorar
 //    function ModificarComentario($params = [])
 //    {
 //        $id = $params[':ID'];

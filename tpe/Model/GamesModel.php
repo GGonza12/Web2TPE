@@ -36,6 +36,10 @@
         $sentencia->execute(array($juego,$imagen,$categorias,$descripcion,$precio,$id_empresa,$id_juego));
         
     }
+    function DeleteGamesFromCompany($id){
+        $sentencia = $this->db->prepare("DELETE FROM juegos WHERE id_empresa=?");
+        $sentencia->execute(array($id));
+    }
 
 
 }
