@@ -16,8 +16,9 @@ class LoginView{
         $this->smarty->display('templates/login.tpl');
     }
 
-    function ShowUsers($usuarios,$check){
+    function ShowUsers($usuarios,$check,$error = ""){
         $this->smarty->assign('check',$check);
+        $this->smarty->assign('error', $error);
         $this->smarty->assign('titulo','lista usuarios');
         $this->smarty->assign('usuarios',$usuarios);
         $this->smarty->display('templates/administrador.tpl');

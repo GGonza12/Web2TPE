@@ -1,23 +1,24 @@
 {include file="header.tpl" assing='check'}
 {if $check == "admin"}
+    <h3>Formulario para insertar un juego:</h3>
     <div class="card" style="width: 18rem;">
     <form action="{BASE_URL}CreateGame" method="post">
   <div class="mb-3">
-    <input type="text" class="form-control" placeholder="Juego" name="juego">
+    <input type="text" class="form-control" placeholder="Juego" name="juego" required>
   </div>
   <div class="mb-3">
-  <input type="text" class="form-control" placeholder="Imagen" name="imagen">
+  <input type="text" class="form-control" placeholder="Imagen" name="imagen" required>
 </div>
   <div class="mb-3">
-  <input type="text" class="form-control" placeholder="Categorias" name="categorias">
+  <input type="text" class="form-control" placeholder="Categorias" name="categorias" required>
 </div>
 <div class="mb-3">
-<input type="text" class="form-control" placeholder="Descripcion" name="descripcion">
+<input type="text" class="form-control" placeholder="Descripcion" name="descripcion" required>
 </div>
 <div class="mb-3">
-<input type="number" class="form-control" placeholder="Precio" name="precio">
+<input type="number" class="form-control" placeholder="Precio" name="precio" required>
 </div>
-<select class="form-select" aria-label="Default select example" name="empresa">
+<select class="form-select" aria-label="Default select example" name="empresa" >
 {foreach from= $company item= $empresas}
     <option value={$empresas->id_empresa}>{$empresas->empresa}</option>
 {/foreach}
@@ -27,6 +28,7 @@
 </div>
 
 {/if}
+<h3>Juegos:</h3>
 {foreach from=$juegos item=$juego}
 
 

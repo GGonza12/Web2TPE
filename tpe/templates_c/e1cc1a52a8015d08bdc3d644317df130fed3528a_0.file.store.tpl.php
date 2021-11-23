@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-11-21 21:16:36
+/* Smarty version 3.1.39, created on 2021-11-23 01:44:40
   from 'C:\xampp\htdocs\Web2TPE\tpe\templates\store.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_619aa924032b09_57377003',
+  'unifunc' => 'content_619c39788b3051_20550181',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e1cc1a52a8015d08bdc3d644317df130fed3528a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2TPE\\tpe\\templates\\store.tpl',
-      1 => 1637525778,
+      1 => 1637628274,
       2 => 'file',
     ),
   ),
@@ -22,28 +22,29 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_619aa924032b09_57377003 (Smarty_Internal_Template $_smarty_tpl) {
+function content_619c39788b3051_20550181 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('assing'=>'check'), 0, false);
 if ($_smarty_tpl->tpl_vars['check']->value == "admin") {?>
+    <h3>Formulario para insertar un juego:</h3>
     <div class="card" style="width: 18rem;">
     <form action="<?php echo BASE_URL;?>
 CreateGame" method="post">
   <div class="mb-3">
-    <input type="text" class="form-control" placeholder="Juego" name="juego">
+    <input type="text" class="form-control" placeholder="Juego" name="juego" required>
   </div>
   <div class="mb-3">
-  <input type="text" class="form-control" placeholder="Imagen" name="imagen">
+  <input type="text" class="form-control" placeholder="Imagen" name="imagen" required>
 </div>
   <div class="mb-3">
-  <input type="text" class="form-control" placeholder="Categorias" name="categorias">
+  <input type="text" class="form-control" placeholder="Categorias" name="categorias" required>
 </div>
 <div class="mb-3">
-<input type="text" class="form-control" placeholder="Descripcion" name="descripcion">
+<input type="text" class="form-control" placeholder="Descripcion" name="descripcion" required>
 </div>
 <div class="mb-3">
-<input type="number" class="form-control" placeholder="Precio" name="precio">
+<input type="number" class="form-control" placeholder="Precio" name="precio" required>
 </div>
-<select class="form-select" aria-label="Default select example" name="empresa">
+<select class="form-select" aria-label="Default select example" name="empresa" >
 <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['company']->value, 'empresas');
 $_smarty_tpl->tpl_vars['empresas']->do_else = true;
@@ -61,7 +62,9 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 </form>
 </div>
 
-<?php }
+<?php }?>
+<h3>Juegos:</h3>
+<?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['juegos']->value, 'juego');
 $_smarty_tpl->tpl_vars['juego']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['juego']->value) {

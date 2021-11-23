@@ -84,19 +84,24 @@ class LoginController
     {
         $this->authHelper->CheckLoggedIn();
         $check = $this->authHelper->CheckRol();
-        if ($check == "admin") {
+        if($_SESSION["user"] == $id){
+            $usuarios = $this->model->getUsers();
+            $this->view->ShowUsers($usuarios,$check,"No puedes eliminarte a ti mismo.");
+        }
+        else if ($check == "admin") {
             $this->model->deleteUser($id);
             $this->view->ShowAdmin();
-        }
-        else {
-            $this->view->ShowHome();
         }
     }
     function quitarPermiso($id)
     {
         $this->authHelper->CheckLoggedIn();
         $check = $this->authHelper->CheckRol();
-        if ($check == "admin") {
+        if($_SESSION["user"] == $id){
+            $usuarios = $this->model->getUsers();
+            $this->view->ShowUsers($usuarios,$check,"No puedes quitar el permiso de administrador a ti mismo.");
+        }
+        else if ($check == "admin") {
             $this->model->quitarPermiso($id);
             $this->view->ShowAdmin();
         }

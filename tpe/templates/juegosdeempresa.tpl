@@ -4,7 +4,6 @@
 	
     <thead>
         <tr>
-        <th>Empresa</th>
         <th>Juego</th>
         <th>Descripcion</th>
         <th>Categorias</th>
@@ -14,7 +13,6 @@
     <tbody>
     {foreach from= $games item= $game}
 		<tr>
-			<td>{$game->empresa}</td>
             <td>{$game->juego}</td>
             <td>{$game->descripcion}</td>
             <td>{$game->categorias}</td>

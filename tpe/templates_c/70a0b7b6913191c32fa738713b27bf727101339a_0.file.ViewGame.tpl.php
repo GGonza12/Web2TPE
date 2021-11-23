@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-11-22 21:13:39
+/* Smarty version 3.1.39, created on 2021-11-23 01:29:09
   from 'C:\xampp\htdocs\Web2TPE\tpe\templates\ViewGame.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_619bf9f35c9935_04618980',
+  'unifunc' => 'content_619c35d51237e9_53616152',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '70a0b7b6913191c32fa738713b27bf727101339a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2TPE\\tpe\\templates\\ViewGame.tpl',
-      1 => 1637611807,
+      1 => 1637627347,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_619bf9f35c9935_04618980 (Smarty_Internal_Template $_smarty_tpl) {
+function content_619c35d51237e9_53616152 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('assing'=>'check'), 0, false);
 ?>
 <div class="container">
@@ -59,19 +59,16 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
 </form>
 
     <div id="comentarios">
-        {{titulo}}
-        <div v-for="coment in coments" :key="coment.id_comentario">
+        <h4 class="card-header"> {{titulo}} </h4>
+        <div v-for="coment in coments" :key="coment.id_comentario" class="card" style="width: 65%;">
+            <div class="card-body">
+            <h5 class="card-title">Usuario: {{coment.usuario}} </h5>
 
-            <p>Comentario: {{ coment.comentario }}</p>
-            <span>
-                <p>Puntaje: {{coment.puntaje}} </p>
-                <p>Usuario: {{coment.usuario}} </p>
-
-            </span>
-
-
-            <button :data-id="coment.id_comentario" id="btn-eliminar" v-on:click="delet"
-                class="btn btn-primary">Eliminar</button>
+            <p class="card-subtitle mb-2 text-muted">Puntaje: {{coment.puntaje}} </p>
+                <p class="card-text">Comentario: {{ coment.comentario }}</p>
+                <button :data-id="coment.id_comentario" id="btn-eliminar" v-on:click="delet"
+                    class="btn btn-primary">Eliminar</button>
+            </div>
         </div>
     </div>
 

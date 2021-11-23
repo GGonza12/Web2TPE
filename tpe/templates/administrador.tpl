@@ -1,7 +1,6 @@
 {include file="header.tpl" assing='check'}
 <h2>{$titulo}</h2>
-
-<h3> Listado de permisos.</h3>
+<h4>{$error}</h4>
 
 <table class="table table-hover">
 

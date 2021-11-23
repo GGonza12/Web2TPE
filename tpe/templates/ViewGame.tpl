@@ -27,19 +27,16 @@
 </form>
 {literal}
     <div id="comentarios">
-        {{titulo}}
-        <div v-for="coment in coments" :key="coment.id_comentario">
+        <h4 class="card-header"> {{titulo}} </h4>
+        <div v-for="coment in coments" :key="coment.id_comentario" class="card" style="width: 65%;">
+            <div class="card-body">
+            <h5 class="card-title">Usuario: {{coment.usuario}} </h5>
 
-            <p>Comentario: {{ coment.comentario }}</p>
-            <span>
-                <p>Puntaje: {{coment.puntaje}} </p>
-                <p>Usuario: {{coment.usuario}} </p>
-
-            </span>
-
-
-            <button :data-id="coment.id_comentario" id="btn-eliminar" v-on:click="delet"
-                class="btn btn-primary">Eliminar</button>
+            <p class="card-subtitle mb-2 text-muted">Puntaje: {{coment.puntaje}} </p>
+                <p class="card-text">Comentario: {{ coment.comentario }}</p>
+                <button :data-id="coment.id_comentario" id="btn-eliminar" v-on:click="delet"
+                    class="btn btn-primary">Eliminar</button>
+            </div>
         </div>
     </div>
 {/literal}
