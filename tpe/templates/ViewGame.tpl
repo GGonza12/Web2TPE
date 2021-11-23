@@ -31,9 +31,9 @@
         <div v-for="coment in coments" :key="coment.id_comentario" class="card" style="width: 65%;">
             <div class="card-body">
             <h5 class="card-title">Usuario: {{coment.usuario}} </h5>
-
             <p class="card-subtitle mb-2 text-muted">Puntaje: {{coment.puntaje}} </p>
                 <p class="card-text">Comentario: {{ coment.comentario }}</p>
+                <p class="text-end" ><small class="text-muted">Fecha: {{coment.tiempo}}</small></p>
                 <button :data-id="coment.id_comentario" id="btn-eliminar" v-on:click="delet"
                     class="btn btn-primary">Eliminar</button>
             </div>

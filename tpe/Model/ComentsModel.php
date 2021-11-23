@@ -19,10 +19,10 @@
         return $comentarios;
     }
 
-    function InsertComent($comentario,$puntaje,$id_juego,$id_usuario){
+    function InsertComent($comentario,$puntaje,$id_juego,$id_usuario,$fecha){
     
-        $sentencia = $this->db->prepare("INSERT INTO comentarios(comentario,puntaje,id_juego,id_usuario) VALUES(?,?,?,?)");
-        $sentencia->execute(array($comentario,$puntaje,$id_juego,$id_usuario));
+        $sentencia = $this->db->prepare("INSERT INTO comentarios(comentario,puntaje,tiempo,id_juego,id_usuario) VALUES(?,?,?,?,?)");
+        $sentencia->execute(array($comentario,$puntaje,$fecha,$id_juego,$id_usuario));
         return $this->db->lastInsertId();
     }
 
@@ -33,6 +33,10 @@
     function DeleteAllComentsFromUser($id_usuario){
         $sentencia = $this->db->prepare("DELETE FROM comentarios WHERE id_usuario=?");
         $sentencia->execute(array($id_usuario));
+    }
+    function DeleteAllComentsFromGame($id_juego){
+        $sentencia = $this->db->prepare("DELETE FROM comentarios WHERE id_juego=?");
+        $sentencia->execute(array($id_juego));
     }
     function GetComentsByGame($id){
         $sentencia = $this->db->prepare("SELECT coment.*, useer.usuario FROM comentarios coment INNER JOIN usuarios useer WHERE coment.id_juego=? AND coment.id_usuario = useer.id_usuario");

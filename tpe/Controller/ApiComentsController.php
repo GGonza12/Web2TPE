@@ -86,13 +86,16 @@ class ApiComentsController
     {
         $this->authHelper->CheckLoggedIn();
         $check = $this->authHelper->CheckRol();
+        date_default_timezone_set('America/Argentina/Buenos_Aires');
         $body = $this->getBody();
         $comentario = $body->comentario;
         $puntaje = $body->puntaje;
+        $mydate = getdate(date("U"));
+        $fecha = "$mydate[year]-$mydate[mon]-$mydate[mday]-$mydate[hours]-$mydate[minutes]-$mydate[mday]-$mydate[seconds]";
         $id_juego = $body->id_juego;
         $id_usuario = $body->id_usuario;
         if (($check == "admin" || $check == "comun") && (isset($comentario)&&isset($puntaje)&&isset($id_juego)&&isset($id_usuario))){
-            $id = $this->modelcoment->InsertComent($comentario,$puntaje,$id_juego,$id_usuario);
+            $id = $this->modelcoment->InsertComent($comentario,$puntaje,$id_juego,$id_usuario,$fecha);
         if ($id != 0) {
             $this->view->response("El comentario se insertó con el id=$id", 200);
         } else {
