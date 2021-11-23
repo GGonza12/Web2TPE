@@ -14,9 +14,8 @@ class UserModel
         return $query->fetch(PDO::FETCH_OBJ);
     }
 
-    function CreateUser($user, $email, $password)
+    function CreateUser($user, $email, $password,$rol)
     {
-        $rol = 'comun';
         $passwordhash = password_hash($password, PASSWORD_BCRYPT);
         $query = $this->db->prepare("INSERT INTO usuarios(usuario,email,contrasena,rol) VALUES(?,?,?,?)");
         $query->execute(array($user, $email, $passwordhash, $rol));
@@ -29,16 +28,14 @@ class UserModel
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
 
-    function agregarPermiso($id)
+    function agregarPermiso($rol, $id)
     {
-        $rol = 'admin';
         $query = $this->db->prepare(" UPDATE usuarios SET rol=? WHERE id_usuario=?");
         $query->execute(array($rol, $id));
     }
 
-    function quitarPermiso($id)
+    function quitarPermiso($rol, $id)
     {
-        $rol = 'comun';
         $query = $this->db->prepare("UPDATE usuarios SET rol=? WHERE id_usuario=?");
         $query->execute(array($rol, $id));
     }

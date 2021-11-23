@@ -12,6 +12,12 @@
         $comentarios = $sentencia->fetchAll(PDO::FETCH_OBJ);
         return $comentarios;
     }
+    function GetComentsByUser($id_usuario){
+        $sentencia = $this->db->prepare("SELECT * FROM comentarios WHERE id_usuario=?");
+        $sentencia->execute(array($id_usuario));
+        $comentarios = $sentencia->fetchAll(PDO::FETCH_OBJ);
+        return $comentarios;
+    }
 
     function InsertComent($comentario,$puntaje,$id_juego,$id_usuario){
     
@@ -23,6 +29,10 @@
     function DeleteComent($id){
         $sentencia = $this->db->prepare("DELETE FROM comentarios WHERE id_comentario=?");
         $sentencia->execute(array($id));
+    }
+    function DeleteAllComentsFromUser($id_usuario){
+        $sentencia = $this->db->prepare("DELETE FROM comentarios WHERE id_usuario=?");
+        $sentencia->execute(array($id_usuario));
     }
     function GetComentsByGame($id){
         $sentencia = $this->db->prepare("SELECT coment.*, useer.usuario FROM comentarios coment INNER JOIN usuarios useer WHERE coment.id_juego=? AND coment.id_usuario = useer.id_usuario");

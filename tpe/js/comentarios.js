@@ -23,26 +23,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    //  async function getComents() {
-    //fetch para traer todas las tareas
-    //      try {
-    //         let response = await fetch(`${API_URL}s`, {
-    //             "method": "POST",
-    //             "mode": 'cors',
-    //             "headers": { "Content-type": "application/json" },
-    //         });
-    //         let coments = await response.json();
-    //         if (response.status == 200) {
-    //             app.coments = coments;
-    //             console.log(coments);
-    //         }
-    //
-    //     } catch (error) {
-    //         console.log(error);
-    //     }
-    // }
-
-
 
     async function getComents() {
 
@@ -67,28 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log(error);
         }
     }
-    //    async function puntuarComentario(puntaje,id) {
-    //        console.log(puntaje);
-    //        let datos = {
-    //            "puntaje": puntaje
-    //        };
-    //
-    //        try {
-    //            let puntuar = await fetch(`${API_URL}/puntaje/${id}`, {
-    //                "method": "PUT",
-    //                "headers": { "Content-type": "application/json" },
-    //                "body": JSON.stringify(datos),
-    //
-    //            });
-    //            if (puntuar.status == 200) {
-    //                console.log("Puntuado!");
-    //                getComents();
-    //            }
-    //        }
-    //        catch (error) {
-    //            console.log(error);
-    //        }
-    //   }
+
     async function agregarcomentario(event) {
         event.preventDefault();
         let comentario = document.querySelector("#comentario").value;
