@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
     async function getComents() {
 
 
-        //fetch para traer todos loscomentarios de ese juego
+        //fetch para traer todos los comentarios de ese juego
         try {
             let response = await fetch(`${API_URL}/juego/${id}`, {
                 "method": "GET",
@@ -77,9 +77,6 @@ document.addEventListener("DOMContentLoaded", function () {
             if (agregar.status == 200) {
                 console.log("Agregado!");
                 getComents();
-            }
-            else if (agregar.status == 401) {
-                alert("No tiene permisos para eliminar este comentario");
             }
 
         }

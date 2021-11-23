@@ -93,7 +93,8 @@ class LoginController
             $usuarios = $this->model->getUsers();
             $this->view->ShowUsers($usuarios,$check,"No puedes eliminarte a ti mismo.");
         }
-        else if ($check == "admin" && $comentarios != null){
+        //Verifico si el usuario tenia comentarios y elimino los comentarios.
+        else if ($check == "admin" && $comentarios != null){ 
             $this->modelcoment->DeleteAllComentsFromUser($id);
             $this->model->deleteUser($id);
             $this->view->ShowAdmin();
