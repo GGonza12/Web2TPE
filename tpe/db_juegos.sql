@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-11-2021 a las 22:34:26
+-- Tiempo de generación: 24-11-2021 a las 16:19:17
 -- Versión del servidor: 10.4.19-MariaDB
 -- Versión de PHP: 8.0.6
 
@@ -31,6 +31,7 @@ CREATE TABLE `comentarios` (
   `id_comentario` int(11) NOT NULL,
   `comentario` varchar(450) NOT NULL,
   `puntaje` int(2) NOT NULL,
+  `tiempo` datetime NOT NULL,
   `id_juego` tinyint(4) NOT NULL,
   `id_usuario` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -39,21 +40,8 @@ CREATE TABLE `comentarios` (
 -- Volcado de datos para la tabla `comentarios`
 --
 
-INSERT INTO `comentarios` (`id_comentario`, `comentario`, `puntaje`, `id_juego`, `id_usuario`) VALUES
-(86, 'test', 3, 6, 7),
-(88, 'test admin 2', 5, 6, 4),
-(89, 'test admin 3', 2, 6, 4),
-(90, '', 3, 6, 5),
-(91, 'comentario test 1\n', 3, 6, 5),
-(92, 'comentario tasdasdasdasdsa', 3, 6, 5),
-(93, 'comentario tasdasdasdasdsaasdasd', 4, 6, 5),
-(94, 'test2 coment\n', 2, 6, 7),
-(95, 'test2 coment 5\n', 5, 6, 7),
-(96, 'test2 coment 4\n', 4, 6, 7),
-(97, 'tesadasdasdas', 3, 2, 7),
-(98, 'juegzao', 5, 2, 7),
-(99, 'the witcher 3', 3, 6, 7),
-(100, ' Hotline miami', 4, 2, 7);
+INSERT INTO `comentarios` (`id_comentario`, `comentario`, `puntaje`, `tiempo`, `id_juego`, `id_usuario`) VALUES
+(106, 'Increíble juego', 5, '2021-11-24 12:10:24', 2, 4);
 
 -- --------------------------------------------------------
 
@@ -80,8 +68,7 @@ INSERT INTO `empresas` (`id_empresa`, `empresa`, `informacion`) VALUES
 (7, 'Sony', 'Sony Group Corporation, comúnmente referida como Sony, es una empresa multinacional japonesa con sede en Tokio y uno de los fabricantes más importantes a nivel mundial en electrónica de consumo: audio y vídeo, computación, fotografía, videojuegos, telefonía móvil, productos profesionales, etcétera.'),
 (9, 'Bethesda', 'Bethesda Softworks LLC es una empresa estadounidense dedicada a la distribución y desarrollo de videojuegos, filial de ZeniMax Media. Fue fundada en 1986 y actualmente tiene su sede en Rockville, Maryland. Es conocida por sus videojuegos de simulación deportiva, de acción y de rol.'),
 (12, 'Devolver Digital', 'Devolver Digital Inc. es un distribuidor de películas y videojuegos estadounidense con sede en Austin, Texas, que está principalmente asociado con las series Serious Sam y Hotline Miami.'),
-(13, 'Warner Bros. Interactive Entertainment', 'Warner Bros. Interactive Entertainment, Inc. es una división de Warner Bros. Home Entertainment Group. Es una empresa desarrolladora, distribuidora y licenciadora de videojuegos a nivel mundial de títulos propios y de terceros. Bajo el sello de WBIE está Warner Bros.'),
-(16, 'Comany test bug', 'dsajasjdas');
+(13, 'Warner Bros. Interactive Entertainment', 'Warner Bros. Interactive Entertainment, Inc. es una división de Warner Bros. Home Entertainment Group. Es una empresa desarrolladora, distribuidora y licenciadora de videojuegos a nivel mundial de títulos propios y de terceros. Bajo el sello de WBIE está Warner Bros.');
 
 -- --------------------------------------------------------
 
@@ -116,8 +103,7 @@ INSERT INTO `juegos` (`id_juego`, `juego`, `imagen`, `categorias`, `descripcion`
 (19, 'Resident Evil Village', 'https://images.greenmangaming.com/bbd2316440504045b61415bf9da78c4c/faac1dba6c7b48be8f82856c887991b7.jpg', 'Terror, FPS.', 'Vive el survival horror como nunca antes en la 8.ª entrega principal de la aclamada serie Resident Evil: Resident Evil Village. El terror más realista e inescapable, con gráficos hiperdetallados, intensa acción en 1.ª persona y una trama magistral.', 3500, 4),
 (20, 'Street Fighter V', 'https://as.com/meristation/imagenes/2020/12/23/noticias/1608759221_959757_1608759267_noticia_normal_recorte1.jpg', 'Lucha, Acción.', 'Experimenta la intensidad de la batalla cara a cara en Street Fighter® V.Elige entre 16 personajes icónicos, cada uno con su propia historia personal y desafíos de entrenamiento únicos, y luego lucha contra amigos en línea o sin conexión con una sólida variedad de opciones para cada partida.', 500, 4),
 (21, 'DOOM Eternal', 'https://image.api.playstation.com/vulcan/ap/rnd/202010/0114/ERNPc4gFqeRDG1tYQIfOKQtM.png', 'FPS, Acción, Sangriento', 'Los ejércitos del infierno han invadido la Tierra. Ponte en la piel del Slayer en una épica campaña para un jugador y cruza dimensiones para detener la destrucción definitiva de la humanidad. No le tienen miedo a nada... salvo a ti.', 600, 9),
-(22, 'Prey', 'https://argengamestore.com/wp-content/uploads/2017/01/capsule_616x353-2.jpg', 'Ciencia Ficción, Espacio, Atmosférico.', 'En Prey os despertaréis a bordo de la Talos I, una estación espacial en órbita alrededor de la Luna en el año 2032. Sois el sujeto clave de un experimento que espera cambiar la humanidad para siempre... pero las cosas se han complicado de forma terrible.', 1200, 9),
-(25, 'dsadsadasd', 'sadasdsadasd', 'asdasd', 'sadsadsadsa', 11, 16);
+(22, 'Prey', 'https://argengamestore.com/wp-content/uploads/2017/01/capsule_616x353-2.jpg', 'Ciencia Ficción, Espacio, Atmosférico.', 'En Prey os despertaréis a bordo de la Talos I, una estación espacial en órbita alrededor de la Luna en el año 2032. Sois el sujeto clave de un experimento que espera cambiar la humanidad para siempre... pero las cosas se han complicado de forma terrible.', 1200, 9);
 
 -- --------------------------------------------------------
 
@@ -188,19 +174,19 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `comentarios`
 --
 ALTER TABLE `comentarios`
-  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=105;
+  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=115;
 
 --
 -- AUTO_INCREMENT de la tabla `empresas`
 --
 ALTER TABLE `empresas`
-  MODIFY `id_empresa` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_empresa` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT de la tabla `juegos`
 --
 ALTER TABLE `juegos`
-  MODIFY `id_juego` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id_juego` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`

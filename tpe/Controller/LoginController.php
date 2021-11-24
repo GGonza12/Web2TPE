@@ -24,10 +24,15 @@ class LoginController
         $this->view->ShowLogin($check);
     }
 
-    function SignIn($user, $email, $password)
+    function SignIn()
     {
-        $rol = 'comun';
-        $this->model->CreateUser($user, $email, $password,$rol);
+        if (isset($_POST['user']) && isset($_POST['email']) && isset($_POST['password'])){
+            $user = $_POST['user'];
+            $email = $_POST['email'];
+            $password = $_POST['password'];
+            $rol = 'comun';
+            $this->model->CreateUser($user, $email, $password,$rol);
+        }
     }
 
     function logout()

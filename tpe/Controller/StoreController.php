@@ -47,8 +47,14 @@ class StoreController
         $this->view->ShowGamesOfCompany($games, $company, $check);
     }
 
-    function createGame($juego, $imagen, $categorias, $descripcion, $precio, $empresa)
+    function createGame()
     {
+        $juego =$_POST['juego'];
+        $imagen= $_POST['imagen']; 
+        $categorias=$_POST['categorias'];
+        $descripcion= $_POST['descripcion'];
+        $precio= $_POST['precio'];
+        $empresa= $_POST['empresa'];
         $this->authHelper->CheckLoggedIn();
         $check = $this->authHelper->CheckRol();
         if ($check == "admin" && (isset($juego)&&isset($imagen)&&isset($categorias)&&isset($descripcion)&&isset($precio)&&isset($empresa))) {
@@ -95,8 +101,15 @@ class StoreController
         }
     }
 
-    function UpdateGame($id_juego, $juego, $imagen, $categorias, $descripcion, $precio, $id_empresa)
+    function UpdateGame()
     {
+        $id_juego=$_POST['id'];
+        $juego= $_POST['juego'];
+        $imagen= $_POST['imagen'];
+        $categorias= $_POST['categorias'];
+        $descripcion= $_POST['descripcion'];
+        $precio= $_POST['precio']; 
+        $id_empresa=$_POST['empresa'];
         $this->authHelper->CheckLoggedIn();
         $check = $this->authHelper->CheckRol();
         if ($check == "admin" && (isset($id_juego)&& isset($juego)&& isset($imagen)&& isset($categorias)&& isset($descripcion)&& isset($precio)&& isset($id_empresa))) {
@@ -107,10 +120,12 @@ class StoreController
         }
     }
 
-    function CreateEmpresa($empresa, $descripcion)
+    function CreateEmpresa()
     {
         $this->authHelper->CheckLoggedIn();
         $check = $this->authHelper->CheckRol();
+        $empresa = $_POST['empresa'];
+        $descripcion = $_POST['informacion'];
         if ($check == "admin" && (isset($empresa)&& isset($descripcion))) {
             $this->modelCompany->InsertCompany($empresa, $descripcion);
             $this->view->showCompanysLocation();
@@ -139,8 +154,11 @@ class StoreController
         $this->view->ShowCompanys($companys, $check);
     }
 
-    function UpdateCompany($empresa, $id, $descripcion)
+    function UpdateCompany()
     {
+        $empresa =$_POST['empresa'];
+        $id= $_POST['id'];
+        $descripcion=$_POST['informacion'];
         $this->authHelper->CheckLoggedIn();
         $check = $this->authHelper->CheckRol();
         if ($check == "admin" && (isset($empresa) && isset($id) && isset($descripcion))) {

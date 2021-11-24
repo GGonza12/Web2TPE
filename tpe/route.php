@@ -39,7 +39,7 @@ switch ($params[0]) {
         $loginController->VefiryLogin();
         break;
     case 'createacount':
-        $loginController->SignIn($_POST['user'], $_POST['email'], $_POST['password']);
+        $loginController->SignIn();
         $loginController->VefiryLogin();
         break;
     case 'home':
@@ -50,7 +50,7 @@ switch ($params[0]) {
         $storeController->ShowStore();
         break;
     case 'CreateGame':
-        $storeController->createGame($_POST['juego'], $_POST['imagen'], $_POST['categorias'], $_POST['descripcion'], $_POST['precio'], $_POST['empresa']);
+        $storeController->createGame();
         break;
     case 'deleteGame':
         $storeController->deleteGame($params[1]);
@@ -62,11 +62,11 @@ switch ($params[0]) {
         $storeController->ShowUpdateGame($params[1]);
         break;
     case 'UpdateGame':
-        $storeController->UpdateGame($_POST['id'], $_POST['juego'], $_POST['imagen'], $_POST['categorias'], $_POST['descripcion'], $_POST['precio'], $_POST['empresa']);
+        $storeController->UpdateGame();
         break;
     //COMPANYS:    
     case 'CreateCompany':
-        $storeController->CreateEmpresa($_POST['empresa'],$_POST['informacion']);
+        $storeController->CreateEmpresa();
         break;
     case 'DeleteCompany':
         $storeController->DeleteCompany($params[1]);
@@ -78,7 +78,7 @@ switch ($params[0]) {
         $storeController->ShowUpdateCompany($params[1]);
         break;
     case 'UpdateCompany':
-        $storeController->UpdateCompany($_POST['empresa'], $_POST['id'],$_POST['informacion']);
+        $storeController->UpdateCompany();
         break;
     case 'Companys':
         $storeController->ShowCompanys();
