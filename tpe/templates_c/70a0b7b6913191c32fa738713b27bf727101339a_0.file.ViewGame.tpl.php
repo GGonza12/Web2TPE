@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-11-23 17:15:53
+/* Smarty version 3.1.39, created on 2021-11-24 02:26:03
   from 'C:\xampp\htdocs\Web2TPE\tpe\templates\ViewGame.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_619d13b9daba10_78384915',
+  'unifunc' => 'content_619d94ab3a0a00_00527668',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '70a0b7b6913191c32fa738713b27bf727101339a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2TPE\\tpe\\templates\\ViewGame.tpl',
-      1 => 1637684152,
+      1 => 1637717160,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_619d13b9daba10_78384915 (Smarty_Internal_Template $_smarty_tpl) {
+function content_619d94ab3a0a00_00527668 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('assing'=>'check'), 0, false);
 ?>
 <div class="container">
@@ -32,7 +32,8 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
         <div class="col-md-12">
             <img src="<?php echo $_smarty_tpl->tpl_vars['juego']->value->imagen;?>
 " class="img-fluid rounded-start"
-                style="float:left;width:225px;height:225px; margin-right:10px;">
+                style="float:left;width:225px;height:225px; margin-right:10px;" alt="<?php echo $_smarty_tpl->tpl_vars['juego']->value->juego;?>
+">
             <p><?php echo $_smarty_tpl->tpl_vars['juego']->value->descripcion;?>
 </p>
             <p>Precio: $<?php echo $_smarty_tpl->tpl_vars['juego']->value->precio;?>

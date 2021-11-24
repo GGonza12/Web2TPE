@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-md-12">
             <img src="{$juego->imagen}" class="img-fluid rounded-start"
-                style="float:left;width:225px;height:225px; margin-right:10px;">
+                style="float:left;width:225px;height:225px; margin-right:10px;" alt="{$juego->juego}">
             <p>{$juego->descripcion}</p>
             <p>Precio: ${$juego->precio}</p>
             <p hidden id="id_juego">{$juego->id_juego}</p>

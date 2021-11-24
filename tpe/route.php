@@ -50,7 +50,7 @@ switch ($params[0]) {
         $storeController->ShowStore();
         break;
     case 'CreateGame':
-        $storeController->createGame($_POST['juego'], $_POST['imagen'], $_POST['categorias'], $_POST['descripcion'], $_POST['precio'], $_POST['empresa']);
+        $storeController->createGame($_POST['juego'], $_POST['categorias'], $_POST['descripcion'], $_POST['precio'], $_POST['empresa']);
         break;
     case 'deleteGame':
         $storeController->deleteGame($params[1]);
@@ -62,7 +62,7 @@ switch ($params[0]) {
         $storeController->ShowUpdateGame($params[1]);
         break;
     case 'UpdateGame':
-        $storeController->UpdateGame($_POST['id'], $_POST['juego'], $_POST['imagen'], $_POST['categorias'], $_POST['descripcion'], $_POST['precio'], $_POST['empresa']);
+        $storeController->UpdateGame($_POST['id'], $_POST['juego'], $_POST['categorias'], $_POST['descripcion'], $_POST['precio'], $_POST['empresa']);
         break;
     //COMPANYS:    
     case 'CreateCompany':

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-11-21 20:56:19
+/* Smarty version 3.1.39, created on 2021-11-24 02:08:19
   from 'C:\xampp\htdocs\Web2TPE\tpe\templates\updategame.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_619aa463db3675_13681011',
+  'unifunc' => 'content_619d9083680373_72674460',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '65acdbdbfa6f7078d5bd2ac2f72a8f45e6e2a99d' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2TPE\\tpe\\templates\\updategame.tpl',
-      1 => 1637524028,
+      1 => 1637715908,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_619aa463db3675_13681011 (Smarty_Internal_Template $_smarty_tpl) {
+function content_619d9083680373_72674460 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('assing'=>'check'), 0, false);
 ?>
 <h2><?php echo $_smarty_tpl->tpl_vars['titulo']->value;?>
@@ -30,12 +30,12 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
 
 <div class="card" style="width: 18rem;">
 <form action="<?php echo BASE_URL;?>
-UpdateGame" method="post">
+UpdateGame" method="post" enctype="multipart/form-data">
 <div class="mb-3">
 <input type="text" class="form-control" placeholder="Juego" name="juego">
 </div>
 <div class="mb-3">
-<input type="text" class="form-control" placeholder="Imagen" name="imagen">
+<input type="file" class="form-control" placeholder="Imagen" name="imagen_name" id="imageToUpload">
 </div>
 <div class="mb-3">
 <input type="text" class="form-control" placeholder="Categorias" name="categorias">

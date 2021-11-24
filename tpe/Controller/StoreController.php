@@ -47,14 +47,20 @@ class StoreController
         $this->view->ShowGamesOfCompany($games, $company, $check);
     }
 
-    function createGame($juego, $imagen, $categorias, $descripcion, $precio, $empresa)
+    function createGame($juego, $categorias, $descripcion, $precio, $empresa)
     {
         $this->authHelper->CheckLoggedIn();
         $check = $this->authHelper->CheckRol();
-        if ($check == "admin" && (isset($juego)&&isset($imagen)&&isset($categorias)&&isset($descripcion)&&isset($precio)&&isset($empresa))) {
-            $this->modelGame->InsertGame($juego, $imagen, $categorias, $descripcion, $precio, $empresa);
-            $this->view->ShowStoreLocation();
-        } else {
+        if (
+            $_FILES['imagen_name']['type'] == "image/jpg" || $_FILES['imagen_name']['type'] == "image/jpeg"
+            || $_FILES['imagen_name']['type'] == "image/png"
+        ) {
+            if ($check == "admin" && (isset($juego) && isset($categorias) && isset($descripcion) && isset($precio) && isset($empresa))) {
+                $this->modelGame->InsertGame($juego, $_FILES['imagen_name']['tmp_name'], $categorias, $descripcion, $precio, $empresa);
+                $this->view->ShowStoreLocation();
+            }
+        } else if ($check == "admin" && (isset($juego) && isset($categorias) && isset($descripcion) && isset($precio) && isset($empresa))) {
+            $this->modelGame->InsertGame($juego, "imagen", $categorias, $descripcion, $precio, $empresa);
             $this->view->showStoreLocation();
         }
     }
@@ -62,11 +68,11 @@ class StoreController
     {
         $this->authHelper->CheckLoggedIn();
         $check = $this->authHelper->CheckRol();
-        $comentarios= $this->modelcoment->GetComentsByGame($id);
+        $comentarios = $this->modelcoment->GetComentsByGame($id);
         if ($check == "admin" && isset($id) && empty($comentarios)) {
             $this->modelGame->Delete($id);
             $this->view->showStoreLocation();
-        } else if($check == "admin" && isset($id) && !empty($comentarios)){
+        } else if ($check == "admin" && isset($id) && !empty($comentarios)) {
             $this->modelcoment->DeleteAllComentsFromGame($id);
             $this->modelGame->Delete($id);
             $this->view->showStoreLocation();
@@ -95,23 +101,29 @@ class StoreController
         }
     }
 
-    function UpdateGame($id_juego, $juego, $imagen, $categorias, $descripcion, $precio, $id_empresa)
+    function UpdateGame($id_juego, $juego, $categorias, $descripcion, $precio, $id_empresa)
     {
         $this->authHelper->CheckLoggedIn();
         $check = $this->authHelper->CheckRol();
-        if ($check == "admin" && (isset($id_juego)&& isset($juego)&& isset($imagen)&& isset($categorias)&& isset($descripcion)&& isset($precio)&& isset($id_empresa))) {
-            $this->modelGame->UpdateGame($id_juego, $juego, $imagen, $categorias, $descripcion, $precio, $id_empresa);
-            $this->view->showStoreLocation();
-        } else {
-            $this->view->showHomeLocation();
-        }
+        if (
+            $_FILES['imagen_name']['type'] == "image/jpg" || $_FILES['imagen_name']['type'] == "image/jpeg"
+            || $_FILES['imagen_name']['type'] == "image/png"
+        ){
+            if ($check == "admin" && (isset($id_juego) && isset($juego) && isset($categorias) && isset($descripcion) && isset($precio) && isset($id_empresa))) {
+                $this->modelGame->UpdateGame($id_juego, $juego, $_FILES['imagen_name']['tmp_name'], $categorias, $descripcion, $precio, $id_empresa);
+                $this->view->showStoreLocation();
+            }
+            } else {
+
+                $this->view->showHomeLocation();
+            }
     }
 
     function CreateEmpresa($empresa, $descripcion)
     {
         $this->authHelper->CheckLoggedIn();
         $check = $this->authHelper->CheckRol();
-        if ($check == "admin" && (isset($empresa)&& isset($descripcion))) {
+        if ($check == "admin" && (isset($empresa) && isset($descripcion))) {
             $this->modelCompany->InsertCompany($empresa, $descripcion);
             $this->view->showCompanysLocation();
         } else {
@@ -162,14 +174,14 @@ class StoreController
                 $this->modelCompany->DeleteCompany($id);
                 $this->view->showCompanysLocation();
             } else if (!empty($games)) { //Si la empresa tiene juegos entonces elimino todos los juegos de esa empresa y luego elimino la empresa.
-                foreach($games as $game){
-                    $id_juego= $game->id_juego;
+                foreach ($games as $game) {
+                    $id_juego = $game->id_juego;
                     $comentarios = $this->modelcoment->GetComentsByGame($id_juego);
-                    if (!empty($comentarios)){ //Si el juego tiene comentarios los elimino.
+                    if (!empty($comentarios)) { //Si el juego tiene comentarios los elimino.
                         $this->modelcoment->DeleteAllComentsFromGame($id_juego);
                     }
                 }
-                $this->modelGame->DeleteGamesFromCompany($id);  
+                $this->modelGame->DeleteGamesFromCompany($id);
                 $this->modelCompany->DeleteCompany($id);
                 $this->view->showCompanysLocation();
             }

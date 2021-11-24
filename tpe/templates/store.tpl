@@ -2,12 +2,12 @@
 {if $check == "admin"}
     <h3>Formulario para insertar un juego:</h3>
     <div class="card" style="width: 18rem;">
-    <form action="{BASE_URL}CreateGame" method="post">
+    <form action="{BASE_URL}CreateGame" method="post" enctype="multipart/form-data">
   <div class="mb-3">
     <input type="text" class="form-control" placeholder="Juego" name="juego" required>
   </div>
   <div class="mb-3">
-  <input type="text" class="form-control" placeholder="Imagen" name="imagen" required>
+  <input type="file" class="form-control" placeholder="Imagen" name="imagen_name" id="imageToUpload">
 </div>
   <div class="mb-3">
   <input type="text" class="form-control" placeholder="Categorias" name="categorias" required>
