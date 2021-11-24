@@ -42,9 +42,11 @@ class StoreController
     {
         $this->authHelper->CheckLoggedIn();
         $check = $this->authHelper->CheckRol();
-        $company = $this->modelCompany->GetCompany($id);
-        $games = $this->modelCompany->GamesOfCompany($id);
-        $this->view->ShowGamesOfCompany($games, $company, $check);
+        if ($id != null){
+            $company = $this->modelCompany->GetCompany($id);
+            $games = $this->modelCompany->GamesOfCompany($id);
+            $this->view->ShowGamesOfCompany($games, $company, $check);
+        }
     }
 
     function createGame()
@@ -68,6 +70,7 @@ class StoreController
     {
         $this->authHelper->CheckLoggedIn();
         $check = $this->authHelper->CheckRol();
+        if ($id != null){
         $comentarios= $this->modelcoment->GetComentsByGame($id);
         if ($check == "admin" && isset($id) && empty($comentarios)) {
             $this->modelGame->Delete($id);
@@ -78,26 +81,31 @@ class StoreController
             $this->view->showStoreLocation();
         }
     }
+    }
 
     function viewGame($id)
     {
         $this->authHelper->CheckLoggedIn();
         $check = $this->authHelper->CheckRol();
         $user = $this->authHelper->CheckUser();
-        $game = $this->modelGame->GetGame($id);
-        $this->view->ShowGame($user, $game, $check);
+        if ($id != null){
+            $game = $this->modelGame->GetGame($id);
+            $this->view->ShowGame($user, $game, $check);
+        }
     }
 
     function ShowUpdateGame($id)
     {
         $this->authHelper->CheckLoggedIn();
         $check = $this->authHelper->CheckRol();
-        if ($check == "admin" && isset($id)) {
-            $game = $this->modelGame->GetGame($id);
-            $company = $this->modelCompany->GetCompanys();
-            $this->view->UpdateViewGame($game, $company, $check);
-        } else {
-            $this->view->showHomeLocation();
+        if ($id != null){
+            if ($check == "admin" && isset($id)) {
+                $game = $this->modelGame->GetGame($id);
+                $company = $this->modelCompany->GetCompanys();
+                $this->view->UpdateViewGame($game, $company, $check);
+            } else {
+                $this->view->showHomeLocation();
+            }
         }
     }
 
@@ -138,11 +146,13 @@ class StoreController
     {
         $this->authHelper->CheckLoggedIn();
         $check = $this->authHelper->CheckRol();
-        if ($check == "admin") {
-            $company = $this->modelCompany->GetCompany($id);
-            $this->view->UpdateViewCompany($company, $check);
-        } else {
-            $this->view->showHomeLocation();
+        if ($id != null){
+            if ($check == "admin") {
+                $company = $this->modelCompany->GetCompany($id);
+                $this->view->UpdateViewCompany($company, $check);
+            } else {
+                $this->view->showHomeLocation();
+            }
         }
     }
 
@@ -173,23 +183,25 @@ class StoreController
     {
         $this->authHelper->CheckLoggedIn();
         $check = $this->authHelper->CheckRol();
-        $comentarios = $this->modelcoment->GetComentsByGame($id);
-        if ($check == "admin" && isset($id)) {         //Verifico si es admin.
-            $games = $this->modelCompany->GamesOfCompany($id);
-            if (empty($games)) {         //verifico si no tiene juegos asi elimina la empresa sin problemas.
-                $this->modelCompany->DeleteCompany($id);
-                $this->view->showCompanysLocation();
-            } else if (!empty($games)) { //Si la empresa tiene juegos entonces elimino todos los juegos de esa empresa y luego elimino la empresa.
-                foreach($games as $game){
-                    $id_juego= $game->id_juego;
-                    $comentarios = $this->modelcoment->GetComentsByGame($id_juego);
-                    if (!empty($comentarios)){ //Si el juego tiene comentarios los elimino.
-                        $this->modelcoment->DeleteAllComentsFromGame($id_juego);
+        if ($id != null){  
+            $comentarios = $this->modelcoment->GetComentsByGame($id);
+            if ($check == "admin" && isset($id)) {         //Verifico si es admin.
+                $games = $this->modelCompany->GamesOfCompany($id);
+                if (empty($games)) {         //verifico si no tiene juegos asi elimina la empresa sin problemas.
+                    $this->modelCompany->DeleteCompany($id);
+                    $this->view->showCompanysLocation();
+                } else if (!empty($games)) { //Si la empresa tiene juegos entonces elimino todos los juegos de esa empresa y luego elimino la empresa.
+                    foreach($games as $game){
+                        $id_juego= $game->id_juego;
+                        $comentarios = $this->modelcoment->GetComentsByGame($id_juego);
+                        if (!empty($comentarios)){ //Si el juego tiene comentarios los elimino.
+                            $this->modelcoment->DeleteAllComentsFromGame($id_juego);
+                        }
                     }
+                    $this->modelGame->DeleteGamesFromCompany($id);  
+                    $this->modelCompany->DeleteCompany($id);
+                    $this->view->showCompanysLocation();
                 }
-                $this->modelGame->DeleteGamesFromCompany($id);  
-                $this->modelCompany->DeleteCompany($id);
-                $this->view->showCompanysLocation();
             }
         }
     }

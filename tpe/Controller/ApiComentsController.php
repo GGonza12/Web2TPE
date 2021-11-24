@@ -47,20 +47,24 @@ class ApiComentsController
     function ObtenerComentario($params = [])
     {
         $id = $params[':ID'];
-        $comentario = $this->modelcoment->GetComent($id);
-        if (!empty($comentario)) {
-            return $this->view->response($comentario, 200);
-        } else {
-            return $this->view->response("No hay comentario con el id: $id", 404);
+        if ($id != null){
+            $comentario = $this->modelcoment->GetComent($id);
+            if (!empty($comentario)) {
+                return $this->view->response($comentario, 200);
+            } else {
+                return $this->view->response("No hay comentario con el id: $id", 404);
+            }
         }
     }
     function ObtenerComentariosJuego($params = []){
         $id = $params[':ID'];
-        $comentarios = $this->modelcoment->GetComentsByGame($id);
-        if (!empty($comentarios)) {
-            return $this->view->response($comentarios, 200);
-        } else {
-            return $this->view->response('No hay comentarios', 404);
+        if ($id != null){
+            $comentarios = $this->modelcoment->GetComentsByGame($id);
+            if (!empty($comentarios)) {
+                return $this->view->response($comentarios, 200);
+            } else {
+                return $this->view->response('No hay comentarios', 404);
+            }
         }
     }
     function EliminarComentario($params = [])
@@ -68,17 +72,19 @@ class ApiComentsController
         $this->authHelper->CheckLoggedIn();
         $check = $this->authHelper->CheckRol();
         $id = $params[':ID'];
-        $comentario = $this->modelcoment->GetComent($id);
-        if($check == "admin"){
-            if ($comentario) {
-                $this->modelcoment->DeleteComent($id);
-                $this->view->response("Comentario con id: $id eliminado con éxito", 200);
-            } else {
-                $this->view->response("No existe el comentario al que eliminar con id: $id", 404);
+        if ($id != null){
+            $comentario = $this->modelcoment->GetComent($id);
+            if($check == "admin"){
+                if ($comentario) {
+                    $this->modelcoment->DeleteComent($id);
+                    $this->view->response("Comentario con id: $id eliminado con éxito", 200);
+                } else {
+                    $this->view->response("No existe el comentario al que eliminar con id: $id", 404);
+                }
             }
-        }
-        else if ($check == "comun"){
-            $this->view->response("No tiene permitido eliminar el comentario: $id", 401);
+            else if ($check == "comun"){
+                $this->view->response("No tiene permitido eliminar el comentario: $id", 401);
+            }
         }
     }
 
@@ -107,30 +113,4 @@ class ApiComentsController
         }
     }
 
-    //Ignorar
-//    function ModificarComentario($params = [])
-//    {
-//        $id = $params[':ID'];
-//        $body = $this->getBody();
-//        $comentario = $body->comentario;
-//        $imagen = $body->imagen;
-//        $this->modelcoment->UpdateComent($comentario, $imagen, $id);
-//        if ($id != 0) {
-//            $this->view->response("El comentario se modifico con exito con el id=$id", 200);
-//        } else {
-//            $this->view->response("El comentario no se pudo modificar", 500);
-//        }
-//    }
-//    function ModificarPuntaje($params = [])
-//    {
-//        $id = $params[':ID'];
-//        $body = $this->getBody();
-//        $puntaje = $body->puntaje;
-//        $this->modelcoment->UpdateScore($puntaje, $id);
-//        if ($id != 0) {
-//            $this->view->response("El puntaje se modifico con exito con el id= $id", 200);
-//        } else {
-//            $this->view->response("El puntaje no se pudo modificar", 500);
-//        }
-//    }
 }

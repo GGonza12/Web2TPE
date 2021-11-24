@@ -80,33 +80,37 @@ class LoginController
     {
         $this->authHelper->CheckLoggedIn();
         $check = $this->authHelper->CheckRol();
-        if ($check == "admin") {
-            $rol = 'admin';
-            $this->model->agregarPermiso($rol, $id);
-            $this->view->ShowAdmin();
-        }
-        else {
-            $this->view->ShowHome();
+        if ($id != null){
+            if ($check == "admin") {
+                $rol = 'admin';
+                $this->model->agregarPermiso($rol, $id);
+                $this->view->ShowAdmin();
+            }
+            else {
+                $this->view->ShowHome();
+            }
         }
     }
     function eliminarUsuario($id)
     {
         $this->authHelper->CheckLoggedIn();
         $check = $this->authHelper->CheckRol();
-        $comentarios = $this->modelcoment->GetComentsByUser($id);
-        if($_SESSION["user"] == $id){
-            $usuarios = $this->model->getUsers();
-            $this->view->ShowUsers($usuarios,$check,"No puedes eliminarte a ti mismo.");
-        }
-        //Verifico si el usuario tenia comentarios y elimino los comentarios.
-        else if ($check == "admin" && $comentarios != null){ 
-            $this->modelcoment->DeleteAllComentsFromUser($id);
-            $this->model->deleteUser($id);
-            $this->view->ShowAdmin();
-        }
-        else if ($check == "admin" && $comentarios == null) {
-            $this->model->deleteUser($id);
-            $this->view->ShowAdmin();
+        if ($id != null){  
+            $comentarios = $this->modelcoment->GetComentsByUser($id);
+            if($_SESSION["user"] == $id){
+                $usuarios = $this->model->getUsers();
+                $this->view->ShowUsers($usuarios,$check,"No puedes eliminarte a ti mismo.");
+            }
+            //Verifico si el usuario tenia comentarios y elimino los comentarios.
+            else if ($check == "admin" && $comentarios != null){ 
+                $this->modelcoment->DeleteAllComentsFromUser($id);
+                $this->model->deleteUser($id);
+                $this->view->ShowAdmin();
+            }
+            else if ($check == "admin" && $comentarios == null) {
+                $this->model->deleteUser($id);
+                $this->view->ShowAdmin();
+            }
         }
 
     }
@@ -114,14 +118,16 @@ class LoginController
     {
         $this->authHelper->CheckLoggedIn();
         $check = $this->authHelper->CheckRol();
-        if($_SESSION["user"] == $id){
-            $usuarios = $this->model->getUsers();
-            $this->view->ShowUsers($usuarios,$check,"No puedes quitar el permiso de administrador a ti mismo.");
-        }
-        else if($_SESSION["user"] != $id){
-            $rol = 'comun';
-            $this->model->quitarPermiso($rol, $id);
-            $this->view->ShowAdmin();
+        if ($id != null){
+            if($_SESSION["user"] == $id){
+                $usuarios = $this->model->getUsers();
+                $this->view->ShowUsers($usuarios,$check,"No puedes quitar el permiso de administrador a ti mismo.");
+            }
+            else if($_SESSION["user"] != $id){
+                $rol = 'comun';
+                $this->model->quitarPermiso($rol, $id);
+                $this->view->ShowAdmin();
+            }
         }
     }
 }
